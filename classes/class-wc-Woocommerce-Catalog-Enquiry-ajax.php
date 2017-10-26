@@ -10,42 +10,15 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 	
 	public function add_variation_for_enquiry_mail() {
 		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce;
-		$variation_array_json = stripslashes($_POST['variation_array']);		
-		$variation_array = json_decode($variation_array_json, true);
-		
-		$variation_name = strtolower(sanitize_text_field($_POST['variation_name']));
-		$variation_value = sanitize_text_field($_POST['variation_value']);
-		$variation_real_name = sanitize_text_field($_POST['variation_real_name']);
-		$product_id = (int)$_POST['product_id'];
-		$f1 = 0;
-		$i = 0;
-		if(isset($_SESSION['variation_list']) && $_SESSION['variation_list'] !='') {
-			$variation_list = $_SESSION['variation_list'];		
-		}
-		else {
-			$variation_list = '';
-		}
-		if($variation_list != '') {
-			foreach($variation_list as $variation ) {
-				if($variation['variation_name'] == $variation_name && $variation['product_id'] == $product_id) {
-					if($variation_value == '') {
-						unset($variation_list[$i]);
-						$variation_list = array_values(array_filter($variation_list));
-					}
-					else {
-						$variation_list[$i]['variation_value'] = $variation_value;
-					}
-					$f1 = 1;					
-				}
-				$i++;				
-			}			
-		}
-		$arr = array('variation_name' => $variation_name, 'variation_value' => $variation_value, 'product_id' => $product_id, 'variation_real_name' => $variation_real_name);
-		if($f1 == 0) {
-			$variation_list[] = $arr;		
-		}
-		$_SESSION['variation_list'] = $variation_list;		
-		die;
+                $product_id = (int)$_POST['product_id'];
+                if($product_id){
+                    if(isset($_SESSION['variation_list']))
+                        unset($_SESSION['variation_list']);
+
+                    $variation_data = $_POST['variation_data'];
+                    $_SESSION['variation_list'] = $variation_data;
+                }	
+                die;
 	}
 
 	public function send_product_enqury_mail() {
@@ -99,7 +72,8 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		$product_name = sanitize_text_field($_POST['woo_customer_product_name']);
 		$product_url = esc_url($_POST['woo_customer_product_url']);
 		$enquiry_product_type = sanitize_text_field($_POST['enquiry_product_type']);
-
+                $product_variations = isset($_SESSION['variation_list']) ? $_SESSION['variation_list'] : array();
+                
 		if(isset($settings['is_other_admin_mail']) && $settings['is_other_admin_mail'] == 'Enable') {
 			if(isset($settings['other_admin_mail'])) {
 				$email_admin = $settings['other_admin_mail'];
@@ -111,8 +85,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		else {
 			$email_admin = get_option( 'admin_email' );
 		}
-		$other_info_product = "";
-		$other_info = "";
+		
 		if(isset($settings['other_emails'])) {
 			$email_admin .= ','.$settings['other_emails'];				
 		}
@@ -124,6 +97,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 				'cust_name' => $name,
 				'cust_email' => $email,
 				'product_id' => $product_id,
+                                'variations' => $product_variations,
 				'subject' => $subject,
 				'phone' => $phone,
 				'comment' => $comment,
@@ -139,17 +113,20 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 					unset($_SESSION['variation_list']);
 				}
 				// delete uploaded file from server temp if have
-				unlink($target_file); 
+				if($target_file)
+					unlink($target_file); 
 				echo 1;
 			}
 			else {
 				// delete uploaded file from server temp if have
-				unlink($target_file); 
+				if($target_file)
+					unlink($target_file); 
 				echo 0;
 			}
 		}else{
 			// delete uploaded file from server temp if have
-			unlink($target_file); 
+			if($target_file)
+				unlink($target_file); 
 		}	
 		die();
 	}

@@ -4,7 +4,8 @@ Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.2
 Tested up to: 4.8
-Stable tag: 3.1.2
+Requires PHP: 5.6
+Stable tag: 3.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +128,10 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+= 3.1.3 =
+* Added: WC Catalog Enquiry admin Email heading and subject customization.
+* Added: Product variation info in enquiry admin email.
+
 = 3.1.2 =
 * Added: Woocommerce 3.1.1 compatibility.
 
@@ -233,6 +238,10 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Initial version release.
 
 == Upgrade Notice ==
+= 3.1.3 =
+* Added: WC Catalog Enquiry admin Email heading and subject customization.
+* Added: Product variation info in enquiry admin email.
+
 = 3.1.2 =
 * Added: Woocommerce 3.1.1 compatibility.
 

@@ -1,36 +1,72 @@
 jQuery( function( $ ) { 
 	
-	$( ".variations_form" ).on( "woocommerce_variation_select_change", function (e) {
-		var variation_name = $(this).parent().parent().find(".label label").html();
-		var select_value = $(".variations select").val();
-		var product_id = $('form.variations_form').attr("data-product_id");
-		var variation_real_name = $(this).attr("name");			
-		var ajax_url = catalog_enquiry_front.ajaxurl;
-		var variation_array = $('form.variations_form').attr('data-product_variations');
-
-		var data = {
-			'action': 'add_variation_for_enquiry_mail',
-			'variation_name': variation_name,
-			'variation_real_name': variation_real_name,
-			'variation_value': select_value,
-			'product_id': product_id,
-			'variation_array': variation_array
-		};
-		$.post(ajax_url, data, function(response) { 
-			console.log(response);														
-		});							
-	});
+//	$( ".variations_form" ).on( "woocommerce_variation_select_change", function (e) {
+//		var variation_name = $(this).parent().parent().find(".label label").html();
+//		var select_value = $(".variations select").val();
+//		var product_id = $('form.variations_form').attr("data-product_id");
+//		var variation_real_name = $(this).attr("name");			
+//		var ajax_url = catalog_enquiry_front.ajaxurl;
+//		var variation_array = $('form.variations_form').attr('data-product_variations');
+//
+//		var data = {
+//			'action': 'add_variation_for_enquiry_mail',
+//			'variation_name': variation_name,
+//			'variation_real_name': variation_real_name,
+//			'variation_value': select_value,
+//			'product_id': product_id,
+//			'variation_array': variation_array
+//		};
+//		$.post(ajax_url, data, function(response) { 
+//			console.log(response);														
+//		});							
+//	});
 	// variation id
 	$(window).bind('found_variation', function(event, variation) {
 		if (variation == null) {
 		}else{
+                        var variation_data = {};
+			var count  = 0;
+			var chosen = 0;
+			var variation_selector = '';
+			var variation_id = '';
+			if(event.hasOwnProperty('target')){
+				variation_selector = event.target;
+			}else{
+				variation_selector = 'form.variations_form.cart';
+			}
+
+			$(variation_selector).find( '.variations select' ).each( function() {
+				var attribute_name = $( this ).data( 'attribute_name' ) || $( this ).attr( 'name' );
+				var value          = $( this ).val() || '';
+
+				if ( value.length > 0 ) {
+					chosen ++;
+				}
+
+				count ++;
+				variation_data[ attribute_name ] = value;
+			});
+                        
 			if(variation.hasOwnProperty('id')){
+                                variation_id = variation.id;
 				$('#product_id_for_enquiry').val(variation.id);
 			}else if(variation.hasOwnProperty('variation_id')){
+                                variation_id = variation.variation_id;
 				$('#product_id_for_enquiry').val(variation.variation_id);
 			}else{
+                                variation_id = $('form.variations_form').attr("data-product_id");
 				$('#product_id_for_enquiry').val($('form.variations_form').attr("data-product_id"));
 			}
+                        console.log(catalog_enquiry_front);
+                        var ajax_url = catalog_enquiry_front.ajaxurl;
+                        var data = {
+                                'action': 'add_variation_for_enquiry_mail',
+                                'product_id': variation_id,
+                                'variation_data': variation_data
+                        };
+                        $.post(ajax_url, data, function(response) { 
+                                console.log(response);														
+                        });					
 		}
 	});
 	$('.variations_form').trigger( 'found_variation' );

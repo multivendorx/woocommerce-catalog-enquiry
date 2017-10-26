@@ -39,8 +39,6 @@ class WC_Catalog_Enquiry_Email extends WC_Email {
 		$this->template_html 	= 'emails/wc_catalog_enquiry_admin.php';
 		$this->template_plain 	= 'emails/plain/wc_catalog_enquiry_admin.php';
 
-		$this->subject 			= __( 'Product Enquiry for {PRODUCT_NAME} by {USER_NAME}', 'woocommerce-catalog-enquiry');
-		$this->heading      	= __( 'Enquiry for {PRODUCT_NAME}', 'woocommerce-catalog-enquiry');
 		$this->template_base = $WC_Woocommerce_Catalog_Enquiry->plugin_path . 'templates/';
 		
 		// Call parent constuctor
@@ -84,6 +82,27 @@ class WC_Catalog_Enquiry_Email extends WC_Email {
 	}
 
 	/**
+	 * Get email subject.
+	 *
+	 * @since  1.4.7
+	 * @return string
+	 */
+	public function get_default_subject() {
+		return apply_filters( 'wc_catalog_enquiry_admin_email_subject', __( 'Product Enquiry for {PRODUCT_NAME} by {USER_NAME}', 'woocommerce-catalog-enquiry'), $this->object );
+	}
+
+	/**
+	 * Get email heading.
+	 *
+	 * @since  1.4.7
+	 * @return string
+	 */
+	public function get_default_heading() {
+		return apply_filters( 'wc_catalog_enquiry_admin_email_heading', __( 'Enquiry for {PRODUCT_NAME}', 'woocommerce-catalog-enquiry'),$this->object );
+	}
+
+
+	/**
      * Get email attachments.
      *
      * @return string
@@ -91,27 +110,6 @@ class WC_Catalog_Enquiry_Email extends WC_Email {
     public function get_attachments() {
         return apply_filters( 'wc_catalog_enquiry_admin_email_attachments', $this->attachments, $this->id, $this->object );
     }
-
-	
-	/**
-	 * get_subject function.
-	 *
-	 * @access public
-	 * @return string
-	 */
-	function get_subject() {
-			return apply_filters( 'wc_catalog_enquiry_admin_email_subject', $this->format_string( $this->subject ), $this->object );
-	}
-
-	/**
-	 * get_heading function.
-	 *
-	 * @access public
-	 * @return string
-	 */
-	function get_heading() {
-			return apply_filters( 'wc_catalog_enquiry_admin_email_heading', $this->format_string( $this->heading ), $this->object );
-	}
 
 	/**
 	 * Get email headers.

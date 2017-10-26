@@ -7,7 +7,6 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		global $WC_Woocommerce_Catalog_Enquiry, $post;
 		$settings = $WC_Woocommerce_Catalog_Enquiry->options;
 		$exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
-		add_action( 'wc_Woocommerce_Catalog_Enquiry_frontend_hook', array($this, 'wc_Woocommerce_Catalog_Enquiry_frontend_function'), 10, 2 );
 		//enqueue scripts
 		add_action('wp_enqueue_scripts', array($this, 'frontend_scripts'));
 		//enqueue styles
@@ -394,7 +393,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 						<?php }?>
 					<?php } else{?>
 					<h2 style="font-size:20px;"><?php echo __('Enquiry about ','woocommerce-catalog-enquiry')?> <?php echo $product_name; ?></h2>
-					<?php }?>
+					<?php } ?>
 				</div>
 				<div class="modal-body">
 					<div class="row-fluid">
@@ -852,15 +851,10 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			
 			}
 			if(isset($settings['custom_css_product_page']) && $settings['custom_css_product_page']!="") {
-				wp_add_inline_style('frontend_css', $settings['custom_css_product_page'] );				
+				wp_add_inline_style('wce_frontend_css', $settings['custom_css_product_page'] );				
 		 	}
 		}
 
-	}
-	
-	function dc_wc_Woocommerce_Catalog_Enquiry_frontend_function() {
-	  // Do your frontend work here
-	  
 	}
 
 }
