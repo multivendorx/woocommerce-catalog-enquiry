@@ -57,7 +57,7 @@ jQuery( function( $ ) {
                                 variation_id = $('form.variations_form').attr("data-product_id");
 				$('#product_id_for_enquiry').val($('form.variations_form').attr("data-product_id"));
 			}
-                        console.log(catalog_enquiry_front);
+                        
                         var ajax_url = catalog_enquiry_front.ajaxurl;
                         var data = {
                                 'action': 'add_variation_for_enquiry_mail',
@@ -179,7 +179,7 @@ function submitthis(str) {
 			cache: false,             
 			processData:false,
 	        success : function( response ) { 
-	        	if(response==1) {	
+	        	if(response.status==1) {	
 					jQuery("#loader_after_sumitting_the_form").hide();
 					jQuery('#msg_for_enquiry_sucesss').html('');	 	 
 					jQuery('#msg_for_enquiry_sucesss').html(catalog_enquiry_front.ajax_success_msg);											
@@ -206,11 +206,11 @@ function submitthis(str) {
 					if(typeof(catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
 						window.location.href=catalog_enquiry_front.redirect_link;
 					}											 
-				}else if(response==2){
+				}else if(response.status==2){
 					jQuery("#loader_after_sumitting_the_form").hide();
 					jQuery('#msg_for_enquiry_sucesss').html('');
 					jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.filetype_error);	
-				}else if(response==3){
+				}else if(response.status==3){
 					jQuery("#loader_after_sumitting_the_form").hide();
 					jQuery('#msg_for_enquiry_sucesss').html('');
 					jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.filesize_error);	
@@ -218,7 +218,11 @@ function submitthis(str) {
 				else {	
 					jQuery("#loader_after_sumitting_the_form").hide();
 					jQuery('#msg_for_enquiry_sucesss').html('');
-					jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.ajax_error);									 
+					if(response.error_report != ''){
+						jQuery('#msg_for_enquiry_error').html(response.error_report);	
+					}else{
+						jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.ajax_error);	
+					}									 
 				}
 			}
 	    });
@@ -241,7 +245,7 @@ function submitthis(str) {
 		};
 		jQuery.post(ajax_url, data, function(response) {					
 				
-			if(response==1) {	
+			if(response.status==1) {	
 				jQuery("#loader_after_sumitting_the_form").hide();					 	 												
 				jQuery('#msg_for_enquiry_sucesss').html('');
 				jQuery('#msg_for_enquiry_sucesss').html(catalog_enquiry_front.ajax_success_msg);
@@ -264,10 +268,23 @@ function submitthis(str) {
 				if(typeof(catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
 					window.location.href=catalog_enquiry_front.redirect_link;
 				}												 
+			}else if(response.status==2){
+				jQuery("#loader_after_sumitting_the_form").hide();
+				jQuery('#msg_for_enquiry_sucesss').html('');
+				jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.filetype_error);	
+			}else if(response.status==3){
+				jQuery("#loader_after_sumitting_the_form").hide();
+				jQuery('#msg_for_enquiry_sucesss').html('');
+				jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.filesize_error);	
 			}
 			else {	
 				jQuery("#loader_after_sumitting_the_form").hide();
-				jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.ajax_error);									 
+				jQuery('#msg_for_enquiry_sucesss').html('');
+				if(response.error_report != ''){
+					jQuery('#msg_for_enquiry_error').html(response.error_report);	
+				}else{
+					jQuery('#msg_for_enquiry_error').html(catalog_enquiry_front.error_levels.ajax_error);	
+				}									 
 			}					
 		});	
 	}					

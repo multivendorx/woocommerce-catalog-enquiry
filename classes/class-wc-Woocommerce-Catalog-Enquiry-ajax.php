@@ -1,11 +1,12 @@
 <?php
 class WC_Woocommerce_Catalog_Enquiry_Ajax {
-
+	public $error_mail_report;
 	public function __construct() {
 		add_action('wp_ajax_send_enquiry_mail', array(&$this, 'send_product_enqury_mail') );
 		add_action( 'wp_ajax_nopriv_send_enquiry_mail', array( &$this, 'send_product_enqury_mail' ) );
 		add_action( 'wp_ajax_add_variation_for_enquiry_mail', array( $this, 'add_variation_for_enquiry_mail'));
 		add_action( 'wp_ajax_nopriv_add_variation_for_enquiry_mail', array( $this, 'add_variation_for_enquiry_mail'));
+		add_action('wp_mail_failed', array( $this, 'catalog_enquiry_error_mail_report'));
 	}
 	
 	public function add_variation_for_enquiry_mail() {
@@ -21,6 +22,22 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
                 die;
 	}
 
+	public function catalog_enquiry_error_mail_report($wp_error){
+        if ( true === WP_DEBUG ) {
+            error_log(print_r($wp_error, true));
+        }
+        if (is_object( $wp_error ) ) {
+            if(isset($wp_error->errors['wp_mail_failed']) || isset($wp_error->error_data['wp_mail_failed'])){
+                if(isset($wp_error->error_data['wp_mail_failed']['phpmailer_exception_code'])){
+                    $this->error_mail_report = 'Mailer Error: '.$wp_error->error_data['wp_mail_failed']['phpmailer_exception_code'];
+                }
+                if(isset($wp_error->errors['wp_mail_failed'][0])){
+                    $this->error_mail_report .= ', '.$wp_error->errors['wp_mail_failed'][0];
+                }
+            }
+        }
+    }
+
 	public function send_product_enqury_mail() {
 		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $product;
 		
@@ -28,7 +45,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
     	if( !isset( $_POST['wc_catalog_enq'] ) || !wp_verify_nonce( $_POST['wc_catalog_enq'], 'wc_catalog_enquiry_mail_form' ) ) {
     		die();
     	}
-
+    	$status = '';
 		$file_name = '';
 		$target_file = '';
 		$attachments = array();
@@ -53,11 +70,11 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 				    	$attachments[] = $target_file;
 				    }
 				}else{
-					echo 3;
+					$status = 3;
 		    		die;
 				}
 		    }else{
-		    	echo 2;
+		    	$status = 2;
 		    	die;
 		    }
 		}
@@ -97,7 +114,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 				'cust_name' => $name,
 				'cust_email' => $email,
 				'product_id' => $product_id,
-                                'variations' => $product_variations,
+                'variations' => $product_variations,
 				'subject' => $subject,
 				'phone' => $phone,
 				'comment' => $comment,
@@ -115,19 +132,22 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 				// delete uploaded file from server temp if have
 				if($target_file)
 					unlink($target_file); 
-				echo 1;
+				$status = 1;
+
+				do_action('wc_catalog_enquiry_sent', $enquiry_data);
 			}
 			else {
 				// delete uploaded file from server temp if have
 				if($target_file)
 					unlink($target_file); 
-				echo 0;
+				$status = 0;
 			}
 		}else{
 			// delete uploaded file from server temp if have
 			if($target_file)
 				unlink($target_file); 
-		}	
+		}
+		wp_send_json(array('status' => $status, 'error_report' => $this->error_mail_report))	;	
 		die();
 	}
 

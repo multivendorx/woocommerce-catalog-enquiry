@@ -58,7 +58,7 @@ class WC_Catalog_Enquiry_Email extends WC_Email {
 		$this->enquiry_data = $enquiry_data;
 		$this->cust_name = $enquiry_data['cust_name'];
 		$this->cust_email = $enquiry_data['cust_email'];
-		$this->customer_email = $customer_email;
+		$this->customer_email = $this->cust_email;
 		
 		if ( ! $this->is_enabled() || ! $this->get_recipient() ) {
 			return;

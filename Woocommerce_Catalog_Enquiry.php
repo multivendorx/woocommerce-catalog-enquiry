@@ -4,7 +4,7 @@
  * Plugin URI: https://wc-marketplace.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
  * Author: WC Marketplace, The Grey Parrots 
- * Version: 3.1.3
+ * Version: 3.1.4
  * Author URI: https://wc-marketplace.com/
  * WC requires at least: 3.0
  * WC tested up to: 3.2.1

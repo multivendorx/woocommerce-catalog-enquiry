@@ -736,7 +736,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			wp_localize_script(
 				'wce_frontend_js', 
 				'catalog_enquiry_front',	
-			array(
+			apply_filters( 'wc_catalog_enquiry_localize_script_data', array(
 				'ajaxurl' 				=> admin_url('admin-ajax.php'),	
 				'json_arr' 				=> json_encode( $arr_field ),
 				'settings' 				=> $settings,
@@ -744,7 +744,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 				'ajax_success_msg' 		=> __('Enquiry sent successfully','woocommerce-catalog-enquiry'),
 				'redirect_link' 		=> get_permalink($settings['redirect_page_id']),
 				'captcha' 				=> $captcha,
-			));
+			)));
 		}
 
 	}
