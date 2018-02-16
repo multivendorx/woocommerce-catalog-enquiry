@@ -4,7 +4,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 	public $available_for;
 	
 	public function __construct() { 
-		global $WC_Woocommerce_Catalog_Enquiry, $post;
+		global $WC_Woocommerce_Catalog_Enquiry;
 		$settings = $WC_Woocommerce_Catalog_Enquiry->options;
 		$exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
 		//enqueue scripts
@@ -111,8 +111,10 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 	
 	
 	public function change_permalink() {
-		global $product, $WC_Woocommerce_Catalog_Enquiry, $post;
-		$settings = $WC_Woocommerce_Catalog_Enquiry->options;				
+            global $product, $WC_Woocommerce_Catalog_Enquiry, $post;
+            $settings = $WC_Woocommerce_Catalog_Enquiry->options;
+            print_r($post);
+            if($post && $post->post_type == 'product'){
 		if(!$product) {
 		  return get_permalink($post->ID);
 		}
@@ -129,6 +131,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 				return get_permalink($post->ID);				
 			}
 		}
+            }
 		
 	}
 	
@@ -194,7 +197,9 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		if($product_for == $post->ID) {
 			remove_filter('the_permalink', array($this, 'change_permalink'),10);			
 		} else {
+                    if($post->post_status == 'product'){
 			add_filter('the_permalink', array($this, 'change_permalink'),10);
+                    }
 		}
 	}
 	
