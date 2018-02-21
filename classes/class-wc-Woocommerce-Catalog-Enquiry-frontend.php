@@ -113,17 +113,16 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 	public function change_permalink() {
             global $product, $WC_Woocommerce_Catalog_Enquiry, $post;
             $settings = $WC_Woocommerce_Catalog_Enquiry->options;
-            print_r($post);
             if($post && $post->post_type == 'product'){
 		if(!$product) {
 		  return get_permalink($post->ID);
 		}
 		else {
-			if ($settings['button_type'] == 2) { 
+			if (isset($settings['button_type']) && $settings['button_type'] == 2) { 
 				$link = $settings['button_link'];
 				return $link;
 			}
-			else if($settings['button_type'] == 3 ) {
+			else if(isset($settings['button_type']) && $settings['button_type'] == 3 ) {
 				$link = get_post_field("woo_catalog_enquiry_product_link",$post->ID);
 				return $link;				
 			}
@@ -197,7 +196,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		if($product_for == $post->ID) {
 			remove_filter('the_permalink', array($this, 'change_permalink'),10);			
 		} else {
-                    if($post->post_status == 'product'){
+                    if($post->post_type == 'product'){
 			add_filter('the_permalink', array($this, 'change_permalink'),10);
                     }
 		}
