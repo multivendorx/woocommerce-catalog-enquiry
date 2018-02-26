@@ -118,11 +118,11 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		  return get_permalink($post->ID);
 		}
 		else {
-			if (isset($settings['button_type']) && $settings['button_type'] == 2) { 
+			if ($settings['button_type'] == 2) { 
 				$link = $settings['button_link'];
 				return $link;
 			}
-			else if(isset($settings['button_type']) && $settings['button_type'] == 3 ) {
+			else if($settings['button_type'] == 3 ) {
 				$link = get_post_field("woo_catalog_enquiry_product_link",$post->ID);
 				return $link;				
 			}
@@ -343,7 +343,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 				</div>
 			</div>
 			<div class="modal-footer">		
-				<button onclick="submitthis('frm_woo_catalog');" type="button" id="woo_submit_enquiry" class="btn btn-primary"><?php echo __('Send', 'woocommerce-catalog-enquiry');?></button>
+				<button type="button" id="woo_submit_enquiry" class="btn btn-primary"><?php echo __('Send', 'woocommerce-catalog-enquiry');?></button>
 			</div>
 		</div>				
 	</div>	
@@ -447,7 +447,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default"><?php echo __('Close','woocommerce-catalog-enquiry');?></button>
-					<button onclick="submitthis('frm_woo_catalog');" type="button" id="woo_submit_enquiry" class="btn btn-primary"><?php echo __('Send', 'woocommerce-catalog-enquiry');?></button>
+					<button type="button" id="woo_submit_enquiry" class="btn btn-primary"><?php echo __('Send', 'woocommerce-catalog-enquiry');?></button>
 				</div>
 			</div>
 		</div>			

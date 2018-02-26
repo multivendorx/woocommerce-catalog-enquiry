@@ -5,7 +5,7 @@ Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.2
 Tested up to: 4.8
 Requires PHP: 5.6
-Stable tag: 3.1.4
+Stable tag: 3.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,6 +128,10 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+= 3.1.5 =
+* Added: Enquiry mail failed mail server messages added.
+* Fixed: Some minor css issues.
+
 = 3.1.4 =
 * Fixed: Product variations data issue.
 * Added: Some hooks/filters for third party development.
@@ -242,6 +246,10 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Initial version release.
 
 == Upgrade Notice ==
+= 3.1.5 =
+* Added: Enquiry mail failed mail server messages added.
+* Fixed: Some minor css issues.
+
 = 3.1.4 =
 * Fixed: Product variations data issue.
 * Added: Some hooks/filters for third party development.

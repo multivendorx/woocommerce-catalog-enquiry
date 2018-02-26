@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Catalog Enquiry\n"
-"POT-Creation-Date: 2017-07-24 10:24+0000\n"
-"PO-Revision-Date: 2017-07-24 10:27+0000\n"
-"Last-Translator: Admin DC <khokan@dualcube.com>\n"
+"POT-Creation-Date: 2018-01-15 04:51+0000\n"
+"PO-Revision-Date: 2018-01-15 04:55+0000\n"
+"Last-Translator: admin <khokan@dualcube.com>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg-BG\n"
 "MIME-Version: 1.0\n"
@@ -17,128 +17,118 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "Report-Msgid-Bugs-To: "
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
-msgid "Load Wordpress JS Library?"
-msgstr "Заредете Wordpress JS Library?"
+#: templates/emails/wc_catalog_enquiry_admin.php:99
+#: templates/emails/plain/wc_catalog_enquiry_admin.php:61
+#, php-format
+msgid "%s - Powered by WC Catalog Enquiry"
+msgstr "%s - Задвижвани от WC Каталог запитване"
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
-msgid ""
-"Just Checked this checkbox for load Wordpress JS Library, if your theme has "
-"own JS lib then ingnore it"
-msgstr ""
-"Проверете това квадратче за зареждане на Wordpress JS Library, ако вашата "
-"тема има собствена JS lib след това да я инкорпорира"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
-msgid "Check this for load Wordpress js lib."
-msgstr "Проверете това за зареждане на Wordpress js lib"
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:263
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:265
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:280
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:362
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:364
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:380
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:262
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:264
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:279
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:361
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:363
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:379
 msgid "Send an enquiry"
 msgstr "Изпратете запитване"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:293
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:396
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:292
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:395
 msgid "Enquiry about "
 msgstr "запитване за"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:304
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:407
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:303
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:406
 msgid "Enter your name : "
 msgstr "Въведете вашето име :"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:307
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:410
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:306
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:409
 msgid "Enter your Email Id : "
 msgstr "Въведете вашия e-mail:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:311
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:414
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:310
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:413
 msgid "Enter enquiry subject : "
 msgstr "Въведете повода на запитване:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:312
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:415
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:311
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:414
 msgid "Enquiry about"
 msgstr "запитване за"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:315
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:418
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:314
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:417
 msgid "Enter your phone no : "
 msgstr "Въведете вашия телефон:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:319
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:422
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:318
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:421
 msgid "Enter your address : "
 msgstr "Въведете вашия адрес:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:323
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:426
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:322
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:425
 msgid "Enter your Message : "
 msgstr "Въведете вашето съобщение:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:327
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:430
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:326
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:429
 msgid "Upload your File : "
 msgstr "Качете файла си:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:333
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:436
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:332
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:435
 msgid "Security Code"
 msgstr "Код за сигурност"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:334
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:437
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:333
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:436
 msgid "Enter the security code shown above"
 msgstr "Въведете кода за сигурност, показан по-горе:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:343
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:447
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:342
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:446
 msgid "Send"
 msgstr "Изпрати"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:446
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:445
 msgid "Close"
 msgstr "Затвори"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:717
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:716
 msgid "Name is required field"
 msgstr "Името е задължително поле"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:718
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:717
 msgid "Email is required field"
 msgstr "E-mail адреса е задължително поле"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:719
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:718
 msgid "Please Enter Valid Email Id"
 msgstr "Моля,въведете валиден e-mail адрес"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:720
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:719
 msgid "Please enter the security code"
 msgstr "Моля, въведете кода за сигурност"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:721
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:720
 msgid "Please enter the valid seurity code"
 msgstr "Моля, въведете валидния код за защита"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:722
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:721
 msgid "Error in system please try later"
 msgstr "Грешка в системата опитайте по-късно"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:723
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:722
 msgid "Invalid file format."
 msgstr "Невалиден файлов формат."
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:724
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:723
 msgid "Exceeded filesize limit."
 msgstr "Превишен лимит на файла."
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:745
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:744
 msgid "Enquiry sent successfully"
 msgstr "Запитването е изпратено успешно"
 
@@ -238,6 +228,22 @@ msgstr "Проверете това квадратче за включване �
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:47
 msgid "Check this for active the catalog functionality."
 msgstr "Проверете дали това е активна функционалността на каталога."
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
+msgid "Load Wordpress JS Library?"
+msgstr "Заредете Wordpress JS Library?"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
+msgid ""
+"Just Checked this checkbox for load Wordpress JS Library, if your theme has "
+"own JS lib then ingnore it"
+msgstr ""
+"Проверете това квадратче за зареждане на Wordpress JS Library, ако вашата "
+"тема има собствена JS lib след това да я инкорпорира"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:48
+msgid "Check this for load Wordpress js lib."
+msgstr "Проверете това за зареждане на Wordpress js lib"
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:49
 msgid "Applicable For"
@@ -950,39 +956,33 @@ msgstr "URL адрес на продукта"
 msgid "Product SKU"
 msgstr "Продукт SKU"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:44
+#: templates/emails/wc_catalog_enquiry_admin.php:61
 msgid "Customer Details"
 msgstr "Данни на клиента"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:46
+#: templates/emails/wc_catalog_enquiry_admin.php:63
 msgid "Name"
 msgstr "име"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:50
+#: templates/emails/wc_catalog_enquiry_admin.php:67
 msgid "Email"
 msgstr "електронна поща"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:55
+#: templates/emails/wc_catalog_enquiry_admin.php:72
 msgid "User Phone : "
 msgstr "Телефон на потребителя:"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:61
+#: templates/emails/wc_catalog_enquiry_admin.php:78
 msgid "User Address : "
 msgstr "Адрес на потребителя"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:67
+#: templates/emails/wc_catalog_enquiry_admin.php:84
 msgid "User Subject : "
 msgstr "Потребителско съобщение:"
 
-#: templates/emails/wc_catalog_enquiry_admin.php:73
+#: templates/emails/wc_catalog_enquiry_admin.php:90
 msgid "User Comments : "
 msgstr "Потребителски коментари:"
-
-#: templates/emails/wc_catalog_enquiry_admin.php:82
-#: templates/emails/plain/wc_catalog_enquiry_admin.php:45
-#, php-format
-msgid "%s - Powered by WC Catalog Enquiey"
-msgstr "%s - Осъществено от каталога на канцеларията"
 
 #: classes/emails/class-wc-catalog-enquiry-email.php:36
 msgid "WC Catalog Enquiry admin"
@@ -992,11 +992,11 @@ msgstr "WC Каталог запитване admin"
 msgid "Admin will get an email when customer enquiry about a product"
 msgstr "Администраторът ще получи имейл при запитване на клиент за продукт"
 
-#: classes/emails/class-wc-catalog-enquiry-email.php:42
+#: classes/emails/class-wc-catalog-enquiry-email.php:91
 msgid "Product Enquiry for {PRODUCT_NAME} by {USER_NAME}"
 msgstr "Заявка за продукт за {PRODUCT_NAME} от {USER_NAME}"
 
-#: classes/emails/class-wc-catalog-enquiry-email.php:43
+#: classes/emails/class-wc-catalog-enquiry-email.php:101
 msgid "Enquiry for {PRODUCT_NAME}"
 msgstr "Запитване за {PRODUCT_NAME}"
 
@@ -1009,14 +1009,10 @@ msgid "Convert your WooCommerce store into a catalog website in a click"
 msgstr ""
 "Преобразувайте своя магазин WooCommerce в каталонен сайт с едно кликване"
 
-#. URI of the plugin
-msgid "http://wc-marketplace.com/"
-msgstr "http://wc-marketplace.com/"
+#. Author URI of the plugin
+msgid "https://wc-marketplace.com/"
+msgstr "https://wc-marketplace.com/"
 
 #. Author of the plugin
 msgid "WC Marketplace, The Grey Parrots"
 msgstr "WC Marketplace, The Grey Parrots"
-
-#. Author URI of the plugin
-msgid "https://wc-marketplace.com/"
-msgstr "https://wc-marketplace.com/"
