@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 04:50+0000\n"
+"POT-Creation-Date: 2018-05-23 08:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,181 +14,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:262
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:264
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:279
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:361
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:363
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:379
-msgid "Send an enquiry"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:292
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:395
-msgid "Enquiry about "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:303
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:406
-msgid "Enter your name : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:306
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:409
-msgid "Enter your Email Id : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:310
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:413
-msgid "Enter enquiry subject : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:311
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:414
-msgid "Enquiry about"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:314
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:417
-msgid "Enter your phone no : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:318
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:421
-msgid "Enter your address : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:322
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:425
-msgid "Enter your Message : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:326
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:429
-msgid "Upload your File : "
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:332
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:435
-msgid "Security Code"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:333
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:436
-msgid "Enter the security code shown above"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:342
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:446
-msgid "Send"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:445
-msgid "Close"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:716
-msgid "Name is required field"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:717
-msgid "Email is required field"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:718
-msgid "Please Enter Valid Email Id"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:719
-msgid "Please enter the security code"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:720
-msgid "Please enter the valid seurity code"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:721
-msgid "Error in system please try later"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:722
-msgid "Invalid file format."
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:723
-msgid "Exceeded filesize limit."
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:744
-msgid "Enquiry sent successfully"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:29
-msgid "Powered by"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:29
-msgid "WC Marketplace"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:96
-msgid "Enter product external link"
-msgstr ""
-
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:97
-msgid "https://www.google.com"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:74
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:46
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:74
 msgid "Woocommerce Catalog Enquiry Settings"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
-msgid "Enable Exclusion List"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
-msgid "Enable the exclusion list"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "User List Excluded from catalog"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "select the user who can puchase from website"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "select the user who can puchase from website."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-msgid "Product List Excluded from catalog"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "select the products will be excluted from catalog list"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "select the products will be excluted from catalog list."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "Category List Excluded from catalog"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:123
-msgid "Exclusion settings updated"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:136
-msgid "Configure the exclusion list"
 msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
@@ -359,7 +188,7 @@ msgid "Check this if you want custom button at the place of add to cart."
 msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:60
-msgid "Hide Cart Chackout Page?"
+msgid "Hide Cart Checkout Page?"
 msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:60
@@ -376,6 +205,15 @@ msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:62
 msgid "Choose your button type"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:62
+msgid "Please Select"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:62
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:157
+msgid "Read More"
 msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:62
@@ -871,6 +709,193 @@ msgstr ""
 msgid "Configure the Enquiry Button"
 msgstr ""
 
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
+msgid "Enable Exclusion List"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
+msgid "Enable the exclusion list"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
+msgid "User List Excluded from catalog"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
+msgid "select the user who can puchase from website"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
+msgid "select the user who can puchase from website."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
+msgid "Product List Excluded from catalog"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
+msgid "select the products will be excluted from catalog list"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
+msgid "select the products will be excluted from catalog list."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
+msgid "Category List Excluded from catalog"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:123
+msgid "Exclusion settings updated"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:136
+msgid "Configure the exclusion list"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:32
+msgid "Powered by"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:32
+msgid "WC Marketplace"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:90
+msgid "Enter product external link"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:91
+msgid "https://www.google.com"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:342
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:344
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:359
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:514
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:516
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:532
+msgid "Send an enquiry"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:376
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:552
+msgid "Enquiry about "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:394
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:570
+msgid "Enter your name : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:404
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:580
+msgid "Enter your Email Id : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:415
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:591
+msgid "Enter enquiry subject : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:418
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:594
+msgid "Enquiry about"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:427
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:603
+msgid "Enter your phone no : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:439
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:615
+msgid "Enter your address : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:451
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:627
+msgid "Enter your Message : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:463
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:639
+msgid "Upload your File : "
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:476
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:652
+msgid "Security Code"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:483
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:659
+msgid "Enter the security code shown above"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:496
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:673
+msgid "Send"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:672
+msgid "Close"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:909
+msgid "Name is required field"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:910
+msgid "Email is required field"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:911
+msgid "Please Enter Valid Email Id"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:912
+msgid "Please enter the security code"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:913
+msgid "Please enter the valid seurity code"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:914
+msgid "Error in system please try later"
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:915
+msgid "Invalid file format."
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:916
+msgid "Exceeded filesize limit."
+msgstr ""
+
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:935
+msgid "Enquiry sent successfully"
+msgstr ""
+
+#: classes/emails/class-wc-catalog-enquiry-email.php:36
+msgid "WC Catalog Enquiry admin"
+msgstr ""
+
+#: classes/emails/class-wc-catalog-enquiry-email.php:37
+msgid "Admin will get an email when customer enquiry about a product"
+msgstr ""
+
+#: classes/emails/class-wc-catalog-enquiry-email.php:91
+msgid "Product Enquiry for {PRODUCT_NAME} by {USER_NAME}"
+msgstr ""
+
+#: classes/emails/class-wc-catalog-enquiry-email.php:101
+msgid "Enquiry for {PRODUCT_NAME}"
+msgstr ""
+
 #: templates/emails/wc_catalog_enquiry_admin.php:15
 #: templates/emails/plain/wc_catalog_enquiry_admin.php:14
 msgid "Dear Admin"
@@ -929,22 +954,6 @@ msgstr ""
 #: templates/emails/plain/wc_catalog_enquiry_admin.php:61
 #, php-format
 msgid "%s - Powered by WC Catalog Enquiry"
-msgstr ""
-
-#: classes/emails/class-wc-catalog-enquiry-email.php:36
-msgid "WC Catalog Enquiry admin"
-msgstr ""
-
-#: classes/emails/class-wc-catalog-enquiry-email.php:37
-msgid "Admin will get an email when customer enquiry about a product"
-msgstr ""
-
-#: classes/emails/class-wc-catalog-enquiry-email.php:91
-msgid "Product Enquiry for {PRODUCT_NAME} by {USER_NAME}"
-msgstr ""
-
-#: classes/emails/class-wc-catalog-enquiry-email.php:101
-msgid "Enquiry for {PRODUCT_NAME}"
 msgstr ""
 
 #. Name of the plugin

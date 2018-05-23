@@ -4,7 +4,7 @@
  * Plugin URI: https://wc-marketplace.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
  * Author: WC Marketplace, The Grey Parrots 
- * Version: 3.1.5
+ * Version: 3.1.6
  * Author URI: https://wc-marketplace.com/
  * WC requires at least: 3.0
  * WC tested up to: 3.2.1
@@ -30,9 +30,24 @@ function woocommerce_catalog_enquiry_plugin_links( $links ) {
 		'<a href="' . admin_url( 'admin.php?page=wc-Woocommerce-Catalog-Enquiry-setting-admin' ) . '">' . __( 'Settings', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>',
 		'<a href="http://dualcube.com/">' . __( 'Support', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>',			
 	);	
-	return array_merge( $plugin_links, $links );
+	$links = array_merge( $plugin_links, $links );
+        $links[] = '<a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">' . __( 'Upgrade to Pro', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>';
+        return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'woocommerce_catalog_enquiry_plugin_links' );
+
+add_filter( 'plugin_row_meta', 'plugin_row_meta', 10, 2 );
+
+function plugin_row_meta( $links, $file ) {
+    if($file == 'woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php'){
+        $row_meta = array(
+            'pro'    => '<a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" title="' . esc_attr( __( 'Upgrade to Pro', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) ) . '">' . __( 'Upgrade to Pro', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>'
+        );
+        return array_merge( $links, $row_meta );
+    }else{
+        return $links;
+    }
+}
 
 if(!WC_Dependencies_woocommerce_catalog_enquiry::woocommerce_catalog_enquiry_pro_active_check()) {
 	if(!class_exists('WC_Woocommerce_Catalog_Enquiry')) {
@@ -42,4 +57,4 @@ if(!WC_Dependencies_woocommerce_catalog_enquiry::woocommerce_catalog_enquiry_pro
 		$GLOBALS['WC_Woocommerce_Catalog_Enquiry'] = $WC_Woocommerce_Catalog_Enquiry;
 	}
 }
-?>
+

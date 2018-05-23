@@ -1,11 +1,11 @@
 ﻿=== WooCommerce Catalog Enquiry ===
-Contributors: dualcube, greyparrots, itzmekhokan, dualcube_subrata
+Contributors: dualcube, greyparrots, itzmekhokan
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.2
-Tested up to: 4.8
+Tested up to: 4.9.5
 Requires PHP: 5.6
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,6 +128,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+= 3.1.6 =
+* Enhancement: Enquiry pop-up styling and responsive.
+* Fixed: Jquery window load issue.
+* Fixed: Widget post url issue.
+
 = 3.1.5 =
 * Added: Enquiry mail failed mail server messages added.
 * Fixed: Some minor css issues.
@@ -246,6 +251,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Initial version release.
 
 == Upgrade Notice ==
+= 3.1.6 =
+* Enhancement: Enquiry pop-up styling and responsive.
+* Fixed: Jquery window load issue.
+* Fixed: Widget post url issue.
+
 = 3.1.5 =
 * Added: Enquiry mail failed mail server messages added.
 * Fixed: Some minor css issues.
