@@ -102,7 +102,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         }
     }
     
-    public function woocommerce_loop_add_to_cart_link($add_to_cart_button, $product, $args){
+    public function woocommerce_loop_add_to_cart_link($add_to_cart_button, $product, $args = array()){
         global $WC_Woocommerce_Catalog_Enquiry;
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {

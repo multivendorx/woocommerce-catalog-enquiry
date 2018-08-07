@@ -5,7 +5,7 @@ Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.2
 Tested up to: 4.9.5
 Requires PHP: 5.6
-Stable tag: 3.1.6
+Stable tag: 3.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,6 +128,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+= 3.1.7 =
+* Fixed: Post permalink issue.
+* Tweak: 'redirect_cart_checkout_on_conditions' functionality.
+* Updated - Language file.
+
 = 3.1.6 =
 * Enhancement: Enquiry pop-up styling and responsive.
 * Fixed: Jquery window load issue.
@@ -251,6 +256,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Initial version release.
 
 == Upgrade Notice ==
+= 3.1.7 =
+* Fixed: Post permalink issue.
+* Tweak: 'redirect_cart_checkout_on_conditions' functionality.
+* Updated - Language file.
+
 = 3.1.6 =
 * Enhancement: Enquiry pop-up styling and responsive.
 * Fixed: Jquery window load issue.
