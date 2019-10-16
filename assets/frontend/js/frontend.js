@@ -68,8 +68,8 @@ jQuery(document).ready(function($) {
                 console.log(response);
             });
         }
-    });
-    $('.variations_form').trigger('found_variation');
+    }).trigger( 'found_variation' );
+    //$('.variations_form').trigger('found_variation');
 
     // Modal Close
     $("#woo_catalog .catalog_modal .close, #woo_catalog .catalog_modal .btn-default").on('click', function () {

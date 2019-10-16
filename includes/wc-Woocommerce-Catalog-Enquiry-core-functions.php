@@ -21,4 +21,13 @@ if(!function_exists('woocommerce_catalog_enquiry_alert_notice')) {
   }
 }
 
+
+if(!function_exists('wce_validate_color_hex_code')) {
+    function wce_validate_color_hex_code($code) {
+        $color = str_replace( '#', '', $code );
+        return '#'.$color;
+    }
+}
+
+
 ?>

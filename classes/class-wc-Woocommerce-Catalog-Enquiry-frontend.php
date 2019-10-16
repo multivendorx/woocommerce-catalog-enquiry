@@ -5,7 +5,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
     public $available_for;
 
     public function __construct() {
-        global $WC_Woocommerce_Catalog_Enquiry, $post;
+        global $WC_Woocommerce_Catalog_Enquiry;
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
         $exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
         //enqueue scripts
@@ -48,6 +48,8 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                 }
             }
         }
+        // Enquiry button shortcode
+        add_shortcode('wce_enquiry_button', array($this, 'wce_enquiry_button_shortcode'));
     }
 
     public function redirect_cart_checkout_on_conditions() {
@@ -146,7 +148,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                                 esc_attr('woo_catalog_enquiry_custom_button'),
                                 $link,
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-                                esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+                                esc_attr( $classes ),
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
@@ -160,14 +162,14 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                                 esc_attr('woo_catalog_enquiry_custom_button'),
                                 $link,
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-                                esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+                                esc_attr( $classes ),
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
                         break;
                 }
             }
-            return apply_filters('woocommerce_catalog_enquiry_custom_product_link', $pro_link, $product);
+            return apply_filters('woocommerce_catalog_enquiry_custom_product_link', $pro_link, $product, $settings);
         }else{
             return $add_to_cart_button;
         }
@@ -183,10 +185,11 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0)) {
             add_action('init', array($this, 'remove_add_to_cart_button'));
             if (isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable") {
+                $piority = apply_filters('wc_catalog_enquiry_button_possition_piority', 100);
                 if (isset($settings['is_disable_popup']) && $settings['is_disable_popup'] == "Enable") {
-                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry_without_popup'), 100);
+                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry_without_popup'), $piority);
                 } else {
-                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry'), 100);
+                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry'), $piority);
                 }
             }
             if (isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {
@@ -955,34 +958,34 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             if (isset($settings_buttons) || isset($settings)) {
 
                 $custom_design_for_button = isset($settings_buttons['is_button']) ? $settings_buttons['is_button'] : '';
-                $background_color = isset($settings_buttons['button_background_color']) ? $settings_buttons['button_background_color'] : '#ccc';
-                $button_text_color = isset($settings_buttons['button_text_color']) ? $settings_buttons['button_text_color'] : '#fff';
-                $button_text_color_hover = isset($settings_buttons['button_text_color_hover']) ? $settings_buttons['button_text_color_hover'] : '#ccc';
-                $button_background_color_hover = isset($settings_buttons['button_background_color_hover']) ? $settings_buttons['button_background_color_hover'] : '#eee';
+                $background_color = isset($settings_buttons['button_background_color']) ? wce_validate_color_hex_code($settings_buttons['button_background_color']) : '#ccc';
+                $button_text_color = isset($settings_buttons['button_text_color']) ? wce_validate_color_hex_code($settings_buttons['button_text_color']) : '#fff';
+                $button_text_color_hover = isset($settings_buttons['button_text_color_hover']) ? wce_validate_color_hex_code($settings_buttons['button_text_color_hover']) : '#ccc';
+                $button_background_color_hover = isset($settings_buttons['button_background_color_hover']) ? wce_validate_color_hex_code($settings_buttons['button_background_color_hover']) : '#eee';
                 $button_width = isset($settings_buttons['button_width']) ? $settings_buttons['button_width'] . 'px' : '200px';
                 $button_height = isset($settings_buttons['button_height']) ? $settings_buttons['button_height'] . 'px' : '50px';
                 $button_padding = isset($settings_buttons['button_padding']) ? $settings_buttons['button_padding'] . 'px' : '10px';
                 $button_border_size = isset($settings_buttons['button_border_size']) ? $settings_buttons['button_border_size'] . 'px' : '1px';
                 $button_fornt_size = isset($settings_buttons['button_fornt_size']) ? $settings_buttons['button_fornt_size'] . 'px' : '18px';
                 $button_border_redius = isset($settings_buttons['button_border_redius']) ? $settings_buttons['button_border_redius'] . 'px' : '5px';
-                $button_border_color = isset($settings_buttons['button_border_color']) ? $settings_buttons['button_border_color'] : '#999';
+                $button_border_color = isset($settings_buttons['button_border_color']) ? wce_validate_color_hex_code($settings_buttons['button_border_color']) : '#999';
                 $button_margin_top = isset($settings_buttons['button_margin_top']) ? $settings_buttons['button_margin_top'] . 'px' : '0px';
                 $button_margin_bottom = isset($settings_buttons['button_margin_bottom']) ? $settings_buttons['button_margin_bottom'] . 'px' : '0px';
 
                 // Custom button
-                $custom_btn_background = isset($settings['button_background_color']) ? $settings['button_background_color'] : '#013ADF';
-                $custom_btn_color = isset($settings['button_text_color']) ? $settings['button_text_color'] : '#FFF';
+                $custom_btn_background = isset($settings['button_background_color']) ? wce_validate_color_hex_code($settings['button_background_color']) : '#013ADF';
+                $custom_btn_color = isset($settings['button_text_color']) ? wce_validate_color_hex_code($settings['button_text_color']) : '#FFF';
                 $custom_btn_padding = isset($settings['button_padding']) ? $settings['button_padding'] . 'px' : '5px';
                 $custom_btn_width = isset($settings['button_width']) ? $settings['button_width'] . 'px' : '80px';
                 $custom_btn_height = isset($settings['button_height']) ? $settings['button_height'] . 'px' : '26px';
                 $custom_btn_line_height = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '14px';
                 $custom_btn_border_radius = isset($settings['button_border_redius']) ? $settings['button_border_redius'] . 'px' : '5px';
-                $custom_btn_border = isset($settings['button_border_size']) ? $settings['button_border_size'] . 'px' : '1px' . ' solid ' . isset($settings['button_border_color']) ? $settings['button_border_color'] : '#333';
+                $custom_btn_border = isset($settings['button_border_size']) ? $settings['button_border_size'] . 'px' : '1px' . ' solid ' . isset($settings['button_border_color']) ? wce_validate_color_hex_code($settings['button_border_color']) : '#333';
                 $custom_btn_font_size = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '12px';
                 $custom_btn_margin_top = isset($settings['button_margin_top']) ? $settings['button_margin_top'] . 'px' : '5px';
                 $custom_btn_margin_bottom = isset($settings['button_margin_bottom']) ? $settings['button_margin_bottom'] . 'px' : '5px';
-                $custom_btn_hover_background = isset($settings['button_background_color_hover']) ? $settings['button_background_color_hover'] : '#0431B4';
-                $custom_btn_hover_color = isset($settings['button_text_color_hover']) ? $settings['button_text_color_hover'] : '#CECEF6';
+                $custom_btn_hover_background = isset($settings['button_background_color_hover']) ? wce_validate_color_hex_code($settings['button_background_color_hover']) : '#0431B4';
+                $custom_btn_hover_color = isset($settings['button_text_color_hover']) ? wce_validate_color_hex_code($settings['button_text_color_hover']) : '#CECEF6';
                 $popup_backdrop = isset($settings['is_disable_popup_backdrop']) ? 'transparent' : 'rgba(0,0,0,0.4)';
 
                 $inline_css = "
@@ -1041,6 +1044,24 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             }
             if (isset($settings['custom_css_product_page']) && $settings['custom_css_product_page'] != "") {
                 wp_add_inline_style('wce_frontend_css', $settings['custom_css_product_page']);
+            }
+        }
+    }
+    
+    public function wce_enquiry_button_shortcode(){
+        global $WC_Woocommerce_Catalog_Enquiry;
+        $settings = $WC_Woocommerce_Catalog_Enquiry->options;
+
+        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0)) {
+            if (isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable") {
+                $piority = apply_filters('wc_catalog_enquiry_button_possition_piority', 100);
+                if (isset($settings['is_disable_popup']) && $settings['is_disable_popup'] == "Enable") {
+                    remove_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry_without_popup'), $piority);
+                    $this->add_form_for_enquiry_without_popup();
+                } else {
+                    remove_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry'), $piority);
+                    $this->add_form_for_enquiry();
+                }
             }
         }
     }

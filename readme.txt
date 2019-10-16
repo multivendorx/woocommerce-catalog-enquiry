@@ -1,25 +1,25 @@
-﻿=== WooCommerce Catalog Enquiry ===
+﻿=== WC Catalog Enquiry ===
 Contributors: dualcube, greyparrots, itzmekhokan
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
-Requires at least: 4.2
-Tested up to: 4.9.5
+Requires at least: 4.4
+Tested up to: 5.2.1
 Requires PHP: 5.6
-Stable tag: 3.1.7
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce Catalog Enquiry is the most feature enriched WordPress catalog plugin. Now start your online catalog in minutes!
+WC Catalog Enquiry is the most feature enriched WordPress catalog plugin. Now start your online catalog in minutes!
 
 == Description ==
-WooCommerce Catalog Enquiry converts your WooCommerce store into a catalog site, fully or partially. With this feature enriched plugin one can have both shop and catalog simultaneously. In addition, one can also use this plugin to get product enquiries from buyers via enquiry form. Install it now and create your own catalog site over just a few clicks.
+WC Catalog Enquiry converts your WooCommerce store into a catalog site, fully or partially. With this feature enriched plugin one can have both shop and catalog simultaneously. In addition, one can also use this plugin to get product enquiries from buyers via enquiry form. Install it now and create your own catalog site over just a few clicks.
 
 * [Demo](http://wcmpdemos.com/addon/catalog_enquiry/my-account/)
 * [Documentation](https://wc-marketplace.com/knowledgebase/woocommerce-catalog-enquiry-pro-wcmp/)
 
-> Go Pro! Try our all new [WooCommerce Catalog Enquiry Pro](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/). 
+> Go Pro! Try our all new [WC Catalog Enquiry Pro](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/). 
 
-= WooCommerce Catalog Enquiry Features =
+= WC Catalog Enquiry Features =
 Following is a non-comprehensive list of the FREE features of our catalog plugin:
 
 * Hide "Add to Cart" button from single product page or any other page (catalog, shop etc.)
@@ -35,8 +35,9 @@ Following is a non-comprehensive list of the FREE features of our catalog plugin
 * Change labeling for enquiry form headers and fields from backend settings
 * Captcha support on enquiry form
 * Fully customizable enquiry button
+* Add Enquiry button anywhere in single product page via shortcode [wce_enquiry_button] 
 
-= WooCommerce Catalog Enquiry Pro features =
+= WC Catalog Enquiry Pro features =
 Pro provides more control, more features and an additional support of [WC Marketplace](https://wc-marketplace.com/), the highest rated multi vendor plugin for WooCommerce. 
 
 <strong>Admin can</strong>
@@ -69,13 +70,13 @@ If you have WC Marketplace installed, then use <strong>Vendor can</strong>
 * Create custom enquiry button text
 * Use Add to cart with Catalog mode
 
-For more information or to go pro, [visit our plugin website](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/ "WooCommerce Catalog Enquiry Pro")
+For more information or to go pro, [visit our plugin website](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/ "WC Catalog Enquiry Pro")
 
 We are adding new features as you are reading. So if your required feature is currently not available, feel free to request in the support forum.
 
 = Compatibility =
-* WooCommerce 3.0+
-* WordPress 4.2+
+* WooCommerce 3.6+
+* WordPress 4.4+
 * WC Marketplace - [demo](http://wcmpdemos.com/addon/wcmp_catalog_enquiry/my-account/ "Vendor - Marketplace Catalog Mode")
 * The theme should be WooCommerce standards compliant.
 * WPML compatible
@@ -89,9 +90,9 @@ All we want is love. We are extremely responsive about support requests - so if 
 It is extremely disheartening when happy users downrate a plugin for no fault of the plugin. 
 
 == Installation ==
-1. Upload the `WooCommerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "WooCommerce Catalog Enquiry" from your WordPress admin.
+1. Upload the `WC Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "WC Catalog Enquiry" from your WordPress admin.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Configure the plugin settings through the "WooCommerce Catalog Enquiry settings" menu on your WordPress admin panel.
+3. Configure the plugin settings through the "WC Catalog Enquiry settings" menu on your WordPress admin panel.
 4. Now click on the settings link and configure the plugin as per your requirement.
 
 This plugin is created for WooCommerce. One must have WooCommerce is installed in his WordPress website to use this plugin. 
@@ -100,7 +101,7 @@ If you have not installed WooCommerce on your WordPress website, then first inst
 If you are new on WordPress and don't know to how to install a WordPress plugin then follow the link https://codex.wordpress.org/Managing_Plugins. 
 You can find the setup guide of installing the WordPress plugin there. 
 
-WooCommerce Catalog Enquiry maintains the standardization of woo themes. We working on the hooks and filter to add more functionality. 
+WC Catalog Enquiry maintains the standardization of woo themes. We working on the hooks and filter to add more functionality. 
 
 == Frequently Asked Questions ==
 = Can we install this plugin without WooCommerce? =
@@ -128,6 +129,25 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+= 3.2.1 =
+* Added: WooCommerce 3.6+ compatibility.
+* Added: Emquiry button shortcode [wce_enquiry_button].
+
+= 3.2.0 =
+* Added: Wordpress 5.0+ compatibility.
+* Fixed: Inline settings css issue with W3 validation.
+* Fixed: Custom button classes issue.
+* Updated: Language file.
+
+= 3.1.9 =
+* Added: Woocommerce 3.5.1 compatibility.
+* Added: Catalog button position filter.
+* Fixed: Minor script issue.
+
+= 3.1.8 =
+* Fixed: Archive page add to cart link filter params.
+* Fixed: Minor script issue.
+
 = 3.1.7 =
 * Fixed: Post permalink issue.
 * Tweak: 'redirect_cart_checkout_on_conditions' functionality.
@@ -185,7 +205,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WooCommerce Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (WCMp)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price, and Availability) added. 
@@ -313,7 +333,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WooCommerce Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (WCMp)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price and Availability) added. 

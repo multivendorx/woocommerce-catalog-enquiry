@@ -134,7 +134,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 					unlink($target_file); 
 				$status = 1;
 
-				do_action('wc_catalog_enquiry_sent', $enquiry_data);
+				do_action('wc_catalog_enquiry_sent', $enquiry_data, $_POST);
 			}
 			else {
 				// delete uploaded file from server temp if have

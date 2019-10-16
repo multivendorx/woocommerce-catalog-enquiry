@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: WooCommerce Catalog Enquiry
+ * Plugin Name: WC Catalog Enquiry
  * Plugin URI: https://wc-marketplace.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
  * Author: WC Marketplace, The Grey Parrots 
- * Version: 3.1.7
+ * Version: 3.2.1
  * Author URI: https://wc-marketplace.com/
  * WC requires at least: 3.0
- * WC tested up to: 3.4.0
+ * WC tested up to: 3.6.4
  * Text Domain: woocommerce-catalog-enquiry
  * Domain Path: /languages/
 */
