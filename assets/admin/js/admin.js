@@ -160,4 +160,11 @@ jQuery(document).ready(function($) {
 				parrent_ele.hide('slow');
 			}
 	});
+	
+	/*********************	select role by select 2 js	***********************************/
+    $('#myuserrole_list').select2();
+    $('#myuser_list').select2();
+    $('#myproduct_list').select2();
+    $('#mycategory_list').select2();
+	
 });

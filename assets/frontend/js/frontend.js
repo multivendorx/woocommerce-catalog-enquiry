@@ -1,4 +1,25 @@
 jQuery(document).ready(function($) {
+    /*********************************  Block model  ***************************************/
+    var block = function( $node ) {
+            if ( ! is_blocked( $node ) ) {
+                $node.addClass( 'processing' ).block( {
+                    message: null,
+                    overlayCSS: {
+                        background: '#fff',
+                        opacity: 0.6
+                    }
+                } );
+            }
+        };
+
+        var is_blocked = function( $node ) {
+            return $node.is( '.processing' ) || $node.parents( '.processing' ).length;
+        };
+
+        var unblock = function( $node ) {
+            $node.removeClass( 'processing' ).unblock();
+        };
+        /*********************************  Block model  ***************************************/
 
 //	$( ".variations_form" ).on( "woocommerce_variation_select_change", function (e) {
 //		var variation_name = $(this).parent().parent().find(".label label").html();
@@ -22,6 +43,9 @@ jQuery(document).ready(function($) {
 //	});
     // variation id
     $(window).bind('found_variation', function (event, variation) {
+
+        
+
         if (variation == null) {
         } else {
             var variation_data = {};
@@ -83,6 +107,9 @@ jQuery(document).ready(function($) {
 
     
     $('#woo_submit_enquiry').on('click', function(){
+
+
+
         var name = document.getElementById('woo_user_name').value;
         var email = document.getElementById('woo_user_email').value;
         var nonce = document.getElementById('wc_catalog_enq').value;
@@ -153,6 +180,8 @@ jQuery(document).ready(function($) {
         jQuery("#loader_after_sumitting_the_form").show();
         jQuery('#msg_for_enquiry_error').html('');
 
+        block($( '#responsive' ));
+
         var ajax_url = catalog_enquiry_front.ajaxurl;
         if (json_arr.indexOf("fileupload") != -1) {
             fd.append('action', 'send_enquiry_mail');
@@ -175,6 +204,7 @@ jQuery(document).ready(function($) {
                 cache: false,
                 processData: false,
                 success: function (response) {
+                    unblock($( '#responsive' ));
                     if (response.status == 1) {
                         jQuery("#loader_after_sumitting_the_form").hide();
                         jQuery('#msg_for_enquiry_sucesss').html('');
@@ -238,8 +268,9 @@ jQuery(document).ready(function($) {
                 'enquiry_product_type': enquiry_product_type
 
             };
-            jQuery.post(ajax_url, data, function (response) {
 
+            jQuery.post(ajax_url, data, function (response) {
+                unblock($( '#responsive' ));
                 if (response.status == 1) {
                     jQuery("#loader_after_sumitting_the_form").hide();
                     jQuery('#msg_for_enquiry_sucesss').html('');

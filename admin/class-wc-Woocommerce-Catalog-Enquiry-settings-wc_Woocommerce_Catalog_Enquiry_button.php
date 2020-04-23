@@ -5,10 +5,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
    */
   private $options;  
   private $tab;  
-  
-  
-  
-
+  public $get_form_option = array();
   /**
    * Start up
    */
@@ -16,19 +13,15 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     $this->tab = $tab;   
     $this->options = get_option( "dc_{$this->tab}_settings_name" );
     $this->settings_page_init();	
+    $this->get_enquery_form_position();
   }
-  
-  
- 
-  
-  
-  
-
-  
-  
-
-  
-  
+  public function get_enquery_form_position(){
+    global $WC_Woocommerce_Catalog_Enquiry;
+    $form_option = array ( 'default' => 'Default', 'after_title' => 'After title','before_title' => 'Before title', 'after_product' => 'After Product' );
+    foreach($form_option as $key => $value) {          
+      $this->get_form_option[$key] = $value;
+    }
+  } 
   /**
    * Register and add settings
    */
@@ -38,7 +31,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     $settings_tab_options = array("tab" => "{$this->tab}",
                                   "ref" => &$this,
                                   "sections" => array(
-                                                      "button_settings_section" => array("title" =>  __('Woocommerce Catalog Enquiry Button Settings', 'woocommerce-catalog-enquiry'), // Section one
+                                                      "button_settings_section" => array("title" =>  __('Enquiry Button Settings', 'woocommerce-catalog-enquiry'), // Section one
                                                                                          "fields" => array("is_button" => array('title' => __('Your own button style', 'woocommerce-catalog-enquiry'), 'type' => 'checkbox', 'id' => 'is_button', 'label_for' => 'is_button', 'name' => 'is_button', 'desc' => __('Enable the custom design for enquiry button',  'woocommerce-catalog-enquiry'), 'value' => 'Enable'),
                                                                                          	 								"button_text" => array('title' => __('Custom button label', 'woocommerce-catalog-enquiry'), 'type' => 'text', 'id' => 'button_text', 'name' => 'button_text', 'hints' => __('Give your custom button Text', 'woocommerce-catalog-enquiry')),	
                                                                                          	 								"button_text_color" => array('title' => __('Choose Button Text Color', 'woocommerce-catalog-enquiry'), 'type' => 'colorpicker', 'id' => 'button_text_color', 'label_for' => 'button_text_color', 'name' => 'button_text_color', 'default' => '#000000', 'hints' => __('Choose your button text color here.', 'woocommerce-catalog-enquiry'), 'desc' => __('This is button text color will be appear in the custom button .', 'woocommerce-catalog-enquiry')),
@@ -53,9 +46,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
 																																																					"button_border_redius" => array('title' => __('Custom button border redius', 'woocommerce-catalog-enquiry'), 'type' => 'text', 'id' => 'button_border_redius', 'name' => 'button_border_redius', 'hints' => __('Give your custom button border redius', 'woocommerce-catalog-enquiry')),
 																																																					"button_border_color" => array('title' => __('Choose Button Border Color', 'woocommerce-catalog-enquiry'), 'type' => 'colorpicker', 'id' => 'button_border_color', 'label_for' => 'button_border_color', 'name' => 'button_border_color', 'default' => '#333333', 'hints' => __('Choose your button border color.', 'woocommerce-catalog-enquiry'), 'desc' => __('This is button border color which will be appear in the custom button .', 'woocommerce-catalog-enquiry')),
 																																																					"button_margin_top" => array('title' => __('Custom button margin top', 'woocommerce-catalog-enquiry'), 'type' => 'text', 'id' => 'button_margin_top', 'name' => 'button_margin_top', 'hints' => __('Give your custom button top margin', 'woocommerce-catalog-enquiry')),
-																																																					"button_margin_bottom" => array('title' => __('Custom button margin bottom', 'woocommerce-catalog-enquiry'), 'type' => 'text', 'id' => 'button_margin_bottom', 'name' => 'button_margin_bottom', 'hints' => __('Give your custom button bottom margin', 'woocommerce-catalog-enquiry')) 
-                                                                                                                                                                                                          
-                                                                                                          
+																																																					"button_margin_bottom" => array('title' => __('Custom button margin bottom', 'woocommerce-catalog-enquiry'), 'type' => 'text', 'id' => 'button_margin_bottom', 'name' => 'button_margin_bottom', 'hints' => __('Give your custom button bottom margin', 'woocommerce-catalog-enquiry')),                                                                                               
+                                                                                                          "set_enquery_form_positon" => array('title' => __('Enquiry button position', 'woocommerce-catalog-enquiry'),  'type' => 'select', 'id' => 'set_enquery_form_positon', 'label_for' => 'set_enquery_form_positon', 'name' => 'set_enquery_form_positon', 'desc' => __('Set the enquery form button position', 'woocommerce-catalog-enquiry'), 'hints' => __('Set the enquery form button position.', 'woocommerce-catalog-enquiry'), 'options' =>array ( 'default' => __('Default', 'woocommerce-catalog-enquiry'), 'after_title' => __('After title', 'woocommerce-catalog-enquiry'),'after_price' => __('After price', 'woocommerce-catalog-enquiry'),'after_short_des' => __('After short description', 'woocommerce-catalog-enquiry'), 'after_share' => __('After product share' , 'woocommerce-catalog-enquiry') ) ) // is catalog enable
                                                                                                           )
                                                                                          ) 
                                                       
@@ -90,9 +82,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     
     if( isset( $input['button_background_color_hover'] ) )
       $new_input['button_background_color_hover'] = sanitize_text_field( $input['button_background_color_hover'] );
-      
-    
-    
+  
     if( isset( $input['button_width'] ) && absint( $input['button_width'] ) != 0 ) {
       $new_input['button_width'] = absint( $input['button_width'] );
     } else {
@@ -107,8 +97,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     
     if( isset( $input['button_padding'] ) && absint($input['button_padding']) != 0 ) {
       $new_input['button_padding'] = absint( $input['button_padding'] );
-    } else {
-    	 
+    } else {	 
          	
     }
     
@@ -117,11 +106,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     } else {
     	    	
     }
-    
-    
-    
-    
-    
+  
     if( isset( $input['button_fornt_size'] ) && absint($input['button_fornt_size']) != 0 ) {
       $new_input['button_fornt_size'] = absint( $input['button_fornt_size'] );
     } else {
@@ -134,7 +119,6 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     	    	
     }
       
-    
     if( isset( $input['button_border_color'] ) )
       $new_input['button_border_color'] = sanitize_text_field( $input['button_border_color'] );
     
@@ -150,8 +134,11 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Button {
     	    	
     }
     
-    
-    
+    if( isset( $input['set_enquery_form_positon'] ) ){
+      $new_input['set_enquery_form_positon'] = $input['set_enquery_form_positon'];
+    }else {
+          
+    }
     
     
     if(!$hasError) {

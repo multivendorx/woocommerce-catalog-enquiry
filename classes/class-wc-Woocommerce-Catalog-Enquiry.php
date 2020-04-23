@@ -122,9 +122,10 @@ class WC_Woocommerce_Catalog_Enquiry {
 	}
 
 	function register_session_for_catalog() {
-	    if(!session_id()) {
-	        session_start();
-	    }
+	    // if(!session_id()) {
+	    //     session_start();
+	    // }
+	    do_action( 'start_session_for_catelog' );
 	}
 	
 	/** Cache Helpers *********************************************************/

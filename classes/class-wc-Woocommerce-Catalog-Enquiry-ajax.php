@@ -8,7 +8,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		add_action( 'wp_ajax_nopriv_add_variation_for_enquiry_mail', array( $this, 'add_variation_for_enquiry_mail'));
 		add_action('wp_mail_failed', array( $this, 'catalog_enquiry_error_mail_report'));
 	}
-	
+
 	public function add_variation_for_enquiry_mail() {
 		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce;
                 $product_id = (int)$_POST['product_id'];

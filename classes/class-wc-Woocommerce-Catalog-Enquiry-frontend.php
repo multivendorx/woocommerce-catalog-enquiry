@@ -13,16 +13,29 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         //enqueue styles
         add_action('wp_enqueue_scripts', array($this, 'frontend_styles'));
         add_action('template_redirect', array($this, 'redirect_cart_checkout_on_conditions'));
-
+        /*check catalog enquery enable and hide orderby price on */
+        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
+            add_filter( 'woocommerce_catalog_orderby',array($this, 'wcmp_catalog_enquiry_hide_price_from_sort' ), 20 );
+        }
         $current_user = wp_get_current_user();
         $user_id = $current_user->ID;
         $this->available_for = '';
-
+        $this->enquery_button_position();
         if (isset($exclusion['is_exclusion']) && $exclusion['is_exclusion'] == 'Enable') {
             if (isset($exclusion['myuser_list'])) {
                 if (is_array($exclusion['myuser_list'])) {
                     if (in_array($current_user->ID, $exclusion['myuser_list'])) {
                         $this->available_for = $current_user->ID;
+                    }
+                }
+            }
+            /*products available for userrole*/
+            if (isset($exclusion['myuserrole_list']) && is_user_logged_in()) {
+                if (is_array($exclusion['myuserrole_list'])) {
+                    if (in_array($current_user->roles[0], $exclusion['myuserrole_list'])) {
+                        if($this->available_for != $current_user->ID){
+                            $this->available_for = $current_user->ID;
+                        }
                     }
                 }
             }
@@ -59,6 +72,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         $current_user = wp_get_current_user();
         $user_id = $current_user->ID;
 
+        $count0 = 0;
         $count1 = 0;
         $count2 = 0;
         $count3 = 0;
@@ -66,7 +80,11 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
             if (isset($settings['is_hide_cart_checkout']) && $settings['is_hide_cart_checkout'] == "Enable") {
                 if (isset($exclusion['is_exclusion']) && $exclusion['is_exclusion'] == 'Enable') {
-
+                     if (isset($exclusion['myuserrole_list'])) {
+                        if (is_array($exclusion['myuserrole_list'])) {
+                            $count0 = count($exclusion['myuserrole_list']);
+                        }
+                    }
                     if (isset($exclusion['myuser_list'])) {
                         if (is_array($exclusion['myuser_list'])) {
                             $count1 = count($exclusion['myuser_list']);
@@ -86,17 +104,27 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                 $cart_page_id = wc_get_page_id('cart');
                 $checkout_page_id = wc_get_page_id('checkout');
 
-                if ($count2 == 0 && $count3 == 0 && $count1 == 0) {
+                if ($count2 == 0 && $count3 == 0 && $count1 == 0 && $count0 == 0) {
 
                     if (is_page($cart_page_id) || is_page($checkout_page_id)) {
                         wp_redirect(home_url());
                         exit;
                     }
                 } else if ($count2 == 0 && $count3 == 0) {
-                    if (!in_array($current_user->ID, $exclusion['myuser_list'])) {
-                        if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
-                            wp_redirect(home_url());
-                            exit;
+                    if(!empty($exclusion['myuser_list'])){
+                        if (!in_array($current_user->ID, $exclusion['myuser_list'])) {
+                            if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
+                                wp_redirect(home_url());
+                                exit;
+                            }
+                        }
+                    }
+                    if(!empty($exclusion['myuserrole_list']) && is_user_logged_in()){
+                        if (!in_array($current_user->roles[0], $exclusion['myuserrole_list'])) {
+                            if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
+                                wp_redirect(home_url());
+                                exit;
+                            }
                         }
                     }
                 }
@@ -180,7 +208,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         global $WC_Woocommerce_Catalog_Enquiry;
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
         $exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
-
+        
 
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0)) {
             add_action('init', array($this, 'remove_add_to_cart_button'));
@@ -222,7 +250,6 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
         $exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
         $product_for = '';
-
         if (isset($exclusion['is_exclusion']) && $exclusion['is_exclusion'] == 'Enable') {
             if (isset($exclusion['myproduct_list'])) {
                 if (is_array($exclusion['myproduct_list']) && isset($post->ID)) {
@@ -339,7 +366,6 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $post, $product;
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
         $settings_buttons = $WC_Woocommerce_Catalog_Enquiry->option_button;
-
         if (isset($settings_buttons)) {
             $custom_design_for_button = isset($settings_buttons['is_button']) ? $settings_buttons['is_button'] : '';
             $button_text = isset($settings_buttons['button_text']) ? $settings_buttons['button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
@@ -1065,5 +1091,49 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             }
         }
     }
+    /*set enquery button positon*/
+    public function enquery_button_position() {
+        global $WC_Woocommerce_Catalog_Enquiry, $woocommerce;
+        $settings_button = $WC_Woocommerce_Catalog_Enquiry->option_button;
+        if (isset($settings_button)) {
+           if(isset($settings_button['set_enquery_form_positon'])){
+                $button_position = $settings_button['set_enquery_form_positon'];
+                 if( $button_position && !empty($button_position)){
+                    switch ($button_position) {
+                        case "after_title":
+                            add_filter('wc_catalog_enquiry_button_possition_piority', function(){
+                                return 5 ;});
+                            break;
+                        case "after_price":
+                             add_filter('wc_catalog_enquiry_button_possition_piority', function(){
+                                return 10 ;});
+                            break;
+                        case "after_short_des":
+                            add_filter('wc_catalog_enquiry_button_possition_piority', function(){
+                                return 20 ;});
+                            break;
+                        case "after_share":
+                            add_filter('wc_catalog_enquiry_button_possition_piority', function(){
+                                return 50 ;});
+                            break;  
+                        default:
+                            add_filter('wc_catalog_enquiry_button_possition_piority', function(){
+                                return 100 ;});  
+                    }
+                }
+            }   
+        } 
+        
+    }
 
+    /*******************    unset the shop page order by price option   *******************/
+    public function wcmp_catalog_enquiry_hide_price_from_sort( $orderby ) {
+        global $WC_Woocommerce_Catalog_Enquiry;
+        $settings = $WC_Woocommerce_Catalog_Enquiry->options;
+        if( isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable" ){
+            unset($orderby["price"]);
+            unset($orderby["price-desc"]);
+        }
+        return $orderby;
+    }
 }

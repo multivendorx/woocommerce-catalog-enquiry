@@ -32,9 +32,9 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
   function get_dc_settings_tabs() {
     global $WC_Woocommerce_Catalog_Enquiry;
     $tabs = apply_filters('wc_Woocommerce_Catalog_Enquiry_tabs', array(
-      'wc_Woocommerce_Catalog_Enquiry_general' => __('Woocommerce Catalog Enquiry General', 'woocommerce-catalog-enquiry'),
-      'wc_Woocommerce_Catalog_Enquiry_exclusion' => __('Woocommerce Catalog Enquiry Exclusion Settings', 'woocommerce-catalog-enquiry'),
-      'wc_Woocommerce_Catalog_Enquiry_button' => __('Woocommerce Catalog Enquiry Button Settings', 'woocommerce-catalog-enquiry')
+      'wc_Woocommerce_Catalog_Enquiry_general' => __('General Settings', 'woocommerce-catalog-enquiry'),
+      'wc_Woocommerce_Catalog_Enquiry_exclusion' => __('Exclusion Settings', 'woocommerce-catalog-enquiry'),
+      'wc_Woocommerce_Catalog_Enquiry_button' => __('Button Settings', 'woocommerce-catalog-enquiry')
        
     ));
     return $tabs;
@@ -61,11 +61,11 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
       echo $link;
     echo '</h2>';
     
-    foreach( $this->tabs as $tab => $name ) :
-      if ( $tab == $current ) :
-        echo "<h2>$name Settings</h2>";
-      endif;
-    endforeach;
+    // foreach( $this->tabs as $tab => $name ) :
+    //   if ( $tab == $current ) :
+    //     echo "<h2>$name Settings</h2>";
+    //   endif;
+    // endforeach;
   }
 
   /**

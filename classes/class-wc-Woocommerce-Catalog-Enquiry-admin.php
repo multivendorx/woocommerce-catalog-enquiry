@@ -108,6 +108,10 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
                 $WC_Woocommerce_Catalog_Enquiry->library->load_datepicker_lib();
                 wp_enqueue_script('catalog_admin_js', $WC_Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/js/admin.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
                 wp_enqueue_style('catalog_admin_css', $WC_Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/css/admin.css', array(), $WC_Woocommerce_Catalog_Enquiry->version);
+                // select 2 js
+                wp_enqueue_script('select2_js', 'https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
+                //// select 2 css
+                wp_enqueue_style('select2_css','https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css',array(), $WC_Woocommerce_Catalog_Enquiry->version);
 
             endif;
         }
