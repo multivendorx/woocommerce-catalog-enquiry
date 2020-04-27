@@ -103,6 +103,7 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
             // Enqueue admin script and stylesheet from here
             if (in_array($screen->id, array('woocommerce_page_wc-Woocommerce-Catalog-Enquiry-setting-admin'))) :
                 $WC_Woocommerce_Catalog_Enquiry->library->load_qtip_lib();
+                $WC_Woocommerce_Catalog_Enquiry->library->load_select2_lib();
                 $WC_Woocommerce_Catalog_Enquiry->library->load_upload_lib();
                 $WC_Woocommerce_Catalog_Enquiry->library->load_colorpicker_lib();
                 $WC_Woocommerce_Catalog_Enquiry->library->load_datepicker_lib();

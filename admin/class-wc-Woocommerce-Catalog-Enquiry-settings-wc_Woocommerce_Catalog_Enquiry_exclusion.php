@@ -6,12 +6,14 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion {
   private $options;
   
   private $tab;
+
+  public $all_user_roles = array();
   
   public $all_users = array();
   
   public $all_products = array();
   
-   public $all_product_cat = array();
+  public $all_product_cat = array();
   
   
 
@@ -20,13 +22,19 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion {
    */
   public function __construct($tab) {
     $this->tab = $tab;
+    $this->get_all_user_roles();
     $this->get_all_users();
     $this->get_all_products();
     $this->get_all_product_category();
     $this->options = get_option( "dc_{$this->tab}_settings_name" );
     $this->settings_page_init();	
   }
-  
+
+
+  public function get_all_user_roles() {
+    global $wp_roles;
+    $this->all_user_roles = $wp_roles->get_names();
+  }
   
   public function get_all_users() {
   	global $WC_Woocommerce_Catalog_Enquiry;  	
@@ -73,6 +81,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion {
                                   "sections" => array(
                                                       "exclusion_settings_section" => array("title" =>  __('Woocommerce Catalog Enquiry Settings', 'woocommerce-catalog-enquiry'), // Section one
                                                                                          "fields" => array("is_exclusion" => array('title' => __('Enable Exclusion List', 'woocommerce-catalog-enquiry'), 'type' => 'checkbox', 'id' => 'is_exclusion', 'label_for' => 'is_exclusion', 'name' => 'is_exclusion', 'desc' => __('Enable the exclusion list',  'woocommerce-catalog-enquiry'), 'value' => 'Enable'),
+                                                                                         	 								 "myuserroles_list" => array('title' => __('User Role List Excluded from catalog', 'woocommerce-catalog-enquiry'),  'type' => 'multiselect', 'id' => 'myuserroles_list', 'label_for' => 'myuserroles_list', 'name' => 'myuserroles_list', 'desc' => __('select the user role who can puchase from website', 'woocommerce-catalog-enquiry'), 'hints' => __('select the user role who can puchase from website.', 'woocommerce-catalog-enquiry'),  'options'=>$this->all_user_roles), // is catalog enable
                                                                                          	 								 "myuser_list" => array('title' => __('User List Excluded from catalog', 'woocommerce-catalog-enquiry'),  'type' => 'multiselect', 'id' => 'myuser_list', 'label_for' => 'myuser_list', 'name' => 'myuser_list', 'desc' => __('select the user who can puchase from website', 'woocommerce-catalog-enquiry'), 'hints' => __('select the user who can puchase from website.', 'woocommerce-catalog-enquiry'),  'options'=>$this->all_users), // is catalog enable
                                                                                          	 								 "myproduct_list" => array('title' => __('Product List Excluded from catalog', 'woocommerce-catalog-enquiry'),  'type' => 'multiselect', 'id' => 'myproduct_list', 'label_for' => 'myproduct_list', 'name' => 'myproduct_list', 'desc' => __('select the products will be excluted from catalog list', 'woocommerce-catalog-enquiry'), 'hints' => __('select the products will be excluted from catalog list.', 'woocommerce-catalog-enquiry'),  'options'=>$this->all_products), // is catalog enable 
                                                                                          	 								 "mycategory_list" => array('title' => __('Category List Excluded from catalog', 'woocommerce-catalog-enquiry'),  'type' => 'multiselect', 'id' => 'mycategory_list', 'label_for' => 'mycategory_list', 'name' => 'mycategory_list', 'desc' => __('select the products will be excluted from catalog list', 'woocommerce-catalog-enquiry'), 'hints' => __('select the products will be excluted from catalog list.', 'woocommerce-catalog-enquiry'),  'options'=>$this->all_product_cat) // is catalog enable 
@@ -100,7 +109,9 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion {
     
     $hasError = false;
     
-    
+    if( isset( $input['myuserroles_list'] ) )
+      $new_input['myuserroles_list'] = $input['myuserroles_list'];
+
     if( isset( $input['myuser_list'] ) )
       $new_input['myuser_list'] = $input['myuser_list'];
     

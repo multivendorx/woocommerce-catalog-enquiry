@@ -19,6 +19,13 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         $this->available_for = '';
 
         if (isset($exclusion['is_exclusion']) && $exclusion['is_exclusion'] == 'Enable') {
+            if (isset($exclusion['myuserroles_list'])) {
+                if (is_array($exclusion['myuserroles_list'])) {
+                    if (in_array($current_user->roles[0], $exclusion['myuserroles_list'])) {
+                        $this->available_for = $current_user->ID;
+                    }
+                }
+            }
             if (isset($exclusion['myuser_list'])) {
                 if (is_array($exclusion['myuser_list'])) {
                     if (in_array($current_user->ID, $exclusion['myuser_list'])) {
@@ -61,39 +68,40 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 
         $count1 = 0;
         $count2 = 0;
-        $count3 = 0;
 
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
             if (isset($settings['is_hide_cart_checkout']) && $settings['is_hide_cart_checkout'] == "Enable") {
                 if (isset($exclusion['is_exclusion']) && $exclusion['is_exclusion'] == 'Enable') {
 
+                    if (isset($exclusion['myuserroles_list'])) {
+                        if (is_array($exclusion['myuserroles_list'])) {
+                            $count1 = count($exclusion['myuserroles_list']);
+                        }
+                    }
                     if (isset($exclusion['myuser_list'])) {
                         if (is_array($exclusion['myuser_list'])) {
-                            $count1 = count($exclusion['myuser_list']);
+                            $count2 = count($exclusion['myuser_list']);
                         }
                     }
-                    if (isset($exclusion['myproduct_list'])) {
-                        if (is_array($exclusion['myproduct_list'])) {
-                            $count2 = count($exclusion['myproduct_list']);
-                        }
-                    }
-                    if (isset($exclusion['mycategory_list'])) {
-                        if (is_array($exclusion['mycategory_list'])) {
-                            $count3 = count($exclusion['mycategory_list']);
-                        }
-                    }
+                    
                 }
                 $cart_page_id = wc_get_page_id('cart');
                 $checkout_page_id = wc_get_page_id('checkout');
 
-                if ($count2 == 0 && $count3 == 0 && $count1 == 0) {
+                if ($count2 == 0 && $count1 == 0) {
 
                     if (is_page($cart_page_id) || is_page($checkout_page_id)) {
                         wp_redirect(home_url());
                         exit;
                     }
-                } else if ($count2 == 0 && $count3 == 0) {
-                    if (!in_array($current_user->ID, $exclusion['myuser_list'])) {
+                } else {
+                    if ( isset($exclusion['myuserroles_list'] ) && !in_array($current_user->roles[0], $exclusion['myuserroles_list'] )) {
+                        if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
+                            wp_redirect(home_url());
+                            exit;
+                        }
+                    }
+                    if (isset($exclusion['myuser_list'] ) && !in_array($current_user->ID, $exclusion['myuser_list'])) {
                         if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
                             wp_redirect(home_url());
                             exit;
@@ -195,6 +203,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             if (isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {
                 add_action('init', array($this, 'remove_price_from_product_list_loop'), 10);
                 add_action('woocommerce_single_product_summary', array($this, 'remove_price_from_product_list_single'), 5);
+                add_filter( 'woocommerce_catalog_orderby', array($this, 'remove_pricing_from_catalog_orderby'), 99 );
             }
 //            if (isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {
 //                if ((isset($settings['button_type'])) && ($settings['button_type'] == 0 || $settings['button_type'] == '' || $settings['button_type'] == 1)) {
@@ -478,7 +487,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             } else {
                 echo __('Security Code', 'woocommerce-catalog-enquiry');
             }
-            ?> <span class="noselect captcha-wrap"><i><?php echo $_SESSION['mycaptcha']; ?></i></span></p>
+            ?> <span class="noselect captcha-wrap"><i><?php echo get_transient('mycaptcha'); ?></i></span></p>
                                 <p><?php
             if (isset($settings['captcha_input_label']) && $settings['captcha_input_label'] != '' && $settings['captcha_input_label'] != ' ') {
                 echo $settings['captcha_input_label'];
@@ -654,7 +663,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
             } else {
                 echo __('Security Code', 'woocommerce-catalog-enquiry');
             }
-            ?> <span class="noselect captcha-wrap"><i><?php echo $_SESSION['mycaptcha']; ?></i></span></label>
+            ?> <span class="noselect captcha-wrap"><i><?php echo get_transient('mycaptcha'); ?></i></span></label>
                                 <p><?php
             if (isset($settings['captcha_input_label']) && $settings['captcha_input_label'] != '' && $settings['captcha_input_label'] != ' ') {
                 echo $settings['captcha_input_label'];
@@ -885,7 +894,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
         }
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
 
-            wp_enqueue_script('wce_frontend_js', $frontend_script_path . 'frontend.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
+            wp_enqueue_script('wce_frontend_js', $frontend_script_path . 'frontend.js', array( 'jquery', 'jquery-blockui' ), $WC_Woocommerce_Catalog_Enquiry->version, true);
 
             // Variable declarations
             $arr_field = array();
@@ -927,7 +936,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                 $captcha .= $arr[$v1];
                 $i++;
             }
-            $_SESSION['mycaptcha'] = $captcha;
+            set_transient('mycaptcha', $captcha, 30 * MINUTE_IN_SECONDS);
 
             wp_localize_script(
                     'wce_frontend_js', 'catalog_enquiry_front', apply_filters('wc_catalog_enquiry_localize_script_data', array(
@@ -1064,6 +1073,12 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                 }
             }
         }
+    }
+
+    public function remove_pricing_from_catalog_orderby( $orderby ) {
+        if( isset( $orderby['price'] ) ) unset( $orderby['price'] );
+        if( isset( $orderby['price-desc'] ) ) unset( $orderby['price-desc'] );
+        return $orderby;
     }
 
 }

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Catalog Enquiry\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-24 07:02+0000\n"
-"PO-Revision-Date: 2018-12-24 07:05+0000\n"
-"Last-Translator: admin <khokan@dualcube.com>\n"
+"POT-Creation-Date: 2020-04-27 01:34+0000\n"
+"PO-Revision-Date: 2020-04-27 01:35+0000\n"
+"Last-Translator: admin <itzmekhokan@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
@@ -12,30 +12,261 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.1; wp-5.4"
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:41
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:37
+msgid "Woocommerce Catalog Enquiry Button Settings"
+msgstr "Настройки кнопки запроса"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:42
+msgid "Your own button style"
+msgstr "Свой стиль кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:42
+msgid "Enable the custom design for enquiry button"
+msgstr "Включить пользовательский дизайн кнопки запроса"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:43
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:70
+msgid "Custom button label"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:43
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:70
+msgid "Give your custom button Text"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
+msgid "Choose Button Text Color"
+msgstr "Выбрать цвет ТЕКСТА кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
+msgid "Choose your button text color here."
+msgstr "Выбрать свой цвет текста кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
+msgid "This is button text color will be appear in the custom button ."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
+msgid "Choose Button Background Color"
+msgstr "Выбрать цвет фона кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
+msgid "Choose your button background color here."
+msgstr "Выбрать цвет фона кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
+msgid "This is button background color will be appear in the custom button ."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
+msgid "Choose Button Text Color Hover"
+msgstr "Выбрать цвет текста кнопки при НАВЕДЕНИИ"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
+msgid "Choose your button text color on hover here."
+msgstr "Свой цвет текста кнопки при наведении"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
+msgid ""
+"This is button text color on hover will be appear in the custom button ."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
+msgid "Choose Button background Color Hover"
+msgstr "Выбрать цвет фона кнопки при наведении"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
+msgid "Choose your button background color on hover here."
+msgstr "Выбрать цвет фона кнопки при наведении"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
+msgid ""
+"This is button background color on hover will be appear in the custom button "
+"."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:48
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:75
+msgid "Custom button Width"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:48
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:75
+msgid "Give your custom button Width in px"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:49
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:76
+msgid "Custom button Height"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:49
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:76
+msgid "Give your custom button Height"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:50
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:77
+msgid "Custom button Padding"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:50
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:77
+msgid "Give your custom button Padding"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:51
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:78
+msgid "Custom button Border"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:51
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:78
+msgid "Give your custom button border size"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:52
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:79
+msgid "Custom button Font size"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:52
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:79
+msgid "Give your custom button Font Size"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:53
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:80
+msgid "Custom button border redius"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:53
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:80
+msgid "Give your custom button border redius"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
+msgid "Choose Button Border Color"
+msgstr "Выбрать цвет рамки кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
+msgid "Choose your button border color."
+msgstr "Выбрать цвет рамки кнопки"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
+msgid "This is button border color which will be appear in the custom button ."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:55
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:82
+msgid "Custom button margin top"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:55
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:82
+msgid "Give your custom button top margin"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:56
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:83
+msgid "Custom button margin bottom"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:56
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:83
+msgid "Give your custom button bottom margin"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:161
+msgid "Enquiry Button settings updated"
+msgstr "Настройки кнопки запроса обновлены"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:174
+msgid "Configure the Enquiry Button"
+msgstr "Настроить кнопку запроса"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:82
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:46
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:74
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
 msgid "Woocommerce Catalog Enquiry Settings"
 msgstr "Woocommerce Catalog Enquiry  Настройки"
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
-msgid "WC Catalog Enquiry"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:83
+msgid "Enable Exclusion List"
+msgstr "Включить список исключений"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:83
+msgid "Enable the exclusion list"
+msgstr "Включить список исключений"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:84
+msgid "User Role List Excluded from catalog"
 msgstr ""
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:35
-msgid "Woocommerce Catalog Enquiry General"
-msgstr "Woocommerce Catalog Enquiry Общие настройки"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:84
+msgid "select the user role who can puchase from website"
+msgstr ""
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:36
-msgid "Woocommerce Catalog Enquiry Exclusion Settings"
-msgstr "Woocommerce Catalog Enquiry Настройки исключения"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:84
+msgid "select the user role who can puchase from website."
+msgstr ""
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:37
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:41
-msgid "Woocommerce Catalog Enquiry Button Settings"
-msgstr "Настройки кнопки запроса"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:85
+msgid "User List Excluded from catalog"
+msgstr "Список пользователей не включенных в каталог"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:85
+msgid "select the user who can puchase from website"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:85
+msgid "select the user who can puchase from website."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:86
+msgid "Product List Excluded from catalog"
+msgstr "Список продуктов исключенных из каталога"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:86
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:87
+msgid "select the products will be excluted from catalog list"
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:86
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:87
+msgid "select the products will be excluted from catalog list."
+msgstr ""
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:87
+msgid "Category List Excluded from catalog"
+msgstr "Список категорий, исключенных из каталога"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:134
+msgid "Exclusion settings updated"
+msgstr "Настройки исключения обновлены"
+
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:147
+msgid "Configure the exclusion list"
+msgstr "Настроить список исключений"
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:47
 msgid "Catalog Enable?"
@@ -212,7 +443,7 @@ msgid "Please Select"
 msgstr "Выбрать"
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:62
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:157
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:167
 msgid "Read More"
 msgstr "Подробнее"
 
@@ -240,174 +471,6 @@ msgid ""
 msgstr ""
 "Ссылка на кнопку применима,  если вы выберете тип кнопки «Пользовательская "
 "ссылка для всех продуктов»"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:70
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:43
-msgid "Custom button label"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:70
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:43
-msgid "Give your custom button Text"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
-msgid "Choose Button Text Color"
-msgstr "Выбрать цвет ТЕКСТА кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
-msgid "Choose your button text color here."
-msgstr "Выбрать свой цвет текста кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:71
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:44
-msgid "This is button text color will be appear in the custom button ."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
-msgid "Choose Button Background Color"
-msgstr "Выбрать цвет фона кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
-msgid "Choose your button background color here."
-msgstr "Выбрать цвет фона кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:72
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:45
-msgid "This is button background color will be appear in the custom button ."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
-msgid "Choose Button Text Color Hover"
-msgstr "Выбрать цвет текста кнопки при НАВЕДЕНИИ"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
-msgid "Choose your button text color on hover here."
-msgstr "Свой цвет текста кнопки при наведении"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:73
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:46
-msgid ""
-"This is button text color on hover will be appear in the custom button ."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
-msgid "Choose Button background Color Hover"
-msgstr "Выбрать цвет фона кнопки при наведении"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
-msgid "Choose your button background color on hover here."
-msgstr "Выбрать цвет фона кнопки при наведении"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:74
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:47
-msgid ""
-"This is button background color on hover will be appear in the custom button "
-"."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:75
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:48
-msgid "Custom button Width"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:75
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:48
-msgid "Give your custom button Width in px"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:76
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:49
-msgid "Custom button Height"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:76
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:49
-msgid "Give your custom button Height"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:50
-msgid "Custom button Padding"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:50
-msgid "Give your custom button Padding"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:78
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:51
-msgid "Custom button Border"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:78
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:51
-msgid "Give your custom button border size"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:79
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:52
-msgid "Custom button Font size"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:79
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:52
-msgid "Give your custom button Font Size"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:80
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:53
-msgid "Custom button border redius"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:80
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:53
-msgid "Give your custom button border redius"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
-msgid "Choose Button Border Color"
-msgstr "Выбрать цвет рамки кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
-msgid "Choose your button border color."
-msgstr "Выбрать цвет рамки кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:81
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:54
-msgid "This is button border color which will be appear in the custom button ."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:82
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:55
-msgid "Custom button margin top"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:82
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:55
-msgid "Give your custom button top margin"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:83
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:56
-msgid "Custom button margin bottom"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:83
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:56
-msgid "Give your custom button bottom margin"
-msgstr ""
 
 #: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:87
 msgid "Captcha Enable ?"
@@ -694,67 +757,17 @@ msgstr ""
 msgid "Configure your enquiry form Labels"
 msgstr ""
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:42
-msgid "Your own button style"
-msgstr "Свой стиль кнопки"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:42
-msgid "Enable the custom design for enquiry button"
-msgstr "Включить пользовательский дизайн кнопки запроса"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:161
-msgid "Enquiry Button settings updated"
-msgstr "Настройки кнопки запроса обновлены"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_button.php:174
-msgid "Configure the Enquiry Button"
-msgstr "Настроить кнопку запроса"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
-msgid "Enable Exclusion List"
-msgstr "Включить список исключений"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:75
-msgid "Enable the exclusion list"
-msgstr "Включить список исключений"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "User List Excluded from catalog"
-msgstr "Список пользователей не включенных в каталог"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "select the user who can puchase from website"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:28
+msgid "WC Catalog Enquiry"
 msgstr ""
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:76
-msgid "select the user who can puchase from website."
-msgstr ""
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:35
+msgid "Woocommerce Catalog Enquiry General"
+msgstr "Woocommerce Catalog Enquiry Общие настройки"
 
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-msgid "Product List Excluded from catalog"
-msgstr "Список продуктов исключенных из каталога"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "select the products will be excluted from catalog list"
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:77
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "select the products will be excluted from catalog list."
-msgstr ""
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:78
-msgid "Category List Excluded from catalog"
-msgstr "Список категорий, исключенных из каталога"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:123
-msgid "Exclusion settings updated"
-msgstr "Настройки исключения обновлены"
-
-#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_exclusion.php:136
-msgid "Configure the exclusion list"
-msgstr "Настроить список исключений"
+#: admin/class-wc-Woocommerce-Catalog-Enquiry-settings.php:36
+msgid "Woocommerce Catalog Enquiry Exclusion Settings"
+msgstr "Woocommerce Catalog Enquiry Настройки исключения"
 
 #: classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:32
 msgid "Powered by"
@@ -772,112 +785,112 @@ msgstr "Введите внешнюю ссылку продукта"
 msgid "https://www.google.com"
 msgstr ""
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:343
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:345
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:360
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:515
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:517
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:533
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:354
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:356
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:371
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:526
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:528
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:544
 msgid "Send an enquiry"
 msgstr "Отправить запрос"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:377
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:553
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:388
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:564
 msgid "Enquiry about "
 msgstr "Запрос о"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:395
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:571
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:406
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:582
 msgid "Enter your name : "
 msgstr "Ваше имя:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:405
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:581
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:416
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:592
 msgid "Enter your Email Id : "
 msgstr "Ваш почтовый адрес:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:416
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:592
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:427
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:603
 msgid "Enter enquiry subject : "
 msgstr "Введите тему запроса:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:419
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:595
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:430
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:606
 msgid "Enquiry about"
 msgstr "Запрос о "
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:428
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:604
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:439
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:615
 msgid "Enter your phone no : "
 msgstr "Номер телефона:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:440
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:616
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:451
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:627
 msgid "Enter your address : "
 msgstr "Ваш адрес:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:452
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:628
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:463
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:639
 msgid "Enter your Message : "
 msgstr "Ваше сообщение:"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:464
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:640
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:475
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:651
 msgid "Upload your File : "
 msgstr "Загрузите файл"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:477
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:653
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:488
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:664
 msgid "Security Code"
 msgstr "Защитный код"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:484
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:660
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:495
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:671
 msgid "Enter the security code shown above"
 msgstr "Введите защитный код показанный выше"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:497
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:674
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:508
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:685
 msgid "Send"
 msgstr "Пуск"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:673
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:684
 msgid "Close"
 msgstr "Закрыть"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:910
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:921
 msgid "Name is required field"
 msgstr "Поле \"имя\" обязательно"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:911
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:922
 msgid "Email is required field"
 msgstr "Необходимо заполнить поле Email"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:912
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:923
 msgid "Please Enter Valid Email Id"
 msgstr "Введите правильный адрес"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:913
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:924
 msgid "Please enter the security code"
 msgstr "Введите защитный код"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:914
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:925
 msgid "Please enter the valid seurity code"
 msgstr "Введите верный код безопасности"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:915
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:926
 msgid "Error in system please try later"
 msgstr "Ошибка в системе, попробуйте позже"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:916
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:927
 msgid "Invalid file format."
 msgstr "Недопустимый формат файла"
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:917
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:928
 msgid "Exceeded filesize limit."
 msgstr "Превышено ограничение на размер файла."
 
-#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:936
+#: classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:947
 msgid "Enquiry sent successfully"
 msgstr "Запрос успешно отправлен"
 

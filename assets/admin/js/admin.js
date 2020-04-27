@@ -1,4 +1,9 @@
 jQuery(document).ready(function($) {
+	$('#myuserroles_list').select2();
+    $('#myuser_list').select2();
+    $('#myproduct_list').select2();
+	$('#mycategory_list').select2();
+	
 	$('.img_tip').each(function() {
 		$(this).qtip({
 			content: $(this).attr('data-desc'),

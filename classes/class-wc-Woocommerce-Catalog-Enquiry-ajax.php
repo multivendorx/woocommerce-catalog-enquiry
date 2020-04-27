@@ -13,11 +13,9 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce;
                 $product_id = (int)$_POST['product_id'];
                 if($product_id){
-                    if(isset($_SESSION['variation_list']))
-                        unset($_SESSION['variation_list']);
-
-                    $variation_data = $_POST['variation_data'];
-                    $_SESSION['variation_list'] = $variation_data;
+					if ( get_transient('variation_list') ) delete_transient('variation_list');
+					$variation_data = $_POST['variation_data'];
+					set_transient('variation_list', $variation_data, 30 * MINUTE_IN_SECONDS);
                 }	
                 die;
 	}
@@ -89,7 +87,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		$product_name = sanitize_text_field($_POST['woo_customer_product_name']);
 		$product_url = esc_url($_POST['woo_customer_product_url']);
 		$enquiry_product_type = sanitize_text_field($_POST['enquiry_product_type']);
-                $product_variations = isset($_SESSION['variation_list']) ? $_SESSION['variation_list'] : array();
+                $product_variations = (get_transient('variation_list')) ? get_transient('variation_list') : array();
                 
 		if(isset($settings['is_other_admin_mail']) && $settings['is_other_admin_mail'] == 'Enable') {
 			if(isset($settings['other_admin_mail'])) {
@@ -104,7 +102,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		}
 		
 		if(isset($settings['other_emails'])) {
-			$email_admin .= ','.$settings['other_emails'];				
+			$email_admin .= ','.$settings['other_emails'];	
 		}
 		
 		$product = wc_get_product($product_id);
@@ -126,8 +124,8 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 			$send_email = WC()->mailer()->emails['WC_Catalog_Enquiry_Email'];
 
 			if($send_email->trigger( $email_admin, $enquiry_data )) {
-				if(isset($_SESSION['variation_list'])){
-					unset($_SESSION['variation_list']);
+				if(get_transient('variation_list')){
+					delete_transient('variation_list');
 				}
 				// delete uploaded file from server temp if have
 				if($target_file)
@@ -147,7 +145,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 			if($target_file)
 				unlink($target_file); 
 		}
-		wp_send_json(array('status' => $status, 'error_report' => $this->error_mail_report))	;	
+		wp_send_json(array('status' => $status, 'error_report' => $this->error_mail_report));
 		die();
 	}
 

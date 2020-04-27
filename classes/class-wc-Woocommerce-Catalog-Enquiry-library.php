@@ -43,6 +43,16 @@ class WC_Woocommerce_Catalog_Enquiry_Library {
 	  wp_enqueue_script('qtip_js', $this->jquery_lib_url . 'qtip/qtip.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
 		wp_enqueue_style('qtip_css',  $this->jquery_lib_url . 'qtip/qtip.css', array(), $WC_Woocommerce_Catalog_Enquiry->version);
 	}
+
+	/**
+     * Select2 library
+     */
+    public function load_select2_lib() {
+        global $WC_Woocommerce_Catalog_Enquiry;
+        wp_enqueue_script('select2_js', $this->jquery_lib_url . 'select2/select2.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
+        wp_enqueue_style('select2_css', $this->jquery_lib_url . 'select2/select2.css', array(), $WC_Woocommerce_Catalog_Enquiry->version);
+    }
+
 	
 	/**
 	 * WP Media library

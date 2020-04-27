@@ -82,9 +82,6 @@ class WC_Woocommerce_Catalog_Enquiry {
 		// DC Wp Fields
 		$this->dc_wp_fields = $this->library->load_wp_fields();
 
-		// catalog session
-		$this->register_session_for_catalog();
-
 	}
 	
 	/**
@@ -119,12 +116,6 @@ class WC_Woocommerce_Catalog_Enquiry {
 		$emails['WC_Catalog_Enquiry_Email'] = new WC_Catalog_Enquiry_Email();
 		
 		return $emails;
-	}
-
-	function register_session_for_catalog() {
-	    if(!session_id()) {
-	        session_start();
-	    }
 	}
 	
 	/** Cache Helpers *********************************************************/

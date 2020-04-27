@@ -17,19 +17,19 @@ $attribute_keys = array_keys( $variation_attributes );
 $attributes   = $product->get_attributes();
 $default_arrt_value = get_post_meta( $post->ID, '_default_attributes', true);
 $i = 0;
-if(isset($_SESSION['variation_list'])){
-	$variation_list = $_SESSION['variation_list'];
+if(get_transient('variation_list')){
+	$variation_list = get_transient('variation_list');
 }
 if(isset($default_arrt_value) && is_array($default_arrt_value) && (!empty($default_arrt_value))) {
-	foreach($default_arrt_value as  $key => $value) {			
+	foreach($default_arrt_value as  $key => $value) {	
 		$vname = str_replace('pa_','',$key);
 		$vname2 = str_replace('attribute_pa_', '', $vname);
-		$vname2 = str_replace('attribute_','',$vname2);				
+		$vname2 = str_replace('attribute_','',$vname2);		
 		$arr = array('variation_name' => $vname2, 'variation_value' => $value, 'product_id' => $post->ID, 'variation_real_name' => 'attribute_'.$key);				
 		$variation_list[$i] = $arr;
 		$i++;
-	}	
-	$_SESSION['variation_list'] = $variation_list;	
+	}
+	set_transient('variation_list', $variation_list, 30 * MINUTE_IN_SECONDS);
 }
 ?>
 <?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
