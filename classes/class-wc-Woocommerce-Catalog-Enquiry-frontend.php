@@ -989,7 +989,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
                 $custom_btn_height = isset($settings['button_height']) ? $settings['button_height'] . 'px' : '26px';
                 $custom_btn_line_height = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '14px';
                 $custom_btn_border_radius = isset($settings['button_border_redius']) ? $settings['button_border_redius'] . 'px' : '5px';
-                $custom_btn_border = isset($settings['button_border_size']) ? $settings['button_border_size'] . 'px' : '1px' . ' solid ' . isset($settings['button_border_color']) ? wce_validate_color_hex_code($settings['button_border_color']) : '#333';
+                $custom_btn_border = isset($settings['button_border_size']) ? $settings['button_border_size'] . 'px' :( '1px' . ' solid ' . isset($settings['button_border_color']) ? wce_validate_color_hex_code($settings['button_border_color']) : '#333');
                 $custom_btn_font_size = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '12px';
                 $custom_btn_margin_top = isset($settings['button_margin_top']) ? $settings['button_margin_top'] . 'px' : '5px';
                 $custom_btn_margin_bottom = isset($settings['button_margin_bottom']) ? $settings['button_margin_bottom'] . 'px' : '5px';
