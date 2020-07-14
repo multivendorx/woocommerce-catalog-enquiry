@@ -112,7 +112,6 @@ jQuery(document).ready(function($) {
         var phone = '';
         var address = '';
         var comment = '';
-        block($( '#responsive' ));
         var fd = new FormData();
         var json_arr = catalog_enquiry_front.json_arr;
         if (json_arr.indexOf("subject") != -1) {
@@ -174,7 +173,8 @@ jQuery(document).ready(function($) {
         }
         jQuery("#loader_after_sumitting_the_form").show();
         jQuery('#msg_for_enquiry_error').html('');
-
+        block($( '#responsive' ));
+        
         var ajax_url = catalog_enquiry_front.ajaxurl;
         if (json_arr.indexOf("fileupload") != -1) {
             fd.append('action', 'send_enquiry_mail');
