@@ -48,6 +48,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		$target_file = '';
 		$attachments = array();
 		$settings = $WC_Woocommerce_Catalog_Enquiry->options;
+		$settings_gen = $WC_Woocommerce_Catalog_Enquiry->option_gen;
 		
 		if(isset($_FILES['fileupload'])){
 
@@ -55,8 +56,8 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		        $_FILES['fileupload'][$key] = $value[0]; 
 		    }
 		    $woo_customer_filesize = 2097152;
-		    if(isset($settings['filesize_limit']) && !empty($settings['filesize_limit'])){
-		    	$woo_customer_filesize = intval($settings['filesize_limit'])*1024*1024;
+		    if(isset($settings_gen['filesize_limit']) && !empty($settings_gen['filesize_limit'])){
+		    	$woo_customer_filesize = intval($settings_gen['filesize_limit'])*1024*1024;
 		    }
 		    
 		    if(in_array($_FILES['fileupload']['type'], wp_get_mime_types())){
@@ -104,7 +105,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		if(isset($settings['other_emails'])) {
 			$email_admin .= ','.$settings['other_emails'];	
 		}
-		
+
 		$product = wc_get_product($product_id);
 		
 		if($product){
@@ -124,6 +125,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 			$send_email = WC()->mailer()->emails['WC_Catalog_Enquiry_Email'];
 
 			if($send_email->trigger( $email_admin, $enquiry_data )) {
+				
 				if(get_transient('variation_list')){
 					delete_transient('variation_list');
 				}

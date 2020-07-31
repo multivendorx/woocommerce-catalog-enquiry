@@ -22,6 +22,8 @@ if(!defined('WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN')) exit;
 if(!WC_Dependencies_woocommerce_catalog_enquiry::woocommerce_active_check()) {
   add_action( 'admin_notices', 'woocommerce_catalog_enquiry_alert_notice' );
 }
+register_activation_hook(__FILE__, 'woo_catalog_option_migration');
+
 /**
 * Plugin page links
 */

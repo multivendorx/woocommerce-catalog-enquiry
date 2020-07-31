@@ -37,16 +37,15 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
     public function init_product_settings() {
         global $WC_Woocommerce_Catalog_Enquiry;
         $settings = $WC_Woocommerce_Catalog_Enquiry->options;
+        $option_button = $WC_Woocommerce_Catalog_Enquiry->option_button;
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
-            if (isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {
-                if (isset($settings['button_type']) && $settings['button_type'] == 3) {
-                    add_filter('woocommerce_product_data_tabs', array($this, 'catalog_product_data_tabs'), 99);
-                    add_action('woocommerce_product_data_panels', array($this, 'catalog_product_data_panel'));
-                    add_action('woocommerce_process_product_meta_simple', array($this, 'save_catalog_data'));
-                    add_action('woocommerce_process_product_meta_grouped', array($this, 'save_catalog_data'));
-                    add_action('woocommerce_process_product_meta_external', array($this, 'save_catalog_data'));
-                    add_action('woocommerce_process_product_meta_variable', array($this, 'save_catalog_data'));
-                }
+            if (isset($option_button['button_type']) && $option_button['button_type'] == 3) {
+                add_filter('woocommerce_product_data_tabs', array($this, 'catalog_product_data_tabs'), 99);
+                add_action('woocommerce_product_data_panels', array($this, 'catalog_product_data_panel'));
+                add_action('woocommerce_process_product_meta_simple', array($this, 'save_catalog_data'));
+                add_action('woocommerce_process_product_meta_grouped', array($this, 'save_catalog_data'));
+                add_action('woocommerce_process_product_meta_external', array($this, 'save_catalog_data'));
+                add_action('woocommerce_process_product_meta_variable', array($this, 'save_catalog_data'));
             }
         }
     }
@@ -99,9 +98,8 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
         public function enqueue_admin_script() {
             global $WC_Woocommerce_Catalog_Enquiry;
             $screen = get_current_screen();
-
             // Enqueue admin script and stylesheet from here
-            if (in_array($screen->id, array('woocommerce_page_wc-Woocommerce-Catalog-Enquiry-setting-admin'))) :
+            if ($screen->id == 'toplevel_page_wcmp_catalog' ) :
                 $WC_Woocommerce_Catalog_Enquiry->library->load_qtip_lib();
                 $WC_Woocommerce_Catalog_Enquiry->library->load_select2_lib();
                 $WC_Woocommerce_Catalog_Enquiry->library->load_upload_lib();

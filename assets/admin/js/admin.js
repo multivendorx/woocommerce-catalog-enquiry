@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
       $('body').trigger('remove_multi_input_block_clicked');
     });
   });
-  if($('#is_other_admin_mail').is(':checked')) {
+  if($('.is_other_admin_mail').is(':checked')) {
 		var parrent_ele = $('#other_admin_mail').parent().parent();
 		parrent_ele.show();
   }
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
   	var parrent_ele = $('#other_admin_mail').parent().parent();
 		parrent_ele.hide();
   }
-  if($('#is_override_form_heading').is(':checked')) {
+  if($('.is_override_form_heading').is(':checked')) {
 		var parrent_ele = $('#custom_static_heading').parent().parent();
 		parrent_ele.show();
   }
@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
   	var parrent_ele = $('#custom_static_heading').parent().parent();
 		parrent_ele.hide();
   }
-  if($('#is_page_redirect').is(':checked')) {
+  if($('.is_page_redirect').is(':checked')) {
 		var parrent_ele = $('#redirect_page_id').parent().parent();
 		parrent_ele.show();
   }
@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
   	var parrent_ele = $('#redirect_page_id').parent().parent();
 		parrent_ele.hide();
   }
-  if($('#is_fileupload').is(':checked')) {
+  if($('.is_fileupload').is(':checked')) {
 		var parrent_ele = $('#filesize_limit').parent().parent();
 		parrent_ele.show();
   }
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 		parrent_ele.hide();
   }
   
-	$('#is_other_admin_mail').change(function() {
+	$('.is_other_admin_mail').change(function() {
 			if($(this).is(":checked")) {
 				var parrent_ele = $('#other_admin_mail').parent().parent();
 				parrent_ele.show('slow');
@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 				parrent_ele.hide('slow');
 			}
 	});
-	$('#is_override_form_heading').change(function() {
+	$('.is_override_form_heading').change(function() {
 			if($(this).is(":checked")) {
 				var parrent_ele = $('#custom_static_heading').parent().parent();
 				parrent_ele.show('slow');
@@ -145,7 +145,7 @@ jQuery(document).ready(function($) {
 				parrent_ele.hide('slow');
 			}
 	});
-	$('#is_page_redirect').change(function() {
+	$('.is_page_redirect').change(function() {
 			if($(this).is(":checked")) {
 				var parrent_ele = $('#redirect_page_id').parent().parent();
 				parrent_ele.show('slow');
@@ -155,7 +155,7 @@ jQuery(document).ready(function($) {
 				parrent_ele.hide('slow');
 			}
 	});
-	$('#is_fileupload').change(function() {
+	$('.is_fileupload').change(function() {
 			if($(this).is(":checked")) {
 				var parrent_ele = $('#filesize_limit').parent().parent();
 				parrent_ele.show('slow');
@@ -165,4 +165,17 @@ jQuery(document).ready(function($) {
 				parrent_ele.hide('slow');
 			}
 	});
+	// Hide choose your button type select option
+	var parrent_ele = $('#button_link').parent().parent();
+	parrent_ele.hide();
+	$('#button_type').change(function() {
+		if( $(this).val() == 3 ){
+			var parrent_ele = $('#button_link').parent().parent();
+				parrent_ele.show();
+		}else{
+			var parrent_ele = $('#button_link').parent().parent();
+				parrent_ele.hide();
+		}
+	});
+
 });
