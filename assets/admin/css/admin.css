@@ -45,3 +45,24 @@
   float: right;
   margin: 2px !important;
 }
+.image-adv{
+  border:1px solid #ddd;display:inline-block;
+}
+.supt-link{
+  text-align: center;margin-bottom:0;
+}
+/*** From table ***/
+.form-table .details_data {
+  display: none;
+}
+.wcmp_catalog_from_setting td:first-child {
+  text-align: left;
+}
+.wcmp_catalog_from_setting th:first-child {
+  text-align: left;
+}   
+.wcmp_catalog_from_setting>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px ridge #d3dbe2;
+  text-align: center;
+  padding: 8px 10px;
+}
