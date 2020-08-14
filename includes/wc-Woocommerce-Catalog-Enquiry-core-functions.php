@@ -29,5 +29,100 @@ if(!function_exists('wce_validate_color_hex_code')) {
     }
 }
 
+if(!function_exists('woo_catalog_option_migration')) {
+    function woo_catalog_option_migration(){
+        global $WC_Woocommerce_Catalog_Enquiry;
+        // Old catalog button data
+        $woo_catalog_old_button = get_option( 'dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name', true );
+        // Old catalog general data
+        $woo_catalog_old_options = get_option('dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name', true ); 
+        // New catalog button data
+        if( $woo_catalog_old_button ){
+          update_option( 'dc_wc_Woocommerce_Catalog_button_appear', $woo_catalog_old_button );
+        }
+        if( $woo_catalog_old_options ){
+          // Old catalog general data
+          update_option( 'dc_wc_Woocommerce_Catalog_general', $woo_catalog_old_options );
+          // Old catalog general data
+          update_option( 'dc_wc_Woocommerce_Catalog_from_settings_name', $woo_catalog_old_options );
+        }
 
-?>
+        // By default set
+        $general_settings = get_option( 'dc_wc_Woocommerce_Catalog_general' );
+        if( is_array( $general_settings ) && !empty( $general_settings ) ){
+          $general_settings['for_user_type'] = 2;
+          update_option( 'dc_wc_Woocommerce_Catalog_general', $general_settings );
+        } else {
+          $general_settings = array();
+          $general_settings['for_user_type'] = 2;
+          update_option( 'dc_wc_Woocommerce_Catalog_general', $general_settings );
+        }
+
+        // set button type
+        $button_settings = get_option( 'dc_wc_Woocommerce_Catalog_button_appear' );
+        if( is_array( $button_settings ) &&  !empty( $button_settings ) ){
+          $button_settings['button_type'] = 1;
+          update_option( 'dc_wc_Woocommerce_Catalog_button_appear', $button_settings );
+        } else {
+          $button_settings = array();
+          $button_settings['button_type'] = 1;
+          update_option( 'dc_wc_Woocommerce_Catalog_button_appear', $button_settings );
+        }
+
+        
+        delete_option( 'dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name' );
+        delete_option( 'dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name' );
+    }
+}
+
+if(!function_exists('wp_all_users')) {
+  // find all users
+  function wp_all_users(){
+    $users = get_users();
+    $all_users = array();
+    foreach($users as $user) {                  
+      $all_users[$user->data->ID] = $user->data->display_name;
+    }
+    return $all_users;
+  }
+}
+ 
+if(!function_exists('get_all_products')) {
+  // find all product
+  function get_all_products() {
+    $args = array( 'posts_per_page' => -1, 'post_type' => 'product', 'orderby' => 'title', 'order' => 'ASC' );
+    $woo_product = get_posts( $args );
+    $all_products = array();
+    foreach ( $woo_product as $post => $value ){
+      $all_products[$value->ID] = $value->post_title;     
+    }
+    return $all_products;
+  }
+}
+
+if(!function_exists('get_all_product_category')) {
+
+  // find all product caegory
+  function get_all_product_category() { 
+    $all_product_cat = array();
+    $args = array( 'orderby' => 'name', 'order' => 'ASC' );
+    $terms = get_terms( 'product_cat', $args );
+    foreach ( $terms as $term) {
+      $all_product_cat[$term->term_id] = $term->name;
+    }
+    return $all_product_cat;
+  }
+}
+
+if(!function_exists('get_all_pages')) {
+  // gte all pages
+  function get_all_pages() {
+    $args = array( 'posts_per_page' => -1, 'post_type' => 'page', 'orderby' => 'title', 'order' => 'ASC' );
+        $wp_posts = get_posts( $args );
+        foreach ( $wp_posts as $post ) : setup_postdata( $post );    
+        $page_array[$post->ID] = $post->post_title;       
+        endforeach; 
+        wp_reset_postdata();
+    return $page_array;
+  }
+}

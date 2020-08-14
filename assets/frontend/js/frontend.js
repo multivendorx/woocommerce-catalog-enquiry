@@ -112,7 +112,6 @@ jQuery(document).ready(function($) {
         var phone = '';
         var address = '';
         var comment = '';
-        block($( '#responsive' ));
         var fd = new FormData();
         var json_arr = catalog_enquiry_front.json_arr;
         if (json_arr.indexOf("subject") != -1) {
@@ -172,6 +171,7 @@ jQuery(document).ready(function($) {
                 return false;
             }
         }
+        block($( '#responsive' ));
         jQuery("#loader_after_sumitting_the_form").show();
         jQuery('#msg_for_enquiry_error').html('');
 
@@ -222,7 +222,7 @@ jQuery(document).ready(function($) {
                             jQuery('#woo_user_fileupload').val('');
                         }
 
-                        if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
+                        if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                             window.location.href = catalog_enquiry_front.redirect_link;
                         }
                     } else if (response.status == 2) {
@@ -283,7 +283,7 @@ jQuery(document).ready(function($) {
                     if (json_arr.indexOf("comment") != -1) {
                         jQuery('#woo_user_comment').val('');
                     }
-                    if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
+                    if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                         window.location.href = catalog_enquiry_front.redirect_link;
                     }
                 } else if (response.status == 2) {
