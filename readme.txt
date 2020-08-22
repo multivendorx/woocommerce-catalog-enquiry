@@ -1,5 +1,5 @@
 ﻿=== WC Catalog Enquiry ===
-Contributors: dualcube, greyparrots, itzmekhokan
+Contributors: wcmp, itzmekhokan
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4

@@ -1,34 +1,15 @@
-#dualcube_menu_ico {
-  background: url("../../images/dclogo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-}
-
-#dc_admin_footer {
+#woocommerce_catalog_admin_footer {
   bottom: 45px;
   text-align: center;
-}
-
-#dc_admin_footer a {
   text-decoration: none; 
-}
-
-#dc_admin_footer img {
   border: none; 
   margin-right: 5px;
   vertical-align: bottom;
 }
 
+
 .required {
   color: red; 
-}
-
-.img_tip {
-	background: url("../../images/question_mark.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-	display: inline-block;
-	height: 12px;
-	vertical-align: -1px;
-	width: 12px;
-	cursor: help;
-	margin-left: 5px;
 }
 
 .multi_input_block {
@@ -44,4 +25,38 @@
 .multi_input_block_manupulate {
   float: right;
   margin: 2px !important;
+}
+.image-adv{
+  border:1px solid #ddd;display:inline-block;
+}
+.supt-link{
+  text-align: center;margin-bottom:0;
+}
+/*** From table ***/
+.form-table .details_data {
+  display: none;
+}
+.wcmp_catalog_from_setting td:first-child {
+  text-align: left;
+}
+.wcmp_catalog_from_setting th:first-child {
+  text-align: left;
+}   
+.wcmp_catalog_from_setting>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px ridge #d3dbe2;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+.select2-container--default .select2-selection--multiple{
+  width: 25em;
+}
+.wcmp-catalog-space{
+  margin: 10px 20px 0 2px;
+}
+.nav-tab-wrapper{
+  padding-left:20px;
+}
+.woocommerce-catalog-upgrade {
+  background-color: #04be5b;color: #fff
 }

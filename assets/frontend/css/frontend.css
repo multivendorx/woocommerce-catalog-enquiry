@@ -1,7 +1,7 @@
-#woo_catalog *{
+#woocommerce_catalog *{
     box-sizing: border-box;
 }
-#woo_catalog .noselect {
+#woocommerce_catalog .noselect {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -9,14 +9,14 @@
 	-ms-user-select: none;
 	user-select: none;
 }
-#woo_catalog #loader_after_sumitting_the_form {
+#woocommerce_catalog #loader_after_sumitting_the_form {
 	display:none;
 }
 .catalog_enquiry_form{
     display:none;
 }
 
-#woo_catalog .modal-content{
+#woocommerce_catalog .modal-content{
 	background-color: #fefefe;
 	margin: auto;
     padding: 0;
@@ -49,7 +49,7 @@
 } */
 
 /* The Close Button */
-#woo_catalog .modal-header button.close {
+#woocommerce_catalog .modal-header button.close {
     padding: 3px;
     cursor: pointer;
     background: transparent;
@@ -72,31 +72,31 @@
 
 } 
 /* modla header */
-#woo_catalog .modal-content .modal-header {
+#woocommerce_catalog .modal-content .modal-header {
     padding: 12px 25px;
     border-bottom: 1px solid #eee;
     position: relative;
 }
-#woo_catalog .modal-header h2{
+#woocommerce_catalog .modal-header h2{
     margin: 0;
     font-size: 18px;
     width: calc(100% - 30px);
 }
 
 /* modla body */ 
-#woo_catalog .modal-body input[type="file"]{
+#woocommerce_catalog .modal-body input[type="file"]{
     width: auto;
     height: auto;
     max-width: 100%;
 }
-#woo_catalog .modal-content .modal-body{
+#woocommerce_catalog .modal-content .modal-body{
     max-height: 52vh;
     overflow: auto;
     margin: 0;
     width: 100%;
     padding: 20px 25px 0 15px;
 } 
-#woo_catalog .cat-form-row input, #woo_catalog .cat-form-row select, #woo_catalog .cat-form-row textarea{
+#woocommerce_catalog .cat-form-row input, #woocommerce_catalog .cat-form-row select, #woocommerce_catalog .cat-form-row textarea{
     padding: 6px 10px;
     line-height: 15px;
     font-size: 15px;
@@ -108,39 +108,39 @@
     background: #fff;
     height: 38px;
 }
-#woo_catalog .cat-form-row textarea{
+#woocommerce_catalog .cat-form-row textarea{
     height: 100px;
 }
-#woo_catalog p:empty {
+#woocommerce_catalog p:empty {
     display: none;
 }
-#woo_catalog p{
+#woocommerce_catalog p{
     margin: 0 0 7px;
     line-height: 1.2;
 } 
-#woo_catalog .cat-form-row{
+#woocommerce_catalog .cat-form-row{
     position: relative;
 }
-#woo_catalog .cat-form-row label{
+#woocommerce_catalog .cat-form-row label{
     margin: 0 0 6px;
     font-size: 15px;
     line-height: 16px;
     font-weight: normal;
     color: #616161;
 }
-#woo_catalog .cat-form-row{
+#woocommerce_catalog .cat-form-row{
     margin: 0 0 15px;
 }
-#woo_catalog p.catalog-enquiry-top-content, #woo_catalog p.catalog-enquiry-bottom-content{
+#woocommerce_catalog p.catalog-enquiry-top-content, #woocommerce_catalog p.catalog-enquiry-bottom-content{
     margin: 0 0 20px;
     font-size: 15px;
     line-height: 18px;
     color: #313131;
 }
-#woo_catalog p.catalog-enquiry-bottom-content{
+#woocommerce_catalog p.catalog-enquiry-bottom-content{
     margin: 20px 0;
 }
-#woo_catalog .captcha-wrap{
+#woocommerce_catalog .captcha-wrap{
     background:#000; 
     color:#fff; 
     border:1px solid #333; 
@@ -150,12 +150,12 @@
     display: inline-block;
     vertical-align: middle;
 }
-#woo_catalog .woo_catalog_enquiry_btn{
+#woocommerce_catalog .woocommerce_catalog_enquiry_btn{
     float: none;
     width: auto;
 }
 /* modal footer */
-#woo_catalog .modal-content .modal-footer {
+#woocommerce_catalog .modal-content .modal-footer {
     padding: 14px 15px 15px;
     margin-bottom: 0;
     text-align: right;
@@ -165,7 +165,7 @@
     position: relative;
 }
 
-#woo_catalog .modal-footer button{
+#woocommerce_catalog .modal-footer button{
     margin: 0 0 0 15px;
     padding: 5px 15px;
     width: 110px;
@@ -180,57 +180,57 @@
     box-shadow: none;
     text-transform: uppercase;
 }
-#woo_catalog .modal-footer button:hover{
+#woocommerce_catalog .modal-footer button:hover{
     background: #555;
     color: #fff;
 }
 @media screen and (max-width:768px){
-    #woo_catalog .modal-content .modal-footer{
+    #woocommerce_catalog .modal-content .modal-footer{
         text-align: center;
     }
-    #woo_catalog .modal-content .modal-footer button{
+    #woocommerce_catalog .modal-content .modal-footer button{
         padding: 2px 15px;
         width: 77px;
         font-size: 14px;
     }
-    #woo_catalog .modal-content .modal-header {
+    #woocommerce_catalog .modal-content .modal-header {
         padding: 8px 10px;
     }
-    #woo_catalog .modal-content .modal-body{
+    #woocommerce_catalog .modal-content .modal-body{
         padding: 15px 15px 0 5px;
     }
-    #woo_catalog .modal-header h2{
+    #woocommerce_catalog .modal-header h2{
         font-size: 16px;
     }
-    #woo_catalog .cat-form-row label{
+    #woocommerce_catalog .cat-form-row label{
         font-size: 14px;
     }
-    #woo_catalog .modal-content .modal-footer {
+    #woocommerce_catalog .modal-content .modal-footer {
         padding: 10px 15px;
     }
-    #woo_catalog .cat-form-row input, #woo_catalog .cat-form-row select, #woo_catalog .cat-form-row textarea{
+    #woocommerce_catalog .cat-form-row input, #woocommerce_catalog .cat-form-row select, #woocommerce_catalog .cat-form-row textarea{
         height: 33px;
     }
-    #woo_catalog .cat-form-row textarea {
+    #woocommerce_catalog .cat-form-row textarea {
         height: 70px;
     }
 }
  
 /* toogle form */
-#woo_catalog .catalog_enquiry_form:focus{
+#woocommerce_catalog .catalog_enquiry_form:focus{
     outline: none;
 }
-#woo_catalog .catalog_enquiry_form{
+#woocommerce_catalog .catalog_enquiry_form{
     background: #f1f1f1;
     padding: 15px;
     width: 100%;
     margin-top: 15px;
     clear: both;
 }
-#woo_catalog .catalog_enquiry_form .modal-header h2{
+#woocommerce_catalog .catalog_enquiry_form .modal-header h2{
     margin: 0 0 15px;
     width: 100%;
 }
-#woo_catalog .catalog_enquiry_form .modal-footer button{
+#woocommerce_catalog .catalog_enquiry_form .modal-footer button{
     margin: 0;
 }
