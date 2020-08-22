@@ -93,42 +93,41 @@ jQuery(document).ready(function($) {
     //$('.variations_form').trigger('found_variation');
 
     // Modal Close
-    $("#woo_catalog .catalog_modal .close, #woo_catalog .catalog_modal .btn-default").on('click', function () {
+    $("#woocommerce_catalog .catalog_modal .close, #woocommerce_catalog .catalog_modal .btn-default").on('click', function () {
         //$("#responsive").hide();
         $("#responsive").slideToggle(500);
     });
 
-    $('#woo_catalog .woo_catalog_enquiry_btn').on('click', function () {
-        $("#woo_catalog #responsive").slideToggle(1000);
+    $('#woocommerce_catalog .woocommerce_catalog_enquiry_btn').on('click', function () {
+        $("#woocommerce_catalog #responsive").slideToggle(1000);
     });
 
     
-    $('#woo_submit_enquiry').on('click', function(){
-        var name = document.getElementById('woo_user_name').value;
-        var email = document.getElementById('woo_user_email').value;
+    $('#woocommerce_submit_enquiry').on('click', function(){
+        var name = document.getElementById('woocommerce_user_name').value;
+        var email = document.getElementById('woocommerce_user_email').value;
         var nonce = document.getElementById('wc_catalog_enq').value;
         var enquiry_product_type = document.getElementById('enquiry_product_type').value;
         var subject = '';
         var phone = '';
         var address = '';
         var comment = '';
-        block($( '#responsive' ));
         var fd = new FormData();
         var json_arr = catalog_enquiry_front.json_arr;
         if (json_arr.indexOf("subject") != -1) {
-            subject = document.getElementById('woo_user_subject').value;
+            subject = document.getElementById('woocommerce_user_subject').value;
         }
         if (json_arr.indexOf("phone") != -1) {
-            phone = document.getElementById('woo_user_phone').value;
+            phone = document.getElementById('woocommerce_user_phone').value;
         }
         if (json_arr.indexOf("address") != -1) {
-            address = document.getElementById('woo_user_address').value;
+            address = document.getElementById('woocommerce_user_address').value;
         }
         if (json_arr.indexOf("comment") != -1) {
-            comment = document.getElementById('woo_user_comment').value;
+            comment = document.getElementById('woocommerce_user_comment').value;
         }
         if (json_arr.indexOf("fileupload") != -1) {
-            var files_data = jQuery('#woo_user_fileupload');
+            var files_data = jQuery('#woocommerce_user_fileupload');
             jQuery.each(jQuery(files_data), function (i, obj) {
                 jQuery.each(obj.files, function (j, file) {
                     fd.append('fileupload[' + j + ']', file);
@@ -139,23 +138,23 @@ jQuery(document).ready(function($) {
         var product_url = document.getElementById('product_url_for_enquiry').value;
         var product_id = document.getElementById('product_id_for_enquiry').value;
         if (typeof (catalog_enquiry_front.settings.is_captcha) != 'undefined' && catalog_enquiry_front.settings.is_captcha !== null && catalog_enquiry_front.settings.is_captcha == "Enable") {
-            var captcha = document.getElementById('woo_catalog_captcha');
+            var captcha = document.getElementById('woocommerce_catalog_captcha');
         }
 
         if (name == '' || name == ' ') {
             document.getElementById('msg_for_enquiry_error').innerHTML = catalog_enquiry_front.error_levels.name_required;
-            document.getElementById('woo_user_name').focus();
+            document.getElementById('woocommerce_user_name').focus();
             return false;
         }
 
         if (email == '' || email == ' ') {
             document.getElementById('msg_for_enquiry_error').innerHTML = catalog_enquiry_front.error_levels.email_required;
-            document.getElementById('woo_user_email').focus();
+            document.getElementById('woocommerce_user_email').focus();
             return false;
         }
         if (!validateEmail(email)) {
             document.getElementById('msg_for_enquiry_error').innerHTML = catalog_enquiry_front.error_levels.email_valid;
-            document.getElementById('woo_user_email').focus();
+            document.getElementById('woocommerce_user_email').focus();
             return false;
         }
 
@@ -163,15 +162,16 @@ jQuery(document).ready(function($) {
 
             if (captcha.value == '' || captcha.value == ' ') {
                 document.getElementById('msg_for_enquiry_error').innerHTML = catalog_enquiry_front.error_levels.captcha_required;
-                document.getElementById('woo_catalog_captcha').focus();
+                document.getElementById('woocommerce_catalog_captcha').focus();
                 return false;
             }
             if (captcha.value != catalog_enquiry_front.captcha) {
                 document.getElementById('msg_for_enquiry_error').innerHTML = catalog_enquiry_front.error_levels.captcha_valid;
-                document.getElementById('woo_catalog_captcha').focus();
+                document.getElementById('woocommerce_catalog_captcha').focus();
                 return false;
             }
         }
+        block($( '#responsive' ));
         jQuery("#loader_after_sumitting_the_form").show();
         jQuery('#msg_for_enquiry_error').html('');
 
@@ -179,15 +179,15 @@ jQuery(document).ready(function($) {
         if (json_arr.indexOf("fileupload") != -1) {
             fd.append('action', 'send_enquiry_mail');
             fd.append('wc_catalog_enq', nonce);
-            fd.append('woo_customer_name', name);
-            fd.append('woo_customer_email', email);
-            fd.append('woo_customer_subject', subject);
-            fd.append('woo_customer_phone', phone);
-            fd.append('woo_customer_address', address);
-            fd.append('woo_customer_comment', comment);
-            fd.append('woo_customer_product_name', product_name);
-            fd.append('woo_customer_product_url', product_url);
-            fd.append('woo_customer_product_id', product_id);
+            fd.append('woocommerce_customer_name', name);
+            fd.append('woocommerce_customer_email', email);
+            fd.append('woocommerce_customer_subject', subject);
+            fd.append('woocommerce_customer_phone', phone);
+            fd.append('woocommerce_customer_address', address);
+            fd.append('woocommerce_customer_comment', comment);
+            fd.append('woocommerce_customer_product_name', product_name);
+            fd.append('woocommerce_customer_product_url', product_url);
+            fd.append('woocommerce_customer_product_id', product_id);
             fd.append('enquiry_product_type', enquiry_product_type);
             jQuery.ajax({
                 type: 'post',
@@ -202,27 +202,27 @@ jQuery(document).ready(function($) {
                         jQuery("#loader_after_sumitting_the_form").hide();
                         jQuery('#msg_for_enquiry_sucesss').html('');
                         jQuery('#msg_for_enquiry_sucesss').html(catalog_enquiry_front.ajax_success_msg);
-                        jQuery('#woo_user_name').val('');
-                        jQuery('#woo_user_email').val('');
-                        jQuery('#woo_catalog_captcha').val('');
+                        jQuery('#woocommerce_user_name').val('');
+                        jQuery('#woocommerce_user_email').val('');
+                        jQuery('#woocommerce_catalog_captcha').val('');
                         if (json_arr.indexOf("subject") != -1) {
-                            jQuery('#woo_user_subject').val('');
+                            jQuery('#woocommerce_user_subject').val('');
                         }
                         if (json_arr.indexOf("phone") != -1) {
-                            jQuery('#woo_user_phone').val('');
+                            jQuery('#woocommerce_user_phone').val('');
                         }
                         if (json_arr.indexOf("address") != -1) {
-                            jQuery('#woo_user_address').val('');
+                            jQuery('#woocommerce_user_address').val('');
 
                         }
                         if (json_arr.indexOf("comment") != -1) {
-                            jQuery('#woo_user_comment').val('');
+                            jQuery('#woocommerce_user_comment').val('');
                         }
                         if (json_arr.indexOf("fileupload") != -1) {
-                            jQuery('#woo_user_fileupload').val('');
+                            jQuery('#woocommerce_user_fileupload').val('');
                         }
 
-                        if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
+                        if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                             window.location.href = catalog_enquiry_front.redirect_link;
                         }
                     } else if (response.status == 2) {
@@ -249,15 +249,15 @@ jQuery(document).ready(function($) {
             var data = {
                 'action': 'send_enquiry_mail',
                 'wc_catalog_enq': nonce,
-                'woo_customer_name': name,
-                'woo_customer_email': email,
-                'woo_customer_subject': subject,
-                'woo_customer_phone': phone,
-                'woo_customer_address': address,
-                'woo_customer_comment': comment,
-                'woo_customer_product_name': product_name,
-                'woo_customer_product_url': product_url,
-                'woo_customer_product_id': product_id,
+                'woocommerce_customer_name': name,
+                'woocommerce_customer_email': email,
+                'woocommerce_customer_subject': subject,
+                'woocommerce_customer_phone': phone,
+                'woocommerce_customer_address': address,
+                'woocommerce_customer_comment': comment,
+                'woocommerce_customer_product_name': product_name,
+                'woocommerce_customer_product_url': product_url,
+                'woocommerce_customer_product_id': product_id,
                 'enquiry_product_type': enquiry_product_type
 
             };
@@ -267,23 +267,23 @@ jQuery(document).ready(function($) {
                     jQuery("#loader_after_sumitting_the_form").hide();
                     jQuery('#msg_for_enquiry_sucesss').html('');
                     jQuery('#msg_for_enquiry_sucesss').html(catalog_enquiry_front.ajax_success_msg);
-                    jQuery('#woo_user_name').val('');
-                    jQuery('#woo_user_email').val('');
-                    jQuery('#woo_catalog_captcha').val('');
+                    jQuery('#woocommerce_user_name').val('');
+                    jQuery('#woocommerce_user_email').val('');
+                    jQuery('#woocommerce_catalog_captcha').val('');
                     if (json_arr.indexOf("subject") != -1) {
-                        jQuery('#woo_user_subject').val('');
+                        jQuery('#woocommerce_user_subject').val('');
                     }
                     if (json_arr.indexOf("phone") != -1) {
-                        jQuery('#woo_user_phone').val('');
+                        jQuery('#woocommerce_user_phone').val('');
                     }
                     if (json_arr.indexOf("address") != -1) {
-                        jQuery('#woo_user_address').val('');
+                        jQuery('#woocommerce_user_address').val('');
 
                     }
                     if (json_arr.indexOf("comment") != -1) {
-                        jQuery('#woo_user_comment').val('');
+                        jQuery('#woocommerce_user_comment').val('');
                     }
-                    if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings.is_page_redirect !== null) {
+                    if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                         window.location.href = catalog_enquiry_front.redirect_link;
                     }
                 } else if (response.status == 2) {
