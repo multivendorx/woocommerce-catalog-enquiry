@@ -91,6 +91,8 @@ $from_heading = apply_filters( 'woocommerce_catalog_enquiry_from_heading', array
     
     ) );
 
+if( apply_filters( 'woocommerce_catalog_enquiry_pro_enable', true ) ) {
+
 ?>
 
 <table class="table table-bordered responsive-table woocommerce-catalog-from-setting widefat">
@@ -148,3 +150,7 @@ $from_heading = apply_filters( 'woocommerce_catalog_enquiry_from_heading', array
 <?php
 
 echo __('Want to customise the form as per your need? To have a fully customizable form kindly upgrade to <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry');
+
+}
+
+do_action('woocommerce_catalog_enquiry_custom_form_fileds');

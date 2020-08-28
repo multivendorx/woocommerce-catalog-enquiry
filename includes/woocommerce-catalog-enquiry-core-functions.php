@@ -20,21 +20,38 @@ if(!function_exists('woocommerce_catalog_enquiry_validate_color_hex_code')) {
 
 // Old version to new migration
 if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
-  function woocommerce_catalog_enquiry_option_migration_3_to_4(){
+
+  function woocommerce_catalog_enquiry_option_migration_3_to_4() {
     global $Woocommerce_Catalog_Enquiry;
     
-    if( get_option( 'woocommerce_catalog_migration_completed', true ) != 'migrated' ) :
+    if( !get_option( 'woocommerce_catalog_migration_completed' ) ) :
 
     // Old catalog button data
     $woocommerce_catalog_old_button = get_option( 'dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name', true );
     
     // Old catalog general data
-    $woocommerce_catalog_old_options = get_option('dc_wc_woocommerce_catalog_enquiry_general_settings_settings_name', true );
+    $woocommerce_catalog_old_options = get_option('dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name', true );
 
     // Old catalog exclusion data
-    $woocommerce_catalog_old_exclusion = get_option('dc_wc_woocommerce_catalog_enquiry_general_settings_settings_name', true ); 
+    $woocommerce_catalog_old_exclusion = get_option('dc_wc_Woocommerce_Catalog_Enquiry_exclusion_settings_name', true ); 
     if ( !empty( $woocommerce_catalog_old_exclusion ) ) {
-      update_option( 'woocommerce_catalog_enquiry_exclusion_settings', $woocommerce_catalog_old_exclusion );
+
+      $update_new_exclution = array();
+      foreach ($woocommerce_catalog_old_exclusion as $key => $value) {
+        if ( $key == 'myuserroles_list' ) {
+          $update_new_exclution['woocommerce_userroles_list'] = $value;
+        }
+        if ( $key == 'myuser_list' ) {
+          $update_new_exclution['woocommerce_user_list'] = $value;
+        }
+        if ( $key == 'myproduct_list' ) {
+          $update_new_exclution['woocommerce_product_list'] = $value;
+        }
+        if ( $key == 'mycategory_list' ) {
+          $update_new_exclution['woocommerce_category_list'] = $value;
+        }
+      }
+      update_option( 'woocommerce_catalog_enquiry_exclusion_settings', $update_new_exclution );
     }
 
     // New catalog button data
@@ -121,8 +138,9 @@ if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
       update_option( 'woocommerce_catalog_enquiry_button_appearence_settings', $button_settings );
     }
 
-    delete_option( 'dc_wc_woocommerce_catalog_enquiry_general_settings_settings_name' );
+    delete_option( 'dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name' );
     delete_option( 'dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name' );
+    delete_option( 'dc_wc_Woocommerce_Catalog_Enquiry_exclusion_settings_name' );
 
     update_option( 'woocommerce_catalog_migration_completed', 'migrated' );
     endif;
