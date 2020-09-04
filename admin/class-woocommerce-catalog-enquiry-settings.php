@@ -37,7 +37,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
       'option_page')
       );
     
-    if( apply_filters( 'woocommerce_catalog_enquiry_menu_hide', true ) ) {
+    if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
       add_submenu_page(
         'woo-catalog',
         __("Upgrade to Pro", 'woocommerce-catalog-enquiry'),
@@ -266,6 +266,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
         echo '<th scope="row" class="' . $field['id'] . '"><strong>' . $field['title'] . '</strong><!--<br>'.$field['args']['desc'].'--></th>';
       }
       echo '<td>';
+      do_action('field_start_' . $field['id']);
       call_user_func($field['callback'], $field['args']);
       echo '</td>';
       echo '</tr>';
@@ -326,7 +327,91 @@ class Woocommerce_Catalog_Enquiry_Settings {
           ), $v ));
 
       }
-    } 
+    }
+    add_action('field_start_custom_enquiry_buttons_css', array($this, 'custom_enquiry_buttons_css_html_callback')); 
+  }
+
+  public function custom_enquiry_buttons_css_html_callback() {
+    
+    global $WCMP_Woocommerce_Catalog_Enquiry;
+    $extra_fonts = apply_filters('wcce_catalog_enquiry_extra_button_style_fonts',array());
+    $extra_fonts_options = '';
+    if(!empty($extra_fonts) && is_array($extra_fonts)){
+      foreach ($extra_fonts as $key => $value) {
+        $extra_fonts_options .= '<option value="'.$value.', Helvetica, Arial, Sans-Serif">'.$value.'</option>';
+      }
+    }
+    $html = '<div id="Enquiry_Btn_wrapper">
+    <div class="controls">
+      <div>
+        <label>Button Size:</label> 
+        <div class="sliderBar" id="sizer"><div id="sizer-handle" class="ui-slider-handle"></div></div>
+      </div>
+      <div>
+        <label>Font Size:</label> 
+        <div class="sliderBar" id="font-sizer"><div id="font-sizer-handle" class="ui-slider-handle"></div></div>
+      </div>
+      <div>
+        <label>Border Radius:</label>
+        <div class="sliderBar" id="border-rounder"><div id="border-rounder-handle" class="ui-slider-handle"></div></div>
+      </div>
+      <div>
+        <label>Border Size:</label>
+        <div class="sliderBar" id="border-sizer"><div id="border-sizer-handle" class="ui-slider-handle"></div></div>
+      </div>
+      <div id="colors">
+        <!--div class="background-color-control">
+        <label>
+          Solid Background color: <input type="radio" name="backgroundColor" checked>
+        </label>
+        <label>
+          Gradient Background color: <input type="radio" name="backgroundColor">
+        </label>
+      </div-->
+      <div>
+        <label for="topGradientValue">Top Gradient Color</label>
+        <input type="text" maxlength="6" size="6" id="topGradientValue" class="pickable backgroundTop" rel="backgroundTop" value="3e779d" style="background: #3e779d;" />
+      </div>
+      <div>
+        <label for="bottomGradientValue">Bottom Gradient Color</label>
+        <input type="text" maxlength="6" size="6" id="bottomGradientValue" class="pickable backgroundBottom" rel="backgroundBottom" value="65a9d7" style="background: #65a9d7;" />
+      </div>
+      <div>
+        <label for="borderTopColorValue">Border Color</label>
+        <input type="text" maxlength="6" size="6" id="borderTopColorValue" class="pickable borderColor" rel="borderColor" value="96d1f8" style="background: #96d1f8;" />
+      </div>
+      <div>
+        <label for="hoverBackgroundColorValue">Hover Background Color</label>
+        <input type="text" maxlength="6" size="6" id="hoverBackgroundColorValue" class="pickable hoverBackground" rel="hoverBackground" value="28597a" style="background: #28597a;" />
+      </div>
+      <div>
+        <label for="textColor">Text Color</label>
+        <input type="text" maxlength="6" size="6" id="textColor" class="pickable textColor" rel="textColor" value="white" style="background: white;" />
+      </div>
+      <div>
+        <label for="hoverTextColorValue">Hover Text Color</label>
+        <input type="text" maxlength="6" size="6" id="hoverTextColorValue" class="pickable hoverColor" rel="hoverColor" value="cccccc" style="background: #cccccc;" />
+      </div>
+      <div>
+        <label for="activeBackgroundColor">Active Background Color</label>
+        <input type="text" maxlength="6" size="6" id="activeBackgroundColor" class="pickable activeBackground" rel="activeBackground" value="1b435e" style="background: #1b435e;" />
+      </div>
+      <div>
+        <label for="fontSelector">Select Font: </label>
+        <select id="fontSelector">
+          <option value="">Default</option>
+          <option value="Helvetica, Arial, Sans-Serif">Helvetica</option>
+          <option value="Georgia, Serif">Georgia</option>
+          <option value="Lucida Grande, Helvetica, Arial, Sans-Serif">Lucida Grande</option>'.$extra_fonts_options.'
+        </select>
+      </div>
+    </div>
+    </div>
+    <div class="button-box">
+      <a href="#" class="custom_enquiry_buttons_css_new previewbutton">Example Enquiry</a>
+    </div> 
+    </div>';
+    echo $html;
   }
 
   public function field_machine($args) {

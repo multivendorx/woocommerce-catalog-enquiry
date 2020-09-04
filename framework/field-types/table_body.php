@@ -91,7 +91,7 @@ $from_heading = apply_filters( 'woocommerce_catalog_enquiry_from_heading', array
     
     ) );
 
-if( apply_filters( 'woocommerce_catalog_enquiry_pro_enable', true ) ) {
+if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
 
 ?>
 

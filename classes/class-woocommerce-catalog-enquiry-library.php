@@ -1,19 +1,27 @@
 <?php
 class Woocommerce_Catalog_Enquiry_Library {
+  
+    public $lib_url;  
+    public $jquery_lib_url;
 
-  public $lib_url;
-
-  public $jquery_lib_url;
-
-  public function __construct() {
-	global $Woocommerce_Catalog_Enquiry;
-	  
-    $this->lib_url = $Woocommerce_Catalog_Enquiry->plugin_url . 'lib/';
-    $this->jquery_lib_url = $this->lib_url . 'jquery/';
+    public function __construct() {
+    	
+        global $Woocommerce_Catalog_Enquiry;
+        $this->lib_url = $Woocommerce_Catalog_Enquiry->plugin_url . 'lib/';
+        $this->jquery_lib_url = $this->lib_url . 'jquery/';
 	
     }
 
-	/**
+	   /**
+     * Jquery qTip library
+     */
+    public function load_qtip_lib() {
+      global $Woocommerce_Catalog_Enquiry;
+      wp_enqueue_script('qtip_js', $this->jquery_lib_url . 'qtip/qtip.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
+        wp_enqueue_style('qtip_css',  $this->jquery_lib_url . 'qtip/qtip.css', array(), $Woocommerce_Catalog_Enquiry->version);
+    }
+
+    /**
      * Select2 library
      */
     public function load_select2_lib() {
@@ -22,17 +30,51 @@ class Woocommerce_Catalog_Enquiry_Library {
         wp_enqueue_style('select2_css', $this->jquery_lib_url . 'select2/select2.css', array(), $Woocommerce_Catalog_Enquiry->version);
     }
 
-	
-	/**
-	 * WP Media library
-	 */
-	public function load_upload_lib() {
-	  global $Woocommerce_Catalog_Enquiry;
-	  wp_enqueue_media();
-	  wp_enqueue_script('upload_js', $this->jquery_lib_url . 'upload/media-upload.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
-	  wp_enqueue_style('upload_css',  $this->jquery_lib_url . 'upload/media-upload.css', array(), $Woocommerce_Catalog_Enquiry->version);
-	}
-	
+    
+    /**
+     * WP Media library
+     */
+    public function load_upload_lib() {
+      global $Woocommerce_Catalog_Enquiry;
+      wp_enqueue_media();
+      wp_enqueue_script('upload_js', $this->jquery_lib_url . 'upload/media-upload.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
+      wp_enqueue_style('upload_css',  $this->jquery_lib_url . 'upload/media-upload.css', array(), $Woocommerce_Catalog_Enquiry->version);
+    }
+    
+    /**
+     * WP ColorPicker library
+     */
+    public function load_colorpicker_lib() {
+      global $Woocommerce_Catalog_Enquiry;
+      wp_enqueue_script( 'wp-color-picker' );
+    wp_enqueue_script( 'colorpicker_init', $this->jquery_lib_url . 'colorpicker/colorpicker.js', array( 'jquery', 'wp-color-picker' ), $Woocommerce_Catalog_Enquiry->version, true );
+    wp_enqueue_style( 'wp-color-picker' );
+    }
+    
+    /**
+     * WP DatePicker library
+     */
+    public function load_datepicker_lib() {
+      global $Woocommerce_Catalog_Enquiry;
+      wp_enqueue_script('jquery-ui-datepicker');
+      $this->load_jqueryui_lib();
+    }
+
+
+    /**
+     * Load JqueryUI library
+     */
+    public function load_jqueryui_lib() {
+      global $wp_scripts;
+      if(wp_style_is( 'jquery-ui-style', 'registered' )){
+        wp_enqueue_style( 'jquery-ui-style' );
+      }else{
+        $jquery_version = isset( $wp_scripts->registered['jquery-ui-core']->ver ) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.11.4';
+        wp_register_style( 'jquery-ui-style', '//code.jquery.com/ui/' . $jquery_version . '/themes/smoothness/jquery-ui.min.css', array(), $jquery_version );
+        wp_enqueue_style( 'jquery-ui-style' );
+      }
+    }
+
 	public function catalog_enquiry_get_options(){
     /**
      * Create new menus
@@ -74,7 +116,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "id" => "is-enable",
         "name" => "is_enable",
         "label" => __( "Catalog Mode", 'woocommerce-catalog-enquiry' ),
-        "desc" => __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to  <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry'),
+        "desc" => apply_filters( 'woocommerce_catalog_enquiry_enable_catalog_text', __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to  <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry') ),
         "option_values" => array(
              'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
         )
@@ -108,7 +150,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "id" => "is-hide-cart-checkout",
         "name" => "is_hide_cart_checkout",
         "label" => __( "Disable Cart and Checkout Page?", 'woocommerce-catalog-enquiry' ),
-        "desc" => __('Enable this to redirect user to home page, if they click on the cart or checkout page. To set the redirection to another page kindly upgrade to <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry'),
+        "desc" => apply_filters( 'woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect user to home page, if they click on the cart or checkout page. To set the redirection to another page kindly upgrade to <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry') ),
         "option_values" => array(
              'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
         )
@@ -226,7 +268,7 @@ class Woocommerce_Catalog_Enquiry_Library {
     $woocommerce_catalog_options[ ] = array(
         "type" => "textbox",
         "id" => "button-text",
-        'name' => "button_text",
+        'name' => "enquiry_button_text",
         "label" => __( "Button Text", 'woocommerce-catalog-enquiry' ),
         "desc" => __('Enter the text for your Enquery Button.', 'woocommerce-catalog-enquiry'),
     );
@@ -253,130 +295,28 @@ class Woocommerce_Catalog_Enquiry_Library {
         "desc" => __('Aplicable only when you choose custom link for all products in button type', 'woocommerce-catalog-enquiry'),
     );
 
-    // button-text-color
+
+    // Your own button style
     $woocommerce_catalog_options[ ] = array(
-        "type" => "color",
-        "id" => "button-text-color",
-        "name" => "button_text_color",
-        "label" => __( "Text Color", 'woocommerce-catalog-enquiry' ),
-        "default_value" => "#666666",
-        "validate" => 'required,color',
-    );
-    // button-text-color-hover
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "color",
-        "id" => "button-text-color-hover",
-        "name" => "button_text_color_hover",
-        "label" => __( "Text Color Hover", 'woocommerce-catalog-enquiry' ),
-        "default_value" => "#666666",
-        "validate" => 'required,color',
-    );
-    // Background Color
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "color",
-        "id" => "button-background-color",
-        "name" => "button_background_color",
-        "label" => __( "Background Color", 'woocommerce-catalog-enquiry' ),
-        "default_value" => "#666666",
-        "validate" => 'required,color',
-    );
-    //button_background_color_hover
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "color",
-        "id" => "button-background-color-hover",
-        "name" => "button_background_color_hover",
-        "label" => __( "Background Color Hover", 'woocommerce-catalog-enquiry' ),
-        "default_value" => "#666666",
-        "validate" => 'required,color',
-    );
-    
-    // Button button Font size
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-fornt-size",
-        "name" => "button_fornt_size",
-        "class" => "large-text",
-        "label" => __( "Button Font size", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
+        "type" => "checkbox",
+        "id" => "is_button",
+        "name" => "is_button",
+        "label" => __( "Your own button style", 'woocommerce-catalog-enquiry' ),
+        "desc" => __('Enable the custom design for enquiry button.', 'woocommerce-catalog-enquiry'),
+        "option_values" => array(
+             'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
+        )
     );
 
-    // Custom button Width
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-width",
-        "name" => "button_width",
-        "class" => "large-text",
-        "label" => __( "Button Width", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-    // Button button Height
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-height",
-        "name" => "button_height",
-        "class" => "large-text",
-        "label" => __( "Button Height", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-
-    // Button button Padding
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-padding",
-        "name" => "button_padding",
-        "class" => "large-text",
-        "label" => __( "Button Padding", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-
-        // Button button margin top
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-margin-top",
-        "name" => "button_margin_top",
-        "class" => "large-text",
-        "label" => __( "Button Margin Top", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-    // Button button margin bottom
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-margin-bottom",
-        "name" => "button_margin_bottom",
-        "class" => "large-text",
-        "label" => __( "Button Margin Bottom", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-    // Button button Border
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-border-size",
-        "name" => "button_border_size",
-        "class" => "large-text",
-        "label" => __( "Button Border", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-  
-    // Button button border redius
-    $woocommerce_catalog_options[ ] = array(
-        "type" => "textbox",
-        "id" => "button-border-redius",
-        "name" => "button_border_redius",
-        "class" => "large-text",
-        "label" => __( "Button Border Redius", 'woocommerce-catalog-enquiry' ),
-        "desc" => __( "", 'woocommerce-catalog-enquiry' ),
-    );
-		
     // Choose Button Border Color
     $woocommerce_catalog_options[ ] = array(
-        "type" => "color",
-        "id" => "button-border-color",
-        "name" => "button_border_color",
-        "label" => __( "Button Border Color", 'woocommerce-catalog-enquiry' ),
-        "default_value" => "#666666",
-        "validate" => 'required,color',
+        "type" => "hidden",
+        "id" => "custom_enquiry_buttons_css",
+        "name" => "custom_enquiry_buttons_css",
+        "label" => __( "Make your own Button Style", 'woocommerce-catalog-enquiry' ),
     );
 
+    
     // Template
     $woocommerce_catalog_options[ ] = array(
         "type" => "section",

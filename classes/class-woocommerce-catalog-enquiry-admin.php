@@ -97,18 +97,45 @@ class Woocommerce_Catalog_Enquiry_Admin {
         public function enqueue_admin_script() {
             global $Woocommerce_Catalog_Enquiry;
             $screen = get_current_screen();
+
+            $settings_buttons = get_option( 'woocommerce_catalog_enquiry_button_appearence_settings' );
             // Enqueue admin script and stylesheet from here
             if ($screen->id == 'toplevel_page_woo-catalog' ) :
+
+                $Woocommerce_Catalog_Enquiry->library->load_qtip_lib();
                 $Woocommerce_Catalog_Enquiry->library->load_select2_lib();
                 $Woocommerce_Catalog_Enquiry->library->load_upload_lib();
-                wp_enqueue_style( 'wp-color-picker' );                wp_enqueue_script('catalog_admin_js', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/js/admin.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
+                $Woocommerce_Catalog_Enquiry->library->load_colorpicker_lib();
+                $Woocommerce_Catalog_Enquiry->library->load_datepicker_lib();
+
+                wp_enqueue_style( 'wp-color-picker' );
+                wp_enqueue_script('catalog_admin_js', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/js/admin.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
                 wp_enqueue_style('catalog_admin_css', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/css/admin.css', array(), $Woocommerce_Catalog_Enquiry->version);
+
+                // Colorpicker css
+                wp_enqueue_style('button_color_picker_css', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/css/colorpicker_btn.css', array(), $Woocommerce_Catalog_Enquiry->version);
+                // Colorpicker js
+                wp_enqueue_script('button_color_picker_js', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/js/colorpicker_btn.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
+                // Button js
+                wp_enqueue_script('button_gen_js', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/admin/js/button_gen.js', array('jquery'), $Woocommerce_Catalog_Enquiry->version, true);
+
+                wp_localize_script(
+                'button_gen_js', 
+                'wcmp_catalog_btn', 
+                array(
+                    'custom_css' => isset($settings_buttons['custom_enquiry_buttons_css']) ? $settings_buttons['custom_enquiry_buttons_css'] : '',  
+                    'custom_cssStuff' => isset($settings_buttons['custom_enquiry_buttons_cssStuff']) ? $settings_buttons['custom_enquiry_buttons_cssStuff'] : '',
+                    'custom_cssValues' => isset($settings_buttons['custom_enquiry_buttons_cssValues']) ? $settings_buttons['custom_enquiry_buttons_cssValues'] : '',    
+                    ));
+
 
                 wp_enqueue_style('font-awesome-solid', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/solid.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
 
                 wp_enqueue_style('font-awesome-brands', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/brands.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
 
                 wp_enqueue_style('font-awesome', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/fontawesome.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
+
+
 
             endif;
         }

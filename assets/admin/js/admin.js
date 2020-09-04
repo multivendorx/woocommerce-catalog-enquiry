@@ -80,4 +80,24 @@ jQuery(document).ready(function($) {
 		parrent_ele.hide();
 	}
 
+	if($('.is_button').is(':checked')) {
+		var parrent_ele = $('#Enquiry_Btn_wrapper').parent().parent();
+		parrent_ele.show();
+	}
+	else {
+		var parrent_ele = $('#Enquiry_Btn_wrapper').parent().parent();
+		parrent_ele.hide();
+	}
+
+	$('.is_button').change(function() {
+			if($(this).is(":checked")) {
+				var parrent_ele = $('#Enquiry_Btn_wrapper').parent().parent();
+				parrent_ele.show('slow');
+			}
+			else {
+				var parrent_ele = $('#Enquiry_Btn_wrapper').parent().parent();
+				parrent_ele.hide('slow');
+			}
+	});
+
 });

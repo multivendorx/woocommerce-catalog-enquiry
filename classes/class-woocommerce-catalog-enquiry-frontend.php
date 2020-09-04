@@ -21,7 +21,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
         if (isset($exclusion['woocommerce_userroles_list'])) {
             if (is_array($exclusion['woocommerce_userroles_list'])) {
-                if (in_array($current_user->roles[0], $exclusion['woocommerce_userroles_list'])) {
+                if ( !empty( $current_user->roles ) && in_array($current_user->roles[0], $exclusion['woocommerce_userroles_list'])) {
                     $this->available_for = $current_user->ID;
                 }
             }
@@ -120,7 +120,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                 switch ($options_button_appearence_settings['button_type']) {
                     case 2:
                         $link = isset($options_button_appearence_settings['button_link']) && !empty($options_button_appearence_settings['button_link']) ? $options_button_appearence_settings['button_link'] : '#';
-                        $label = isset($options_button_appearence_settings['button_text']) && !empty($options_button_appearence_settings['button_text']) ? $options_button_appearence_settings['button_text'] : $product->add_to_cart_text();
+                        $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
                         $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
@@ -135,7 +135,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     case 3:
                         $product_link = get_post_meta($product->get_id(), 'woocommerce_catalog_enquiry_product_link', true);
                         $link = !empty($product_link) ? $product_link : '#';
-                        $label = isset($options_button_appearence_settings['button_text']) && !empty($options_button_appearence_settings['button_text']) ? $options_button_appearence_settings['button_text'] : $product->add_to_cart_text();
+                        $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
                         $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
@@ -149,7 +149,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     
                     case 4:
                         $link = '#';
-                        $label = isset($options_button_appearence_settings['button_text']) && !empty($options_button_appearence_settings['button_text']) ? $options_button_appearence_settings['button_text'] : $product->add_to_cart_text();
+                        $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
                         $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
@@ -163,7 +163,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
                     default:
                         $link = get_permalink($product->get_id());
-                        $label = isset($options_button_appearence_settings['button_text']) && !empty($options_button_appearence_settings['button_text']) ? $options_button_appearence_settings['button_text'] : __('Read More', 'woocommerce-catalog-enquiry');
+                        $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : __('Read More', 'woocommerce-catalog-enquiry');
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
                         $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
@@ -189,7 +189,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         $exclusion = $Woocommerce_Catalog_Enquiry->options_exclusion_settings;
 
 
-        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0)) {
+        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0) && apply_filters( 'woocommerce_catalog_enquiry_free_active', true )) {
             add_action('init', array($this, 'remove_add_to_cart_button'));
             if (isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable") {
                 $piority = apply_filters('woocommerce_catalog_enquiry_button_possition_piority', 100);
@@ -328,9 +328,9 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         $settings_buttons = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
 
         if (isset($settings_buttons)) {
-            $button_text = isset($settings_buttons['button_text']) ? $settings_buttons['button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
-            if ($button_text == '') {
-                $button_text = __('Send an enquiry', 'woocommerce-catalog-enquiry');
+            $enquiry_button_text = isset($settings_buttons['enquiry_button_text']) ? $settings_buttons['enquiry_button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
+            if ($enquiry_button_text == '') {
+                $enquiry_button_text = __('Send an enquiry', 'woocommerce-catalog-enquiry');
             }
         }
         $productid = $post->ID;
@@ -339,13 +339,13 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         $product_url = get_permalink($productid);
         ?>    
         <div id="woocommerce-catalog" name="woocommerce_catalog" >	
-            <?php if ( isset($button_text) ) { ?>
+            <?php if ( isset($enquiry_button_text) ) { ?>
                 <br/>
-                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry" href="#responsive"><?php echo $button_text; ?></button>
+                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
                 <?php
             } else {
                 ?>
-                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
+                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
             <?php } ?>
             <input type="hidden" name="product_name_for_enquiry" id="product-name-for-enquiry" value="<?php echo get_post_field('post_title', $post->ID); ?>" />
             <input type="hidden" name="product_url_for_enquiry" id="product-url-for-enquiry" value="<?php echo get_permalink($post->ID); ?>" />
@@ -502,9 +502,9 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         $settings_buttons = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
         if (isset($settings_buttons)) {
             $custom_design_for_button = isset($settings_buttons['is_button']) ? $settings_buttons['is_button'] : '';
-            $button_text = isset($settings_buttons['button_text']) ? $settings_buttons['button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
-            if ($button_text == '') {
-                $button_text = __('Send an enquiry', 'woocommerce-catalog-enquiry');
+            $enquiry_button_text = isset($settings_buttons['enquiry_button_text']) ? $settings_buttons['enquiry_button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
+            if ($enquiry_button_text == '') {
+                $enquiry_button_text = __('Send an enquiry', 'woocommerce-catalog-enquiry');
             }
         }
 
@@ -516,11 +516,11 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         <div id="woocommerce-catalog" name="woocommerce_catalog" >
                         <?php if (isset($custom_design_for_button) && $custom_design_for_button == "Enable") { ?>
                 <br/>
-                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry" href="#responsive"><?php echo $button_text; ?></button>
+                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
                             <?php
                         } else {
                             ?>
-                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
+                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
         <?php } ?>
 
             <input type="hidden" name="product_name_for_enquiry" id="product-name-for-enquiry" value="<?php echo get_post_field('post_title', $post->ID); ?>" />
@@ -771,45 +771,45 @@ class Woocommerce_Catalog_Enquiry_Frontend {
     public function add_read_more_button() {
         global $Woocommerce_Catalog_Enquiry, $post;
         $settings = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
-        $button_text = "Read More";
-        if (!empty($settings['button_text'])) {
-            $button_text = $settings['button_text'];
+        $enquiry_button_text = "Read More";
+        if (!empty($settings['enquiry_button_text'])) {
+            $enquiry_button_text = $settings['enquiry_button_text'];
         }
         $link = get_permalink($post->ID);
-        echo ' <center><a  id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $button_text . '</a></center>';
+        echo ' <center><a  id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $enquiry_button_text . '</a></center>';
     }
 
     public function add_external_link_button() {
         global $Woocommerce_Catalog_Enquiry;
         $settings_button = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
-        $button_text = "Read More";
-        if (!empty($settings_button['button_text'])) {
-            $button_text = $settings_button['button_text'];
+        $enquiry_button_text = "Read More";
+        if (!empty($settings_button['enquiry_button_text'])) {
+            $enquiry_button_text = $settings_button['enquiry_button_text'];
         }
         $link = $settings_button['button_link'];
-        echo ' <center><a  id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $button_text . '</a></center>';
+        echo ' <center><a  id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $enquiry_button_text . '</a></center>';
     }
 
     public function add_external_link_button_independent() {
         global $Woocommerce_Catalog_Enquiry, $post;
         $settings_button = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
-        $button_text = "Read More";
-        if (!empty($settings_button['button_text'])) {
-            $button_text = $settings_button['button_text'];
+        $enquiry_button_text = "Read More";
+        if (!empty($settings_button['enquiry_button_text'])) {
+            $enquiry_button_text = $settings_button['enquiry_button_text'];
         }
         $link = get_post_field("woocommerce_catalog_enquiry_product_link", $post->ID);
-        echo ' <center><a id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $button_text . '</a></center>';
+        echo ' <center><a id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $enquiry_button_text . '</a></center>';
     }
 
     public function add_custom_button_without_link() {
         global $Woocommerce_Catalog_Enquiry;
         $settings_button = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
-        $button_text = "Read More";
-        if (!empty($settings_button['button_text'])) {
-            $button_text = $settings_button['button_text'];
+        $enquiry_button_text = "Read More";
+        if (!empty($settings_button['enquiry_button_text'])) {
+            $enquiry_button_text = $settings_button['enquiry_button_text'];
         }
         $link = "#";
-        echo ' <center><a id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $button_text . '</a></center>';
+        echo ' <center><a id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $enquiry_button_text . '</a></center>';
     }
 
     public function remove_add_to_cart_button() {
@@ -905,7 +905,6 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                 $i++;
             }
             set_transient('woocaptcha', $captcha, 30 * MINUTE_IN_SECONDS);
-
             wp_localize_script(
                     'wce_frontend_js', 'catalog_enquiry_front', apply_filters('woocommerce_catalog_enquiry_localize_script_data', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
@@ -936,74 +935,10 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
             if (isset($settings_buttons) || isset($settings)) {
 
-                $custom_design_for_button = isset($settings_buttons['is_button']) ? $settings_buttons['is_button'] : '';
-                $background_color = isset($settings_buttons['button_background_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings_buttons['button_background_color']) : '#ccc';
-                $button_text_color = isset($settings_buttons['button_text_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings_buttons['button_text_color']) : '#fff';
-                $button_text_color_hover = isset($settings_buttons['button_text_color_hover']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings_buttons['button_text_color_hover']) : '#ccc';
-                $button_background_color_hover = isset($settings_buttons['button_background_color_hover']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings_buttons['button_background_color_hover']) : '#eee';
-                $button_width = isset($settings_buttons['button_width']) ? $settings_buttons['button_width'] . 'px' : '200px';
-                $button_height = isset($settings_buttons['button_height']) ? $settings_buttons['button_height'] . 'px' : '50px';
-                $button_padding = isset($settings_buttons['button_padding']) ? $settings_buttons['button_padding'] . 'px' : '10px';
-                $button_border_size = isset($settings_buttons['button_border_size']) ? $settings_buttons['button_border_size'] . 'px' : '1px';
-                $button_fornt_size = isset($settings_buttons['button_fornt_size']) ? $settings_buttons['button_fornt_size'] . 'px' : '18px';
-                $button_border_redius = isset($settings_buttons['button_border_redius']) ? $settings_buttons['button_border_redius'] . 'px' : '5px';
-                $button_border_color = isset($settings_buttons['button_border_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings_buttons['button_border_color']) : '#999';
-                $button_margin_top = isset($settings_buttons['button_margin_top']) ? $settings_buttons['button_margin_top'] . 'px' : '0px';
-                $button_margin_bottom = isset($settings_buttons['button_margin_bottom']) ? $settings_buttons['button_margin_bottom'] . 'px' : '0px';
-
-                // Custom button
-                $custom_btn_background = isset($settings['button_background_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings['button_background_color']) : '#013ADF';
-                $custom_btn_color = isset($settings['button_text_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings['button_text_color']) : '#FFF';
-                $custom_btn_padding = isset($settings['button_padding']) ? $settings['button_padding'] . 'px' : '5px';
-                $custom_btn_width = isset($settings['button_width']) ? $settings['button_width'] . 'px' : '80px';
-                $custom_btn_height = isset($settings['button_height']) ? $settings['button_height'] . 'px' : '26px';
-                $custom_btn_line_height = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '14px';
-                $custom_btn_border_radius = isset($settings['button_border_redius']) ? $settings['button_border_redius'] . 'px' : '5px';
-                $custom_btn_border = isset($settings['button_border_size']) ? $settings['button_border_size'] . 'px' :( '1px' . ' solid ' . isset($settings['button_border_color']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings['button_border_color']) : '#333');
-                $custom_btn_font_size = isset($settings['button_fornt_size']) ? $settings['button_fornt_size'] . 'px' : '12px';
-                $custom_btn_margin_top = isset($settings['button_margin_top']) ? $settings['button_margin_top'] . 'px' : '5px';
-                $custom_btn_margin_bottom = isset($settings['button_margin_bottom']) ? $settings['button_margin_bottom'] . 'px' : '5px';
-                $custom_btn_hover_background = isset($settings['button_background_color_hover']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings['button_background_color_hover']) : '#0431B4';
-                $custom_btn_hover_color = isset($settings['button_text_color_hover']) ? woocommerce_catalog_enquiry_validate_color_hex_code($settings['button_text_color_hover']) : '#CECEF6';
-
-                $inline_css = "
-	            .woocommerce-catalog-enquiry-custom-button-enquiry {
-					background: {$background_color};
-					color: {$button_text_color};
-					padding: {$button_padding};
-					width: {$button_width};
-					height: {$button_height};
-					line-height: {$button_fornt_size};
-					border-radius: {$button_border_redius};
-					border: {$button_border_size} solid {$button_border_color};
-					font-size: {$button_fornt_size};
-					margin-top : {$button_margin_top};
-					margin-bottom : {$button_margin_bottom};
+                $inline_css = "				
 				
-				}
-				.woocommerce-catalog-enquiry-custom-button-enquiry:hover {
-					background: {$button_text_color_hover};
-					color: {$button_background_color_hover};
-				}
-				#woocommerce-catalog-enquiry-custom-button {
-					background: {$custom_btn_background};
-					color: {$custom_btn_color};
-					padding: {$custom_btn_padding};
-					width: {$custom_btn_width};
-					height: {$custom_btn_height};
-					line-height: {$custom_btn_line_height};
-					border-radius: {$custom_btn_border_radius};
-					border: {$custom_btn_border};
-					font-size: {$custom_btn_font_size};
-					margin-top: {$custom_btn_margin_top};
-					margin-bottom: {$custom_btn_margin_bottom};
-					
-				}
-				#woocommerce-catalog-enquiry-custom-button:hover {
-					background: {$custom_btn_hover_background};
-					color: {$custom_btn_hover_color};
-				}
 				/* The Modal (background) */
+                ".$settings['custom_enquiry_buttons_css']."
 				#woocommerce-catalog .catalog-modal {
 				    display: none; /* Hidden by default */
 				    position: fixed; /* Stay in place */

@@ -46,3 +46,156 @@
 .woocommerce-catalog-upgrade {
   background-color: #04be5b;color: #fff
 }
+
+
+/*************************** Button Gen Start ***************************/
+
+.inside .button-box {
+    height: 352px;
+    width: 280px;
+    max-width: 100%;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    background: transparent;
+    border: 4px dashed #ddd;
+}
+
+.inside .button-box a {
+    position: absolute;
+    top: 42%;
+    left: 18%;
+}
+
+.inside .buttonText {
+    margin-bottom: 8px;
+}
+
+.inside .buttonText input {
+    width: 100%;
+    height: 30px;
+}
+
+.inside .controls {
+    width: 250px;
+    max-width: 100%;
+    padding: 20px;
+    float: left;
+}
+
+.controls label{
+    width: 85px;
+}
+.controls > div{
+    margin-bottom: 16px;
+}
+.controls > div:after, .inside #colors>div:after{
+    content:'';
+    display: table;
+    clear: both;
+}
+.inside .controls .ui-widget-content{
+    width: calc(100% - 125px);
+    float: right;
+    margin: 0;
+}
+
+.inside .button-box .button {
+    position: absolute;
+}
+
+.inside .button-box .button {
+    border-top: 1px solid #96d1f8;
+    background: #3e779d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+    background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: black 0 1px 0;
+    -moz-box-shadow: black 0 1px 0;
+    box-shadow: black 0 1px 0;
+    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.inside .button:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+}
+
+.inside .button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+    outline: 0;
+}
+
+.inside .sliderBar {
+    margin: 0 0 10px 0;
+}
+
+.inside .ui-dialog-content {
+    font: 12px Monaco, MonoSpace;
+}
+
+.inside .controls .ui-widget-content {
+    background: none !important;
+    border: 1px solid #aaaaaa !important;
+}
+
+.inside #colors>div {
+    position: relative;
+    width: 100%;
+    height: 26px;
+    margin: 0 0 8px 0;
+}
+
+.inside #colors>div>input {
+    float: right;
+    width: calc(100% - 170px);
+    margin-top: 4px;
+    color: transparent;
+}
+ 
+.inside #colors>div>label {
+    float: left;
+    width: 150px;
+    margin: 6px 0 0;
+}
+
+.inside .colorpicker {
+    z-index: 1000;
+}
+input[readonly].size-label {
+    border: 0;
+    margin: 0 0 0 5px;
+    color: #0085ba;
+    padding: 0 !important;
+    width: 20px !important;
+    display: inline-block !important;
+    background: transparent;
+    box-shadow: none;
+}
+.inside #colors>div.background-color-control>label{
+    width: 50%;
+}
+.inside #colors>div.background-color-control>label input[type=radio]{
+    margin: 0 0 0 5px;
+}
+
+@media screen and (max-width:480px){
+    .inside .controls .ui-widget-content,
+    .inside #colors>div.background-color-control>label,
+    .inside #colors>div>input{
+        width: 100%;
+    }
+    .inside .button-box{
+        height: 152px;
+        width: 100%;
+    }
+}
