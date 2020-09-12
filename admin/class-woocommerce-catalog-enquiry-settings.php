@@ -203,7 +203,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
           }
 
           if( isset( $v[ 'font_class' ] ) ) {
-            echo '<i class="fas '.$v[ 'font_class' ].'"></i> ';
+            echo '<i class="dashicons '.$v[ 'font_class' ].'"></i> ';
           }
 
           // Add extra tab for pro version
@@ -213,11 +213,11 @@ class Woocommerce_Catalog_Enquiry_Settings {
           $c++;
         }
       }
-      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://wcmpdemos.com/all-in-one-demo/my-account/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="fas fa-tv"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
+      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://wcmpdemos.com/all-in-one-demo/my-account/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="dashicons dashicons-format-video"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
       
       // For free version only
       if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ){
-        echo '<a class="nav-tab woocommerce-catalog-upgrade" href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank" rel="noopener noreferrer"><i class="fas fa-trophy"></i> '.__('Upgrade to Pro for More Features', 'woocommerce-catalog-enquiry').'</a>';
+        echo '<a class="nav-tab woocommerce-catalog-upgrade" href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank" rel="noopener noreferrer"><i class="dashicons dashicons-star-filled"></i> '.__('Upgrade to Pro for More Features', 'woocommerce-catalog-enquiry').'</a>';
       }
 
       // Add extra tab for pro version

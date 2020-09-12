@@ -5,14 +5,14 @@ class Woocommerce_Catalog_Enquiry_Library {
     public $jquery_lib_url;
 
     public function __construct() {
-    	
+        
         global $Woocommerce_Catalog_Enquiry;
         $this->lib_url = $Woocommerce_Catalog_Enquiry->plugin_url . 'lib/';
         $this->jquery_lib_url = $this->lib_url . 'jquery/';
-	
+    
     }
 
-	   /**
+       /**
      * Jquery qTip library
      */
     public function load_qtip_lib() {
@@ -75,7 +75,7 @@ class Woocommerce_Catalog_Enquiry_Library {
       }
     }
 
-	public function catalog_enquiry_get_options(){
+    public function catalog_enquiry_get_options(){
     /**
      * Create new menus
      */
@@ -95,7 +95,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "type" => "tab",
         "id" => "woo-catalog-general",
         "label" => __( "General", 'woocommerce-catalog-enquiry' ),
-        "font_class" => "fa-cogs"
+        "font_class" => "dashicons-admin-generic"
     );
 
     // setting box
@@ -248,7 +248,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "type" => "tab",
         "id" => "woo-catalog-button",
         "label" => __( "Button Appearance", 'woocommerce-catalog-enquiry' ),
-        "font_class" => "fa-paint-brush"
+        "font_class" => "dashicons-admin-appearance"
     );
 
     $woocommerce_catalog_options[ ] = array(
@@ -340,7 +340,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "type" => "tab",
         "id" => "woo-catalog-exclusion",
         "label" => __( "Exclusion", 'woocommerce-catalog-enquiry' ),
-        "font_class" => "fa-lock-open"
+        "font_class" => "dashicons-unlock"
     );
 
     $woocommerce_catalog_options[ ] = array(
@@ -398,7 +398,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "type" => "tab",
         "id" => "woo-catalog-from",
         "label" => __( "Enquiry Form", 'woocommerce-catalog-enquiry' ),
-        "font_class" => "fa-edit"
+        "font_class" => "dashicons-edit-page"
     );
 
     $woocommerce_catalog_options[ ] = array(
@@ -470,6 +470,6 @@ class Woocommerce_Catalog_Enquiry_Library {
         ),
     );
 
-  	return apply_filters( 'woocommerce_catalog_enquiry_fileds_options', $woocommerce_catalog_options);
-	}
+    return apply_filters( 'woocommerce_catalog_enquiry_fileds_options', $woocommerce_catalog_options);
+    }
 }

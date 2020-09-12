@@ -949,8 +949,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 				    width: 100%; /* Full width */
 				    height: 100%; /* Full height */
 				    overflow: auto; /* Enable scroll if needed */
-				    background-color: rgb(0,0,0); /* Fallback color */
-				    background-color: 'rgba(0,0,0,0.4)'; /* Black w/ opacity */
+                    background-color: rgb(0,0,0,0.4); /* Fallback color */
 				}";
 
                 wp_add_inline_style('wce_frontend_css', $inline_css);

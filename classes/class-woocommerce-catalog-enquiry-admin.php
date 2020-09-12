@@ -128,15 +128,6 @@ class Woocommerce_Catalog_Enquiry_Admin {
                     'custom_cssValues' => isset($settings_buttons['custom_enquiry_buttons_cssValues']) ? $settings_buttons['custom_enquiry_buttons_cssValues'] : '',    
                     ));
 
-
-                wp_enqueue_style('font-awesome-solid', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/solid.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
-
-                wp_enqueue_style('font-awesome-brands', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/brands.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
-
-                wp_enqueue_style('font-awesome', $Woocommerce_Catalog_Enquiry->plugin_url . 'assets/fontawesome/css/fontawesome.min.css', array(), $Woocommerce_Catalog_Enquiry->version);
-
-
-
             endif;
         }
     }
