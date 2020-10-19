@@ -114,12 +114,9 @@ class Woocommerce_Catalog_Enquiry_Settings {
                   <a class="image-adv" 
                   href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/"
                   target="_blank"><img
-                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/getting-started-banner.png" /></a>
+                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/Catalog-Pro-Banner.jpg" /></a>
                   <br><br>
 
-                  <a class="image-adv"><img
-                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/coming-soon-pro-sidebar.png" /></a>
-                  <br><br>
                   <div class="postbox ">
                     <div class="inside">
                       <div class="support-widget">
