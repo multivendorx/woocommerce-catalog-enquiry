@@ -100,4 +100,27 @@ jQuery(document).ready(function($) {
 			}
 	});
 
+	$("#disable-cart-page-link").attr("disabled", "disabled"); 
+	/******* Dynamic link for disable cart page *********/
+    $('.is-hide-cart-checkout').change(function() {
+    	console.log( 'fasfsafasf' );
+    	if($(this).is(":checked")) {
+    		var parrent_ele = $('#disable-cart-page-link').parent().parent();
+    		parrent_ele.show('slow');
+    	}
+    	else {
+    		var parrent_ele = $('#disable-cart-page-link').parent().parent();
+    		parrent_ele.hide('slow');
+    	}
+    });
+
+    if($('.is-hide-cart-checkout').is(':checked')) {
+		var parrent_ele = $('#disable-cart-page-link').parent().parent();
+		parrent_ele.show();
+	}
+	else {
+		var parrent_ele = $('#disable-cart-page-link').parent().parent();
+		parrent_ele.hide();
+	}
+
 });

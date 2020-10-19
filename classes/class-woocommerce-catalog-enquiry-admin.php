@@ -131,3 +131,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
             endif;
         }
     }
+
+    
+
+    

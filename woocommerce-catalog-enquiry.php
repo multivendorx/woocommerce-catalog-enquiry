@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WC Catalog Enquiry by rajsekhar
+ * Plugin Name: WC Catalog Enquiry
  * Plugin URI: https://wc-marketplace.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
  * Author: WC Marketplace
@@ -63,5 +63,3 @@ function plugin_row_meta( $links, $file ) {
 		$GLOBALS['Woocommerce_Catalog_Enquiry'] = $Woocommerce_Catalog_Enquiry;
 	}
 //}
-
-
