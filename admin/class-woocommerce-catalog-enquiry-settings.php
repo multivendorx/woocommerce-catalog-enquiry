@@ -122,8 +122,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
                       <div class="support-widget">
                         <p class="supt-link"><a
                           href="https://wordpress.org/support/plugin/woocommerce-catalog-enquiry/"
-                          target="_blank"><?php _e('Got a Support Question', 'woocommerce-catalog-enquiry') ?></a> <i
-                          class="fas fa-question-circle"></i>
+                          target="_blank"><?php _e('Got a Support Question', 'woocommerce-catalog-enquiry') ?></a>
                         </p>
                       </div>
                     </div>
