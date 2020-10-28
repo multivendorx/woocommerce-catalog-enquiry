@@ -27,11 +27,11 @@ class Woocommerce_Catalog_Enquiry_Settings {
       'option_page' ), 'dashicons-store',
       50
       );
-    $setting_text = apply_filters( 'woocommer_catalog_general_setting_text', 'Settings' );
+    $setting_text = apply_filters( 'woocommer_catalog_general_setting_text', __('Settings', 'woocommerce-catalog-enquiry') );
     add_submenu_page(
       'woo-catalog',
-      __($setting_text, 'woocommerce-catalog-enquiry'),
-      __($setting_text, 'woocommerce-catalog-enquiry'),
+      $setting_text,
+      $setting_text,
       'manage_options',
       'woo-catalog', array( $this,
       'option_page')
