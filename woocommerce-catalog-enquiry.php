@@ -25,6 +25,8 @@ if(!Woocommerce_Catalog_Enquiry_Dependencies::woocommerce_active_check()) {
 
 // Migration at activation hook
 register_activation_hook(__FILE__, 'woocommerce_catalog_enquiry_option_migration_3_to_4');
+// Update time migration
+add_action( 'upgrader_process_complete', 'woocommerce_catalog_enquiry_option_migration_3_to_4' );
 
 /**
 * Plugin page links
