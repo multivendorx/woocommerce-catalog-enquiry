@@ -117,7 +117,8 @@ jQuery(document).ready(function($) {
         var product_name = document.getElementById('product-name-for-enquiry').value;
         var product_url = document.getElementById('product-url-for-enquiry').value;
         var product_id = document.getElementById('product-id-for-enquiry').value;
-        if (typeof (catalog_enquiry_front.settings_gen.form_captcha.is_enable) != 'undefined' && catalog_enquiry_front.settings_gen.form_captcha.is_enable !== null && catalog_enquiry_front.settings_gen.form_captcha.is_enable == "Enable") {
+        
+        if ( typeof(catalog_enquiry_front.settings_gen.form_captcha) != 'undefined' && typeof (catalog_enquiry_front.settings_gen.form_captcha.is_enable) != 'undefined' && catalog_enquiry_front.settings_gen.form_captcha.is_enable !== null && catalog_enquiry_front.settings_gen.form_captcha.is_enable == "Enable") {
             var captcha = document.getElementById('woocommerce-catalog-captcha');
         }
 
@@ -138,7 +139,7 @@ jQuery(document).ready(function($) {
             return false;
         }
 
-        if (typeof (catalog_enquiry_front.settings_gen.form_captcha.is_enable) != 'undefined' && catalog_enquiry_front.settings_gen.form_captcha.is_enable !== null && catalog_enquiry_front.settings_gen.form_captcha.is_enable == "Enable") {
+        if ( typeof(catalog_enquiry_front.settings_gen.form_captcha) != 'undefined' && typeof (catalog_enquiry_front.settings_gen.form_captcha.is_enable) != 'undefined' && catalog_enquiry_front.settings_gen.form_captcha.is_enable !== null && catalog_enquiry_front.settings_gen.form_captcha.is_enable == "Enable") {
 
             if (captcha.value == '' || captcha.value == ' ') {
                 document.getElementById('msg-for-enquiry-error').innerHTML = catalog_enquiry_front.error_levels.captcha_required;

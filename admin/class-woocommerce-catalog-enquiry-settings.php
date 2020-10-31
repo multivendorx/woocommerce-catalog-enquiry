@@ -10,7 +10,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
    */
   public function __construct() {
     // Admin menu
-    add_action( 'admin_menu', array( $this, 'add_settings_page' ), 100 );
+    add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
     add_action( 'admin_init', array( $this, 'settings_page_init' ) );
   }
   
@@ -27,16 +27,16 @@ class Woocommerce_Catalog_Enquiry_Settings {
       'option_page' ), 'dashicons-store',
       50
       );
-
+    $setting_text = apply_filters( 'woocommer_catalog_general_setting_text', __('Settings', 'woocommerce-catalog-enquiry') );
     add_submenu_page(
       'woo-catalog',
-      __("Settings", 'woocommerce-catalog-enquiry'),
-      __("Settings", 'woocommerce-catalog-enquiry'),
+      $setting_text,
+      $setting_text,
       'manage_options',
       'woo-catalog', array( $this,
       'option_page')
       );
-    
+
     if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
       add_submenu_page(
         'woo-catalog',
@@ -110,23 +110,19 @@ class Woocommerce_Catalog_Enquiry_Settings {
               </div> <!-- #post-body-content -->
               <div id="postbox-container-1" class="postbox-container">
                 <div id="side-sortables" class="meta-box-sortables ui-sortable">
-                <?php if( apply_filters( 'woocommerce_catalog_enquiry_free_active_side_adv', true ) ) { ?>
+                <?php if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) { ?>
                   <a class="image-adv" 
                   href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/"
                   target="_blank"><img
-                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/getting-started-banner.png" /></a>
+                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/Catalog-Pro-Banner.jpg" /></a>
                   <br><br>
 
-                  <a class="image-adv"><img
-                  src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/coming-soon-pro-sidebar.png" /></a>
-                  <br><br>
                   <div class="postbox ">
                     <div class="inside">
                       <div class="support-widget">
                         <p class="supt-link"><a
                           href="https://wordpress.org/support/plugin/woocommerce-catalog-enquiry/"
-                          target="_blank"><?php _e('Got a Support Question', 'woocommerce-catalog-enquiry') ?></a> <i
-                          class="fas fa-question-circle"></i>
+                          target="_blank"><?php _e('Got a Support Question', 'woocommerce-catalog-enquiry') ?></a>
                         </p>
                       </div>
                     </div>
@@ -263,7 +259,8 @@ class Woocommerce_Catalog_Enquiry_Settings {
       if (!empty($field['args']['label_for'])) {
         echo '<th scope="row"><label for="' . $field['args']['label_for'] . '">' . $field['title'] . '</label></th>';
       } else {
-        echo '<th scope="row" class="' . $field['id'] . '"><strong>' . $field['title'] . '</strong><!--<br>'.$field['args']['desc'].'--></th>';
+        $fields_description = isset($field['args']['desc']) ? $field['args']['desc'] : '';
+        echo '<th scope="row" class="' . $field['id'] . '"><strong>' . $field['title'] . '</strong><!--<br>'.$fields_description.'--></th>';
       }
       echo '<td>';
       do_action('field_start_' . $field['id']);

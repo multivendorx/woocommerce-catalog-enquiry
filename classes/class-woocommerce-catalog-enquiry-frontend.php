@@ -84,23 +84,23 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                 
                 $cart_page_id = wc_get_page_id('cart');
                 $checkout_page_id = wc_get_page_id('checkout');
-
+                $home_url_link = apply_filters( 'woocommerce_redirect_to_home_url', home_url() );
                 if ($count2 == 0 && $count1 == 0) {
 
                     if (is_page($cart_page_id) || is_page($checkout_page_id)) {
-                        wp_redirect(home_url());
+                        wp_redirect($home_url_link);
                         exit;
                     }
                 } else {
                     if ( isset($exclusion['woocommerce_userroles_list'] ) && !in_array($current_user->roles[0], $exclusion['woocommerce_userroles_list'] )) {
                         if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
-                            wp_redirect(home_url());
+                            wp_redirect($home_url_link);
                             exit;
                         }
                     }
                     if (isset($exclusion['woocommerce_user_list'] ) && !in_array($current_user->ID, $exclusion['woocommerce_user_list'])) {
                         if (is_page((int) $cart_page_id) || is_page($checkout_page_id)) {
-                            wp_redirect(home_url());
+                            wp_redirect($home_url_link);
                             exit;
                         }
                     }
@@ -199,7 +199,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry'), $piority);
                 }
             }
-            if (isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {
+            if (isset($settings['is_remove_price_free']) && $settings['is_remove_price_free'] == "Enable") {
                 add_action('init', array($this, 'remove_price_from_product_list_loop'), 10);
                 add_action('woocommerce_single_product_summary', array($this, 'remove_price_from_product_list_single'), 5);
                 add_filter( 'woocommerce_catalog_orderby', array($this, 'remove_pricing_from_catalog_orderby'), 99 );
@@ -712,7 +712,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         if ($product_for == $post->ID || $category_for == $post->ID) {
             add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
         } else {
-            if (isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {
+            if (isset($settings['is_remove_price_free']) && $settings['is_remove_price_free'] == "Enable") {
                 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
             }
         }

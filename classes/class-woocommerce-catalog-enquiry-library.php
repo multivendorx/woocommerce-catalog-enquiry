@@ -156,6 +156,16 @@ class Woocommerce_Catalog_Enquiry_Library {
         )
     );
 
+
+    $woocommerce_catalog_options[ ] = array(
+        "type" => "select",
+        "id" => "disable-cart-page-link",
+        "name" => "disable_cart_page_link",
+        "label" => __( "Set Redirect Page", 'woocommerce-catalog-enquiry' ),
+        "desc" => __('Select page where user will be redirected for disable cart page.', 'woocommerce-catalog-enquiry'),
+        "option_values" => woocommerce_catalog_wp_pages()
+    );
+
     // Redirect after enquiry success
     $woocommerce_catalog_options[ ] = array(
         "type" => "checkbox",
@@ -188,8 +198,8 @@ class Woocommerce_Catalog_Enquiry_Library {
 
     $woocommerce_catalog_options[ ] = array(
         "type" => "checkbox",
-        "id" => "is-remove-price",
-        "name" => "is_remove_price",
+        "id" => "is-remove-price-free",
+        "name" => "is_remove_price_free",
         "label" => __( "Remove Product Price?", 'woocommerce-catalog-enquiry' ),
         "desc" => __('Enable this option to remove the product price display from site.', 'woocommerce-catalog-enquiry'),
         "option_values" => array(
