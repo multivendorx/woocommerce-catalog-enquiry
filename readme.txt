@@ -129,6 +129,14 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+
+= 4.0 =
+* Added: New UI Added.
+* Added: Php 7.4 compatibility.
+* Fixed: Enquiry from loading issue.
+* Fixed: Ternary operator error fixed.
+* Updated: Language file.
+
 = 3.2.2 =
 * Added: Exclusion settings for user roles.
 * Tweak: Backend settings dropdown UI.
