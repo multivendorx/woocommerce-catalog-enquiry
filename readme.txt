@@ -1,11 +1,11 @@
 ﻿=== WC Catalog Enquiry ===
-Contributors: wcmp, itzmekhokan
+Contributors: wcmp, itzmekhokan, rajsekharchatterjee11
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
-Tested up to: 5.4
+Tested up to: 5.5.3
 Requires PHP: 5.6
-Stable tag: 3.2.2
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

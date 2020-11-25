@@ -41,14 +41,18 @@ class Woocommerce_Catalog_Enquiry_Settings {
       add_submenu_page(
         'woo-catalog',
         __("Upgrade to Pro", 'woocommerce-catalog-enquiry'),
-        __("Upgrade to Pro", 'woocommerce-catalog-enquiry'),
+        '<span class="dashicons dashicons-star-filled" style="font-size: 17px"></span> ' . __( 'Upgrade to Pro', 'woocommerce-catalog-enquiry' ),
         'manage_options',
         '',
-        array( $this, 'option_page' )
+        array( $this, 'handle_external_redirects' )
         );
     }
+  }
 
-    
+  // Upgrade to pro link
+  public function handle_external_redirects() {
+    wp_redirect( 'https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/' );
+    die;
   }
 
   public function option_page(){
