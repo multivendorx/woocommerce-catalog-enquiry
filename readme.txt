@@ -3,7 +3,7 @@ Contributors: wcmp, itzmekhokan, rajsekharchatterjee11
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 5.6
 Stable tag: 4.0
 License: GPLv2 or later
@@ -130,7 +130,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 
 == Changelog ==
 
-= 4.0 =
+= 4.0 - 2020-11-26 =
 * Added: New UI Added.
 * Added: Php 7.4 compatibility.
 * Fixed: Enquiry from loading issue.
