@@ -132,7 +132,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 
 = 4.0 - 2020-11-26 =
 * Added: New UI Added.
-* Added: Php 7.4 compatibility.
+* Added: PHP 7.4 compatibility.
 * Fixed: Enquiry from loading issue.
 * Fixed: Ternary operator error fixed.
 * Updated: Language file.
