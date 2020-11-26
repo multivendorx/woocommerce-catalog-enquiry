@@ -4,10 +4,10 @@
  * Plugin URI: https://wc-marketplace.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
  * Author: WC Marketplace
- * Version: 3.2.2
+ * Version: 4.0
  * Author URI: https://wc-marketplace.com/
  * WC requires at least: 3.0
- * WC tested up to: 4.0.1
+ * WC tested up to: 4.7.1
  * Text Domain: woocommerce-catalog-enquiry
  * Domain Path: /languages/
 */
