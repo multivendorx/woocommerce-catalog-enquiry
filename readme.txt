@@ -130,7 +130,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 
 == Changelog ==
 
-= 4.0.1 - 2020-11-26 =
+= 4.0.1 - 2020-12-01 =
 * Fixed: File structure fixed.
 
 = 4.0 - 2020-11-26 =
