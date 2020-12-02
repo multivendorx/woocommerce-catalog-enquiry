@@ -21,7 +21,10 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
         if (isset($exclusion['woocommerce_userroles_list'])) {
             if (is_array($exclusion['woocommerce_userroles_list'])) {
-                if ( !empty( $current_user->roles ) && in_array($current_user->roles[0], $exclusion['woocommerce_userroles_list'])) {
+                foreach ($exclusion['woocommerce_userroles_list'] as $user_list_key) {
+                    $user_role_list[] = array_key_exists( $user_list_key, array_keys( wp_roles()->roles ) ) ? array_keys( wp_roles()->roles )[$user_list_key] : '';
+                }
+                if ( !empty( $current_user->roles ) && in_array($current_user->roles[0], $user_role_list ) ) {
                     $this->available_for = $current_user->ID;
                 }
             }
@@ -397,10 +400,10 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <input name="woocommerce_user_email" id="woocommerce-user-email"  type="email" value="<?php echo $current_user->user_email; ?>" class="span12" />
                     </div>
                     <div class="cat-form-row">	
-        <?php if (isset($settings['is_subject']) && $settings['is_subject'] == "Enable") { ?>
+                        <?php if (isset($settings['form_subject']['is_enable']) && $settings['form_subject']['is_enable'] == "Enable") { ?>
                             <label><?php
-                            if (isset($settings['subject_label']['label']) && $settings['subject_label']['label'] != '' && $settings['subject_label']['label'] != ' ') {
-                                echo $settings['subject_label']['label'];
+                            if (isset($settings['form_subject']['label']) && $settings['form_subject']['label'] != '' && $settings['form_subject']['label'] != ' ') {
+                                echo $settings['form_subject']['label'];
                             } else {
                                 echo __('Enter enquiry subject : ', 'woocommerce-catalog-enquiry');
                             }
@@ -411,8 +414,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     <div class="cat-form-row">	
                         <?php if (isset($settings['form_phone']['is_enable']) && $settings['form_phone']['is_enable'] == "Enable") { ?>
                             <label><?php
-                                if (isset($settings['phone_label']['label']) && $settings['phone_label']['label'] != '' && $settings['phone_label']['label'] != ' ') {
-                                    echo $settings['phone_label']['label'];
+                                if (isset($settings['form_phone']['label']) && $settings['form_phone']['label'] != '' && $settings['form_phone']['label'] != ' ') {
+                                    echo $settings['form_phone']['label'];
                                 } else {
                                     echo __('Enter your phone no : ', 'woocommerce-catalog-enquiry');
                                 }
@@ -423,8 +426,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     <div class="cat-form-row">	
                             <?php if (isset($settings['form_address']['is_enable']) && $settings['form_address']['is_enable'] == "Enable") { ?>
                             <label><?php
-                                if (isset($settings['address_label']['label']) && $settings['address_label']['label'] != '' && $settings['address_label']['label'] != ' ') {
-                                    echo $settings['address_label']['label'];
+                                if (isset($settings['form_address']['label']) && $settings['form_address']['label'] != '' && $settings['form_address']['label'] != ' ') {
+                                    echo $settings['form_address']['label'];
                                 } else {
                                     echo __('Enter your address : ', 'woocommerce-catalog-enquiry');
                                 }
@@ -435,8 +438,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     <div class="cat-form-row">	
                             <?php if (isset($settings['form_comment']['is_enable']) && $settings['form_comment']['is_enable'] == "Enable") { ?>
                             <label><?php
-                    if (isset($settings['comment_label']['label']) && $settings['comment_label']['label'] != '' && $settings['comment_label']['label'] != ' ') {
-                        echo $settings['comment_label']['label'];
+                    if (isset($settings['form_comment']['label']) && $settings['form_comment']['label'] != '' && $settings['form_comment']['label'] != ' ') {
+                        echo $settings['form_comment']['label'];
                     } else {
                         echo __('Enter your Message : ', 'woocommerce-catalog-enquiry');
                     }
@@ -447,8 +450,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     <div class="cat-form-row">	
                             <?php if (isset($settings['form_fileupload']['is_enable']) && $settings['form_fileupload']['is_enable'] == "Enable") { ?>
                             <label><?php
-                                    if (isset($settings['fileupload_label']['label']) && $settings['fileupload_label']['label'] != '' && $settings['fileupload_label']['label'] != ' ') {
-                                        echo $settings['fileupload_label']['label'];
+                                    if (isset($settings['form_fileupload']['label']) && $settings['form_fileupload']['label'] != '' && $settings['form_fileupload']['label'] != ' ') {
+                                        echo $settings['form_fileupload']['label'];
                                     } else {
                                         echo __('Upload your File : ', 'woocommerce-catalog-enquiry');
                                     }
@@ -460,18 +463,16 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         <?php do_action('woocommerce_catalog_enquiry_form_extra_fileds'); ?> 
         <?php if (isset($settings['form_captcha']['is_enable']) && $settings['form_captcha']['is_enable'] == "Enable") { ?>
                             <label><?php
-            if (isset($settings['captcha_label']['label']) && $settings['captcha_label']['label'] != '' && $settings['captcha_label']['label'] != ' ') {
-                echo $settings['captcha_label']['label'];
+            if (isset($settings['form_captcha']['label']) && $settings['form_captcha']['label'] != '' && $settings['form_captcha']['label'] != ' ') {
+                echo $settings['form_captcha']['label'];
             } else {
                 echo __('Security Code', 'woocommerce-catalog-enquiry');
             }
             ?> <span class="noselect captcha-wrap"><i><?php echo get_transient('woocaptcha'); ?></i></span></p>
                                 <p><?php
-            if (isset($settings['captcha_input_label']) && $settings['captcha_input_label'] != '' && $settings['captcha_input_label'] != ' ') {
-                echo $settings['captcha_input_label'];
-            } else {
-                echo __('Enter the security code shown above', 'woocommerce-catalog-enquiry');
-            }
+            
+            echo __('Enter the security code shown above', 'woocommerce-catalog-enquiry');
+            
             ?> </p>
                                 <input type="text" id="woocommerce-catalog-captcha" name="woocommerce_captcha" class="span12" />
         <?php } ?>
@@ -574,10 +575,10 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                             <input name="woocommerce_user_email" id="woocommerce-user-email"  type="email" value="<?php echo $current_user->user_email; ?>" class="span12" />
                         </div>
                         <div class="cat-form-row">
-                                <?php if (isset($settings_gen['is_subject']) && $settings_gen['is_subject'] == "Enable") { ?>
+                                <?php if (isset($settings_gen['form_subject']['is_enable']) && $settings_gen['form_subject']['is_enable'] == "Enable") { ?>
                                 <label><?php
-                                    if (isset($settings_gen['subject_label']['label']) && $settings_gen['subject_label']['label'] != '' && $settings_gen['subject_label']['label'] != ' ') {
-                                        echo $settings_gen['subject_label']['label'];
+                                    if (isset($settings_gen['form_subject']['label']) && $settings_gen['form_subject']['label'] != '' && $settings_gen['form_subject']['label'] != ' ') {
+                                        echo $settings_gen['form_subject']['label'];
                                     } else {
                                         echo __('Enter enquiry subject : ', 'woocommerce-catalog-enquiry');
                                     }
@@ -588,8 +589,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <div class="cat-form-row">
                                 <?php if (isset($settings_gen['form_phone']['is_enable']) && $settings_gen['form_phone']['is_enable'] == "Enable") { ?>
                                 <label><?php
-                        if (isset($settings_gen['phone_label']['label']) && $settings_gen['phone_label']['label'] != '' && $settings_gen['phone_label']['label'] != ' ') {
-                            echo $settings_gen['phone_label']['label'];
+                        if (isset($settings_gen['form_phone']['label']) && $settings_gen['form_phone']['label'] != '' && $settings_gen['form_phone']['label'] != ' ') {
+                            echo $settings_gen['form_phone']['label'];
                         } else {
                             echo __('Enter your phone no : ', 'woocommerce-catalog-enquiry');
                         }
@@ -600,8 +601,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <div class="cat-form-row">
                                 <?php if (isset($settings_gen['form_address']['is_enable']) && $settings_gen['form_address']['is_enable'] == "Enable") { ?>
                                 <label><?php
-                                    if (isset($settings_gen['address_label']['label']) && $settings_gen['address_label']['label'] != '' && $settings_gen['address_label']['label'] != ' ') {
-                                        echo $settings_gen['address_label']['label'];
+                                    if (isset($settings_gen['form_address']['label']) && $settings_gen['form_address']['label'] != '' && $settings_gen['form_address']['label'] != ' ') {
+                                        echo $settings_gen['form_address']['label'];
                                     } else {
                                         echo __('Enter your address : ', 'woocommerce-catalog-enquiry');
                                     }
@@ -612,8 +613,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <div class="cat-form-row">
         <?php if (isset($settings_gen['form_comment']['is_enable']) && $settings_gen['form_comment']['is_enable'] == "Enable") { ?>
                                 <label><?php
-            if (isset($settings_gen['comment_label']['label']) && $settings_gen['comment_label']['label'] != '' && $settings_gen['comment_label']['label'] != ' ') {
-                echo $settings_gen['comment_label']['label'];
+            if (isset($settings_gen['form_comment']['label']) && $settings_gen['form_comment']['label'] != '' && $settings_gen['form_comment']['label'] != ' ') {
+                echo $settings_gen['form_comment']['label'];
             } else {
                 echo __('Enter your Message : ', 'woocommerce-catalog-enquiry');
             }
@@ -624,8 +625,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <div class="cat-form-row">
         <?php if (isset($settings_gen['form_fileupload']['is_enable']) && $settings_gen['form_fileupload']['is_enable'] == "Enable") { ?>
                                 <label><?php
-            if (isset($settings_gen['fileupload_label']['label']) && $settings_gen['fileupload_label']['label'] != '' && $settings_gen['fileupload_label']['label'] != ' ') {
-                echo $settings_gen['fileupload_label']['label'];
+            if (isset($settings_gen['form_fileupload']['label']) && $settings_gen['form_fileupload']['label'] != '' && $settings_gen['form_fileupload']['label'] != ' ') {
+                echo $settings_gen['form_fileupload']['label'];
             } else {
                 echo __('Upload your File : ', 'woocommerce-catalog-enquiry');
             }
@@ -637,18 +638,16 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         <?php do_action('woocommerce_catalog_enquiry_form_extra_fileds'); ?> 
         <?php if (isset($settings_gen['form_captcha']['is_enable']) && $settings_gen['form_captcha']['is_enable'] == "Enable") { ?>
                                 <label><?php
-            if (isset($settings_gen['captcha_label']['label']) && $settings_gen['captcha_label']['label'] != '' && $settings_gen['captcha_label']['label'] != ' ') {
-                echo $settings_gen['captcha_label']['label'];
+            if (isset($settings_gen['form_captcha']['label']) && $settings_gen['form_captcha']['label'] != '' && $settings_gen['form_captcha']['label'] != ' ') {
+                echo $settings_gen['form_captcha']['label'];
             } else {
                 echo __('Security Code', 'woocommerce-catalog-enquiry');
             }
             ?> <span class="noselect captcha-wrap"><i><?php echo get_transient('woocaptcha'); ?></i></span></label>
                                 <p><?php
-            if (isset($settings_gen['captcha_input_label']) && $settings_gen['captcha_input_label'] != '' && $settings_gen['captcha_input_label'] != ' ') {
-                echo $settings_gen['captcha_input_label'];
-            } else {
-                echo __('Enter the security code shown above', 'woocommerce-catalog-enquiry');
-            }
+            
+            echo __('Enter the security code shown above', 'woocommerce-catalog-enquiry');
+            
             ?> </p>
                                 <input type="text" id="woocommerce-catalog-captcha" name="woocommerce_captcha" class="span12" />
         <?php } ?>
