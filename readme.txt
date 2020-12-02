@@ -5,7 +5,7 @@ Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+
+= 4.0.1 - 2020-12-02 =
+* Fixed: Enquiry from submit if enquiry about checkbox is enabled.
+* Fixed: Dynamic names of from fields is not showing.
+* Fixed: User roles exclution issue fixed.
 
 = 4.0.1 - 2020-12-01 =
 * Fixed: File structure fixed.
