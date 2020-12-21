@@ -10,7 +10,7 @@ class Woocommerce_Catalog_Enquiry_Ajax {
 	}
 	
 	public function add_variation_for_enquiry_mail() {
-		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce;
+		global $Woocommerce_Catalog_Enquiry, $woocommerce;
                 $product_id = (int)$_POST['product_id'];
                 if($product_id){
 					if ( get_transient('variation_list') ) delete_transient('variation_list');
@@ -37,7 +37,7 @@ class Woocommerce_Catalog_Enquiry_Ajax {
     }
 
 	public function send_product_enqury_mail() {
-		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $product;
+		global $Woocommerce_Catalog_Enquiry, $woocommerce, $product;
 		
 		// check catalog nonce 
     	if( !isset( $_POST['wc_catalog_enq'] ) || !wp_verify_nonce( $_POST['wc_catalog_enq'], 'wc_catalog_enquiry_mail_form' ) ) {
@@ -47,8 +47,8 @@ class Woocommerce_Catalog_Enquiry_Ajax {
 		$file_name = '';
 		$target_file = '';
 		$attachments = array();
-		$settings = $WC_Woocommerce_Catalog_Enquiry->options_general_settings;
-		$settings_gen = $WC_Woocommerce_Catalog_Enquiry->options_form_settings;
+		$settings = $Woocommerce_Catalog_Enquiry->options_general_settings;
+		$settings_gen = $Woocommerce_Catalog_Enquiry->options_form_settings;
 		
 		if(isset($_FILES['fileupload'])){
 
@@ -91,14 +91,8 @@ class Woocommerce_Catalog_Enquiry_Ajax {
                 $product_variations = (get_transient('variation_list')) ? get_transient('variation_list') : array();
                 
 		if(isset($settings['is_other_admin_mail']) && $settings['is_other_admin_mail'] == 'Enable') {
-			if(isset($settings['other_admin_mail'])) {
-				$email_admin = $settings['other_admin_mail'];
-			}
-			else {
-				$email_admin = get_option( 'admin_email' );
-			}
-		}
-		else {
+			$email_admin = '';
+		} else {
 			$email_admin = get_option( 'admin_email' );
 		}
 		

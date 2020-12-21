@@ -933,11 +933,11 @@ class Woocommerce_Catalog_Enquiry_Frontend {
             wp_enqueue_style('wce_frontend_css', $frontend_style_path . 'frontend.css', array(), $Woocommerce_Catalog_Enquiry->version);
 
             if (isset($settings_buttons) || isset($settings)) {
-
+                $custom_button_css = isset($settings['custom_enquiry_buttons_css']) ? $settings['custom_enquiry_buttons_css'] : '';
                 $inline_css = "				
 				
 				/* The Modal (background) */
-                ".$settings['custom_enquiry_buttons_css']."
+                ".$custom_button_css."
 				#woocommerce-catalog .catalog-modal {
 				    display: none; /* Hidden by default */
 				    position: fixed; /* Stay in place */
