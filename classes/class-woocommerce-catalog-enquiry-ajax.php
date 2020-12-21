@@ -91,14 +91,8 @@ class Woocommerce_Catalog_Enquiry_Ajax {
                 $product_variations = (get_transient('variation_list')) ? get_transient('variation_list') : array();
                 
 		if(isset($settings['is_other_admin_mail']) && $settings['is_other_admin_mail'] == 'Enable') {
-			if(isset($settings['other_admin_mail'])) {
-				$email_admin = $settings['other_admin_mail'];
-			}
-			else {
-				$email_admin = get_option( 'admin_email' );
-			}
-		}
-		else {
+			$email_admin = '';
+		} else {
 			$email_admin = get_option( 'admin_email' );
 		}
 		

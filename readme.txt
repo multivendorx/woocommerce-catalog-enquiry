@@ -5,7 +5,7 @@ Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 4.0.2
+Stable tag: 4.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,7 +130,14 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 
 == Changelog ==
 
-= 4.0.1 - 2020-12-02 =
+= 4.0.3 - 2020-12-21 =
+* Added: Compatibility of WordPress 5.6.
+* Added: PHP 7.4.3 compatibility.
+* Fixed: Remove admin email issue #25.
+* Fixed: Additional email send issue #23.
+* Fixed: Error display at cart.
+
+= 4.0.2 - 2020-12-02 =
 * Fixed: Enquiry from submit if enquiry about checkbox is enabled.
 * Fixed: Dynamic names of from fields is not showing.
 * Fixed: User roles exclution issue fixed.
