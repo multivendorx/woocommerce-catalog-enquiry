@@ -82,7 +82,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
      */
     public function catalog_product_data_panel() {
         global $Woocommerce_Catalog_Enquiry;
-        ?><div id="woocommerce-catalog-enquiry-product-data" class="panel woocommerce_options_panel"><?php
+        ?><div id="catalog_enquiry_product_data" class="panel woocommerce_options_panel"><?php
         woocommerce_wp_text_input(array(
             'id' => 'woocommerce_catalog_enquiry_product_link',
             'label' => __('Enter product external link', 'woocommerce-catalog-enquiry'),
