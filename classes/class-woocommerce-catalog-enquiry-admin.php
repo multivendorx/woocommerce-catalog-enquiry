@@ -52,7 +52,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
     public function catalog_product_data_tabs($tabs) {
         $tabs['woocommerce_catalog_enquiry'] = array(
             'label' => __('Catalog Enquiry', 'catalog-enquiry'),
-            'target' => 'catalog_enquiry_product_data',
+            'target' => 'woocommerce-catalog-enquiry-product-data',
             'class' => array(''),
         );
         return $tabs;
