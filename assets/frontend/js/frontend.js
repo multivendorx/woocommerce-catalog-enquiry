@@ -203,7 +203,7 @@ jQuery(document).ready(function($) {
                             jQuery('#woocommerce-user-fileupload').val('');
                         }
 
-                        if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
+                        if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                             window.location.href = catalog_enquiry_front.redirect_link;
                         }
                     } else if (response.status == 2) {
@@ -264,7 +264,7 @@ jQuery(document).ready(function($) {
                     if (json_arr.indexOf("comment") != -1) {
                         jQuery('#woocommerce-user-comment').val('');
                     }
-                    if (typeof (catalog_enquiry_front.settings_gen.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
+                    if (typeof (catalog_enquiry_front.settings.is_page_redirect) != 'undefined' && catalog_enquiry_front.settings_gen.is_page_redirect !== null) {
                         window.location.href = catalog_enquiry_front.redirect_link;
                     }
                 } else if (response.status == 2) {
