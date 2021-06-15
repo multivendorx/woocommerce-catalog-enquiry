@@ -538,7 +538,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                         <button type="button" class="close">&times;</button>
                                 <?php if (isset($settings_gen['is_override_form_heading'])) { ?>
                                     <?php if (isset($settings_gen['custom_static_heading'])) { ?>
-                                <h2><?php echo $settings_gen['custom_static_heading']; ?></h2>
+                                <h2><?php echo str_replace( "PRODUCT_NAME", $product_name, $settings_gen['custom_static_heading'] ); ?></h2>
                                     <?php } ?>
         <?php } else { ?>
                             <h2><?php echo __('Enquiry about ', 'woocommerce-catalog-enquiry') ?> <?php echo $product_name; ?></h2>
