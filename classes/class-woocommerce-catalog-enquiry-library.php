@@ -212,8 +212,8 @@ class Woocommerce_Catalog_Enquiry_Library {
         "type" => "checkbox",
         "id" => "is-disable-popup",
         "name" => "is_disable_popup",
-        "label" => __( "Enquiry form via popup?", 'woocommerce-catalog-enquiry' ),
-        "desc" => __('By default the form will be displayed below the product description. Enable this, if you want to display the form via popup.', 'woocommerce-catalog-enquiry'),
+        "label" => __( "Disable Enquiry form via popup?", 'woocommerce-catalog-enquiry' ),
+        "desc" => __('By default the form will be displayed via popup. Enable this, if you want to display the form below the product description.', 'woocommerce-catalog-enquiry'),
         "option_values" => array(
              'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
         ),

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 13:01+0000\n"
+"POT-Creation-Date: 2021-06-15 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,13 +14,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: templates/emails/woocommerce-catalog-enquiry-admin.php:99 
+#: templates/emails/woocommerce-catalog-enquiry-admin.php:99
 #: templates/emails/plain/woocommerce-catalog-enquiry-admin.php:61
 #, php-format
 msgid "%s - Powered by WC Catalog Enquiry"
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:217
+#: admin/class-woocommerce-catalog-enquiry-settings.php:216
 msgid "&larr; Close Window"
 msgstr ""
 
@@ -121,8 +121,8 @@ msgstr ""
 
 #: classes/class-woocommerce-catalog-enquiry-library.php:216
 msgid ""
-"By default the form will be displayed below the product description. Enable "
-"this, if you want to display the form via popup."
+"By default the form will be displayed via popup. Enable this, if you want to "
+"display the form below the product description."
 msgstr ""
 
 #: framework/field-types/table_body.php:76
@@ -145,7 +145,7 @@ msgstr ""
 msgid "catelog"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:663
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:662
 msgid "Close"
 msgstr ""
 
@@ -173,12 +173,12 @@ msgstr ""
 msgid "Customer Details"
 msgstr ""
 
-#: framework/field-types/date.php:29 framework/field-types/daterange.php:29 
+#: framework/field-types/date.php:29 framework/field-types/daterange.php:29
 #: framework/field-types/daterange.php:42
 msgid "day"
 msgstr ""
 
-#: templates/emails/woocommerce-catalog-enquiry-admin.php:15 
+#: templates/emails/woocommerce-catalog-enquiry-admin.php:15
 #: templates/emails/plain/woocommerce-catalog-enquiry-admin.php:14
 msgid "Dear Admin"
 msgstr ""
@@ -227,16 +227,20 @@ msgstr ""
 msgid "Disable Cart and Checkout Page?"
 msgstr ""
 
+#: classes/class-woocommerce-catalog-enquiry-library.php:215
+msgid "Disable Enquiry form via popup?"
+msgstr ""
+
 #: classes/class-woocommerce-catalog-enquiry-library.php:196
 msgid "Display Options"
 msgstr ""
 
-#: framework/field-types/table_body.php:13 
+#: framework/field-types/table_body.php:13
 #: templates/emails/woocommerce-catalog-enquiry-admin.php:67
 msgid "Email"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:890
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:889
 msgid "Email is required field"
 msgstr ""
 
@@ -292,13 +296,13 @@ msgstr ""
 msgid "Enquiry About"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:408 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:585
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:411
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:586
 msgid "Enquiry about"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:365 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:543
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:368
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:544
 msgid "Enquiry about "
 msgstr ""
 
@@ -322,11 +326,7 @@ msgstr ""
 msgid "Enquiry Form Fields"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:215
-msgid "Enquiry form via popup?"
-msgstr ""
-
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:915
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:914
 msgid "Enquiry sent successfully"
 msgstr ""
 
@@ -336,8 +336,8 @@ msgid ""
 "mail. You can add multiple commma seperated emails. Default: Admin emails."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:405 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:582
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:408
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:583
 msgid "Enter enquiry subject : "
 msgstr ""
 
@@ -345,8 +345,8 @@ msgstr ""
 msgid "Enter product external link"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:473 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:650
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:474
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:649
 msgid "Enter the security code shown above"
 msgstr ""
 
@@ -354,36 +354,36 @@ msgstr ""
 msgid "Enter the text for your Enquery Button."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:429 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:606
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:432
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:607
 msgid "Enter your address : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:394 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:571
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:397
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:572
 msgid "Enter your Email Id : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:441 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:618
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:444
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:619
 msgid "Enter your Message : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:384 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:561
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:387
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:562
 msgid "Enter your name : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:417 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:594
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:420
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:595
 msgid "Enter your phone no : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:894
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:893
 msgid "Error in system please try later"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:896
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:895
 msgid "Exceeded filesize limit."
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:130
+#: admin/class-woocommerce-catalog-enquiry-settings.php:129
 msgid "Got a Support Question"
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 msgid "https://www.google.com"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:895
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:894
 msgid "Invalid file format."
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "is required."
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:217
+#: admin/class-woocommerce-catalog-enquiry-settings.php:216
 msgid "Live Preview"
 msgstr ""
 
@@ -452,12 +452,12 @@ msgstr ""
 msgid "Method applicable for only secleted user group default all."
 msgstr ""
 
-#: framework/field-types/table_body.php:5 
+#: framework/field-types/table_body.php:5
 #: templates/emails/woocommerce-catalog-enquiry-admin.php:63
 msgid "Name"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:889
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:888
 msgid "Name is required field"
 msgstr ""
 
@@ -473,7 +473,7 @@ msgstr ""
 msgid "Please enter a valid color value."
 msgstr ""
 
-#: framework/validations/escurlraw.php:11 framework/validations/email.php:10
+#: framework/validations/email.php:10 framework/validations/escurlraw.php:11
 msgid "Please enter a valid email."
 msgstr ""
 
@@ -481,19 +481,19 @@ msgstr ""
 msgid "Please enter a valid number."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:892
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:891
 msgid "Please enter the security code"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:893
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:892
 msgid "Please enter the valid seurity code"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:891
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:890
 msgid "Please Enter Valid Email Id"
 msgstr ""
 
-#: templates/emails/woocommerce-catalog-enquiry-admin.php:16 
+#: templates/emails/woocommerce-catalog-enquiry-admin.php:16
 #: templates/emails/plain/woocommerce-catalog-enquiry-admin.php:15
 msgid "Please find the product enquiry, details are given below"
 msgstr ""
@@ -538,8 +538,8 @@ msgstr ""
 msgid "Put your custom css here, to customize the enquiry form."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:293 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:166
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:169
+#: classes/class-woocommerce-catalog-enquiry-library.php:293
 msgid "Read More"
 msgstr ""
 
@@ -555,12 +555,12 @@ msgstr ""
 msgid "Remove Product Price?"
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:249
+#: admin/class-woocommerce-catalog-enquiry-settings.php:248
 msgid "Save All Changes"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:466 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:643
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:469
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:644
 msgid "Security Code"
 msgstr ""
 
@@ -600,17 +600,17 @@ msgstr ""
 msgid "Select the users, who won’t be able to send enquiry."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:486 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:664
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:487
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:663
 msgid "Send"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:331 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:333 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:348 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:505 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:507 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:523
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:334
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:336
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:351
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:506
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:508
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:524
 msgid "Send an enquiry"
 msgstr ""
 
@@ -629,7 +629,7 @@ msgstr ""
 msgid "Set New Field Name"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:164 
+#: classes/class-woocommerce-catalog-enquiry-library.php:164
 #: classes/class-woocommerce-catalog-enquiry-library.php:186
 msgid "Set Redirect Page"
 msgstr ""
@@ -650,17 +650,17 @@ msgstr ""
 msgid "This content will be displayed after your from."
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:43 
+#: admin/class-woocommerce-catalog-enquiry-settings.php:43
 #: admin/class-woocommerce-catalog-enquiry-settings.php:44
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: admin/class-woocommerce-catalog-enquiry-settings.php:221
+#: admin/class-woocommerce-catalog-enquiry-settings.php:220
 msgid "Upgrade to Pro for More Features"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:453 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:630
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:456
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:631
 msgid "Upload your File : "
 msgstr ""
 
@@ -709,7 +709,7 @@ msgstr ""
 msgid "WC Marketplace"
 msgstr ""
 
-#: framework/field-types/date.php:32 framework/field-types/daterange.php:32 
+#: framework/field-types/date.php:32 framework/field-types/daterange.php:32
 #: framework/field-types/daterange.php:45
 msgid "year"
 msgstr ""

@@ -3,9 +3,9 @@ Contributors: wcmp, itzmekhokan, rajsekharchatterjee11
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
-Tested up to: 5.6
+Tested up to: 5.7.2
 Requires PHP: 5.6
-Stable tag: 4.0.4
+Stable tag: 4.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,14 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+
+= 4.0.5 - 2021-06-15 =
+* Added: Compatibility of WordPress 5.7.2.
+* Added: Compatibility of WooCommerce 5.4.1.
+* Added: Compatibility of PHP 8.0.6.
+* Fixed: Dynamic title not working #35.
+* Fixed: Translation issue #33.
+* Updated: Language file.
 
 = 4.0.4 - 2021-01-12 =
 * Fixed: Redirect page not working #28.
