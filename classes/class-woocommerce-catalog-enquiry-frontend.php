@@ -113,19 +113,24 @@ class Woocommerce_Catalog_Enquiry_Frontend {
     }
     
     public function woocommerce_loop_add_to_cart_link($add_to_cart_button, $product, $args = array()){
-        global $Woocommerce_Catalog_Enquiry;
+        global $Woocommerce_Catalog_Enquiry, $product;
         $settings = $Woocommerce_Catalog_Enquiry->options_general_settings;
         // button option
         $options_button_appearence_settings = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
             $pro_link = '';
             if(isset($options_button_appearence_settings['button_type'])){
+                // echo $options_button_appearence_settings['button_type'];
                 switch ($options_button_appearence_settings['button_type']) {
                     case 2:
+                        $labels = 'Add to cart';
+                        $link_add_to_cart = get_permalink($product->get_id());
                         $link = isset($options_button_appearence_settings['button_link']) && !empty($options_button_appearence_settings['button_link']) ? $options_button_appearence_settings['button_link'] : '#';
                         $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
-                        $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                        if (isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable"){
+                            if(! $product->managing_stock() && ! $product->is_in_stock()){
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
                                 esc_url( $link ),
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
@@ -133,14 +138,38 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
+                            }else{
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                esc_url( $link_add_to_cart ),
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $labels )
+                        );
+                            }
+                        }else{
+                            $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                esc_url( $link ),
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $label )
+                        );
+                        }
+                        
                         break;
                     
                     case 3:
+                        $labels = 'Add to cart';
                         $product_link = get_post_meta($product->get_id(), 'woocommerce_catalog_enquiry_product_link', true);
                         $link = !empty($product_link) ? $product_link : '#';
                         $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
-                        $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                        if (isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable"){
+                            if(! $product->managing_stock() && ! $product->is_in_stock()){
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
                                 esc_url( $link ),
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
@@ -148,13 +177,38 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
+                            }else{
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                esc_url( $link ),
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $labels )
+                        );
+                            }
+                        }else{
+                            $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                esc_url( $link ),
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $label )
+                        );
+                        }
+                        
                         break;
                     
                     case 4:
+                        $link_add_to_cart = get_permalink($product->get_id());
+                        $labels = 'Add to cart';
                         $link = '#';
                         $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : $product->add_to_cart_text();
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
-                        $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                        if (isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable"){
+                            if(! $product->managing_stock() && ! $product->is_in_stock()){
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
                                 $link,
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
@@ -162,13 +216,56 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
+                            }else{
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                $link,
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $labels )
+                        );
+                            }
+                        }else{
+                            $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                $link,
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $label )
+                        );
+                        }
+                        
                         break;
 
                     default:
+                        $labels = 'Add to cart';
                         $link = get_permalink($product->get_id());
                         $label = isset($options_button_appearence_settings['enquiry_button_text']) && !empty($options_button_appearence_settings['enquiry_button_text']) ? $options_button_appearence_settings['enquiry_button_text'] : __('Read More', 'woocommerce-catalog-enquiry');
                         $classes = implode( ' ', array('button','product_type_' . $product->get_type()));
-                        $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                        if (isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable"){
+                            if(! $product->managing_stock() && ! $product->is_in_stock()){
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                $link,
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $label )
+                        ); 
+                            }else{
+                                $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+                                esc_attr('woocommerce-catalog-enquiry-custom-button'),
+                                $link,
+                                esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                                esc_attr( $classes ),
+                                isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                                esc_html( $labels )
+                        );
+                            }
+                        }else{
+                            $pro_link = sprintf( '<a id="%s" href="%s" data-quantity="%s" class="%s" %s>%s</a>',
                                 esc_attr('woocommerce-catalog-enquiry-custom-button'),
                                 $link,
                                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
@@ -176,6 +273,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
                                 esc_html( $label )
                         );
+                        }
+                        
                         break;
                 }
             }
@@ -194,7 +293,15 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0) && apply_filters( 'woocommerce_catalog_enquiry_free_active', true )) {
             add_action('init', array($this, 'remove_add_to_cart_button'));
-            if (isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable") {
+            if ((isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable")){
+                $piority = apply_filters('woocommerce_catalog_enquiry_button_possition_piority', 100);
+                if (isset($settings['is_disable_popup']) && $settings['is_disable_popup'] == "Enable") {
+                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry_without_popup'), $piority);
+                } else {
+                    add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry'), $piority);
+                }
+            }
+            if ((isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable")){
                 $piority = apply_filters('woocommerce_catalog_enquiry_button_possition_piority', 100);
                 if (isset($settings['is_disable_popup']) && $settings['is_disable_popup'] == "Enable") {
                     add_action('woocommerce_single_product_summary', array($this, 'add_form_for_enquiry_without_popup'), $piority);
@@ -510,19 +617,46 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         }
 
         $productid = $post->ID;
+        $add_to_cart = "Add To Cart";
+        $link = "#";
         $current_user = wp_get_current_user();
         $product_name = get_post_field('post_title', $productid);
         $product_url = get_permalink($productid);
         ?>
         <div id="woocommerce-catalog" name="woocommerce_catalog" >
-                        <?php if (isset($custom_design_for_button) && $custom_design_for_button == "Enable") { ?>
-                <br/>
-                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
-                            <?php
-                        } else {
+            <?php if (isset($settings['is_enable_out_of_stock']) && $settings['is_enable_out_of_stock'] == "Enable"){
+                    if(! $product->managing_stock() && ! $product->is_in_stock()){
+                        if(isset($custom_design_for_button) && $custom_design_for_button == "Enable"){ 
                             ?>
-                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
-        <?php } ?>
+                            <br/>
+                            <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
+                            <?php
+                            }else{
+                                ?>
+                                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
+                                <?php }
+                            } 
+                    else { 
+                        $product_object = wc_get_product( $productid );
+                        echo '<a href="' . esc_url( $product_object->add_to_cart_url() ) . '" class="add-to-cart button">' . esc_html__( 'Add to Cart', 'woocommerce-catalog-enquiry' ) . '</a>';
+                    }
+            }
+                else{
+                    if(isset($custom_design_for_button) && $custom_design_for_button == "Enable"){ 
+                        ?>
+                        <br/>
+                        <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
+                        <?php
+                        } 
+                    else {
+                    ?>
+                    <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
+        
+                    <?php
+                }
+                
+            }
+        ?>
 
             <input type="hidden" name="product_name_for_enquiry" id="product-name-for-enquiry" value="<?php echo get_post_field('post_title', $post->ID); ?>" />
             <input type="hidden" name="product_url_for_enquiry" id="product-url-for-enquiry" value="<?php echo get_permalink($post->ID); ?>" />
@@ -809,6 +943,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         }
         $link = "#";
         echo ' <center><a id="woocommerce-catalog-enquiry-custom-button" href="' . $link . '" class="single_add_to_cart_button button">' . $enquiry_button_text . '</a></center>';
+       
     }
 
     public function remove_add_to_cart_button() {
