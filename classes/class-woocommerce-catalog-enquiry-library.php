@@ -133,6 +133,18 @@ class Woocommerce_Catalog_Enquiry_Library {
         )
     );
 
+    // Enable product enquiry button when the product is out of stock
+    $woocommerce_catalog_options[ ] = array(
+        "type" => "checkbox",
+        "id" => "is-enable-out-of-stock",
+        "name" => "is_enable_out_of_stock",
+        "label" => __( "Product Enquiry Button When Product is Out Of Stock", 'woocommerce-catalog-enquiry' ),
+        "desc" => __('Enable this to add the Enquiry button for the products which is out of stock. Use Exclusion settings to exclude specific product or category from enquiry.', 'woocommerce-catalog-enquiry'),
+        "option_values" => array(
+             'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
+        )
+    );
+
     // for user type
     $woocommerce_catalog_options[ ] = array(
         "type" => "select",

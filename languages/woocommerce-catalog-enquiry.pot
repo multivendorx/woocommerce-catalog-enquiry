@@ -518,6 +518,17 @@ msgstr ""
 msgid "Product Enquiry Button"
 msgstr ""
 
+#: classes/class-woocommerce-catalog-enquiry-library.php:141
+msgid "Product Enquiry Button When Product is Out Of Stock"
+msgstr ""
+
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:125
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:166
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:208
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:248
+msgid "Add to cart"
+msgstr ""
+
 #: classes/emails/class-woocommerce-catalog-enquiry-email.php:91
 msgid "Product Enquiry for {PRODUCT_NAME} by {USER_NAME}"
 msgstr ""
