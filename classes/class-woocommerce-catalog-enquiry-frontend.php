@@ -51,7 +51,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
             }
         }
 
-        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
+        if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' || $this->available_for == 0)) {
             if (isset($options_button_appearence_settings['button_type'])) {
                 add_filter('woocommerce_loop_add_to_cart_link', array($this, 'woocommerce_loop_add_to_cart_link'), 99, 3);
             }
