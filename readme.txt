@@ -130,6 +130,11 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 
 == Changelog ==
 
+= 4.0.6 - 2022-01-22 =
+* Added: Setting in the admin where the admin can decide to add the product enquiry button when the product is not in stock.
+* Updated: Language file.
+
+
 = 4.0.5 - 2021-06-15 =
 * Added: Compatibility of WordPress 5.7.2.
 * Added: Compatibility of WooCommerce 5.4.1.

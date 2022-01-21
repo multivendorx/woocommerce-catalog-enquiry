@@ -72,11 +72,11 @@ msgstr ""
 msgid "12-Dec"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:238
+#: classes/class-woocommerce-catalog-enquiry-library.php:250
 msgid "Additional Recivers Emails"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:334
+#: classes/class-woocommerce-catalog-enquiry-library.php:346
 msgid "Additional Settings"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Button Customizer"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:304
+#: classes/class-woocommerce-catalog-enquiry-library.php:316
 msgid "Button Link"
 msgstr ""
 
@@ -109,17 +109,17 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:291
+#: classes/class-woocommerce-catalog-enquiry-library.php:303
 msgid "Button Type"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:449
+#: classes/class-woocommerce-catalog-enquiry-library.php:461
 msgid ""
 "By default it will be \"Enquiry about PRODUCT_NAME\". Enable this to set "
 "your custom title."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:216
+#: classes/class-woocommerce-catalog-enquiry-library.php:228
 msgid ""
 "By default the form will be displayed via popup. Enable this, if you want to "
 "display the form below the product description."
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Catalog Mode"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:142
+#: classes/class-woocommerce-catalog-enquiry-library.php:154
 msgid "Catalog Mode Applicable For"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:399
+#: classes/class-woocommerce-catalog-enquiry-library.php:411
 msgid "Category Specific Exclusion"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "catelog"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:662
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:783
 msgid "Close"
 msgstr ""
 
@@ -153,11 +153,11 @@ msgstr ""
 msgid "Common Settings"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:439
+#: classes/class-woocommerce-catalog-enquiry-library.php:451
 msgid "Content After Enquiry From"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:430
+#: classes/class-woocommerce-catalog-enquiry-library.php:442
 msgid "Content Before Enquiry From"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Convert your WooCommerce store into a catalog website in a click"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:342
+#: classes/class-woocommerce-catalog-enquiry-library.php:354
 msgid "Custom CSS"
 msgstr ""
 
@@ -223,15 +223,15 @@ msgstr ""
 msgid "Default: Upload"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:152
+#: classes/class-woocommerce-catalog-enquiry-library.php:164
 msgid "Disable Cart and Checkout Page?"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:215
+#: classes/class-woocommerce-catalog-enquiry-library.php:227
 msgid "Disable Enquiry form via popup?"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:196
+#: classes/class-woocommerce-catalog-enquiry-library.php:208
 msgid "Display Options"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:889
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1010
 msgid "Email is required field"
 msgstr ""
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Enable / Disable"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:315
+#: classes/class-woocommerce-catalog-enquiry-library.php:327
 msgid "Enable the custom design for enquiry button."
 msgstr ""
 
@@ -274,13 +274,19 @@ msgid ""
 "settings to exclude specific product or category from enquiry."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:175
+#: classes/class-woocommerce-catalog-enquiry-library.php:141
+msgid ""
+"Enable this to add the Enquiry button for the products which is out of stock. Use Exclusion"
+"settings to exclude specific product or category from enquiry."
+msgstr ""
+
+#: classes/class-woocommerce-catalog-enquiry-library.php:187
 msgid ""
 "Enable this to redirect user to another page after successful enquiry "
 "submission."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:153
+#: classes/class-woocommerce-catalog-enquiry-library.php:165
 msgid ""
 "Enable this to redirect user to home page, if they click on the cart or "
 "checkout page. To set the redirection to another page kindly upgrade to <a "
@@ -296,13 +302,9 @@ msgstr ""
 msgid "Enquiry About"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:411
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:586
-msgid "Enquiry about"
-msgstr ""
-
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:368
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:544
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:468
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:665
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:511
 msgid "Enquiry about "
 msgstr ""
 
@@ -310,7 +312,7 @@ msgstr ""
 msgid "Enquiry Details"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:229
+#: classes/class-woocommerce-catalog-enquiry-library.php:241
 msgid "Enquiry Email Receivers Settings"
 msgstr ""
 
@@ -318,15 +320,15 @@ msgstr ""
 msgid "Enquiry for {PRODUCT_NAME}"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:410
+#: classes/class-woocommerce-catalog-enquiry-library.php:422
 msgid "Enquiry Form"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:468
+#: classes/class-woocommerce-catalog-enquiry-library.php:480
 msgid "Enquiry Form Fields"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:914
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1035
 msgid "Enquiry sent successfully"
 msgstr ""
 
@@ -336,8 +338,8 @@ msgid ""
 "mail. You can add multiple commma seperated emails. Default: Admin emails."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:408
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:583
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:508
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:704
 msgid "Enter enquiry subject : "
 msgstr ""
 
@@ -345,8 +347,8 @@ msgstr ""
 msgid "Enter product external link"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:474
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:649
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:574
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:770
 msgid "Enter the security code shown above"
 msgstr ""
 
@@ -354,44 +356,44 @@ msgstr ""
 msgid "Enter the text for your Enquery Button."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:432
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:607
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:532
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:728
 msgid "Enter your address : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:397
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:572
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:497
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:693
 msgid "Enter your Email Id : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:444
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:619
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:544
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:740
 msgid "Enter your Message : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:387
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:562
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:487
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:683
 msgid "Enter your name : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:420
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:595
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:520
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:716
 msgid "Enter your phone no : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:893
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1014
 msgid "Error in system please try later"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:895
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1016
 msgid "Exceeded filesize limit."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:352
+#: classes/class-woocommerce-catalog-enquiry-library.php:364
 msgid "Exclusion"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:364
+#: classes/class-woocommerce-catalog-enquiry-library.php:376
 msgid "Exclusion Management"
 msgstr ""
 
@@ -411,7 +413,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:422
+#: classes/class-woocommerce-catalog-enquiry-library.php:434
 msgid "General Settings"
 msgstr ""
 
@@ -428,7 +430,7 @@ msgstr ""
 msgid "https://www.google.com"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:894
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1015
 msgid "Invalid file format."
 msgstr ""
 
@@ -440,7 +442,7 @@ msgstr ""
 msgid "Live Preview"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:326
+#: classes/class-woocommerce-catalog-enquiry-library.php:338
 msgid "Make your own Button Style"
 msgstr ""
 
@@ -457,11 +459,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:888
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1009
 msgid "Name is required field"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:448
+#: classes/class-woocommerce-catalog-enquiry-library.php:460
 msgid "Override Form Title?"
 msgstr ""
 
@@ -481,15 +483,15 @@ msgstr ""
 msgid "Please enter a valid number."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:891
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1012
 msgid "Please enter the security code"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:892
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1013
 msgid "Please enter the valid seurity code"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:890
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:1011
 msgid "Please Enter Valid Email Id"
 msgstr ""
 
@@ -498,7 +500,7 @@ msgstr ""
 msgid "Please find the product enquiry, details are given below"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:292
+#: classes/class-woocommerce-catalog-enquiry-library.php:304
 msgid "Please Select"
 msgstr ""
 
@@ -518,6 +520,10 @@ msgstr ""
 msgid "Product Enquiry Button"
 msgstr ""
 
+#: classes/class-woocommerce-catalog-enquiry-library.php:140
+msgid "Product Enquiry Button When Product is Out Of Stock"
+msgstr ""
+
 #: classes/emails/class-woocommerce-catalog-enquiry-email.php:91
 msgid "Product Enquiry for {PRODUCT_NAME} by {USER_NAME}"
 msgstr ""
@@ -526,7 +532,7 @@ msgstr ""
 msgid "Product SKU"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:390
+#: classes/class-woocommerce-catalog-enquiry-library.php:402
 msgid "Product Specific Exclusion"
 msgstr ""
 
@@ -534,11 +540,15 @@ msgstr ""
 msgid "Product Url"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:343
+#: classes/class-woocommerce-catalog-enquiry-library.php:355
 msgid "Put your custom css here, to customize the enquiry form."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:169
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:239
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:894
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:905
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:916
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:927
 #: classes/class-woocommerce-catalog-enquiry-library.php:293
 msgid "Read More"
 msgstr ""
@@ -547,11 +557,11 @@ msgstr ""
 msgid "Redirect after Enquiry form Submission"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:247
+#: classes/class-woocommerce-catalog-enquiry-library.php:259
 msgid "Remove admin email"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:203
+#: classes/class-woocommerce-catalog-enquiry-library.php:215
 msgid "Remove Product Price?"
 msgstr ""
 
@@ -559,58 +569,59 @@ msgstr ""
 msgid "Save All Changes"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:469
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:644
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:569
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:765
 msgid "Security Code"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:187
+#: classes/class-woocommerce-catalog-enquiry-library.php:199
 msgid "Select page where user will be redirected after successful enquiry."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:165
+#: classes/class-woocommerce-catalog-enquiry-library.php:177
 msgid "Select page where user will be redirected for disable cart page."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:398
+#: classes/class-woocommerce-catalog-enquiry-library.php:410
 msgid ""
 "Select the Category, where should have the Add to cart button, instead of "
 "enquiry button."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:389
+#: classes/class-woocommerce-catalog-enquiry-library.php:401
 msgid ""
 "Select the products that should have the Add to cart button, instead of "
 "enquiry button."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:141
+#: classes/class-woocommerce-catalog-enquiry-library.php:153
 msgid "Select the type users where this catalog is applicable"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:371
+#: classes/class-woocommerce-catalog-enquiry-library.php:383
 msgid "Select the user roles, who won’t be able to send enquiry."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:143
+#: classes/class-woocommerce-catalog-enquiry-library.php:155
 msgid "Select the user type where this catalog is applicable."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:380
+#: classes/class-woocommerce-catalog-enquiry-library.php:392
 msgid "Select the users, who won’t be able to send enquiry."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:487
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:663
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:587
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:784
 msgid "Send"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:334
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:336
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:351
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:506
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:508
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:524
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:434
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:436
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:451
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:606
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:608
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:627
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:642
 msgid "Send an enquiry"
 msgstr ""
 
@@ -621,7 +632,7 @@ msgid ""
 "PRODUCT_NAME %%."
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:459
+#: classes/class-woocommerce-catalog-enquiry-library.php:471
 msgid "Set Form Title"
 msgstr ""
 
@@ -629,8 +640,8 @@ msgstr ""
 msgid "Set New Field Name"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:164
-#: classes/class-woocommerce-catalog-enquiry-library.php:186
+#: classes/class-woocommerce-catalog-enquiry-library.php:198
+#: classes/class-woocommerce-catalog-enquiry-library.php:176
 msgid "Set Redirect Page"
 msgstr ""
 
@@ -659,8 +670,8 @@ msgstr ""
 msgid "Upgrade to Pro for More Features"
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:456
-#: classes/class-woocommerce-catalog-enquiry-frontend.php:631
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:556
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:752
 msgid "Upload your File : "
 msgstr ""
 
@@ -680,7 +691,7 @@ msgstr ""
 msgid "User Phone : "
 msgstr ""
 
-#: classes/class-woocommerce-catalog-enquiry-library.php:372
+#: classes/class-woocommerce-catalog-enquiry-library.php:384
 msgid "User Role Specific Exclusion"
 msgstr ""
 
@@ -716,4 +727,12 @@ msgstr ""
 
 #: classes/class-woocommerce-catalog-enquiry-library.php:314
 msgid "Your own button style"
+msgstr ""
+
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:119
+msgid "Add to cart"
+msgstr ""
+
+#: classes/class-woocommerce-catalog-enquiry-frontend.php:632
+msgid "Add to Cart"
 msgstr ""
