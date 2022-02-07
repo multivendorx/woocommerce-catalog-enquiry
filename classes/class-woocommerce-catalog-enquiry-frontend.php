@@ -432,7 +432,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         global $Woocommerce_Catalog_Enquiry, $woocommerce, $post, $product;
         $settings = $Woocommerce_Catalog_Enquiry->options_form_settings;
         $settings_buttons = $Woocommerce_Catalog_Enquiry->options_button_appearence_settings;
-
+	$general_settings = $Woocommerce_Catalog_Enquiry->options_general_settings;
         if (isset($settings_buttons)) {
             $enquiry_button_text = isset($settings_buttons['enquiry_button_text']) ? $settings_buttons['enquiry_button_text'] : __('Send an enquiry', 'woocommerce-catalog-enquiry');
             if ($enquiry_button_text == '') {
@@ -445,14 +445,23 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         $product_url = get_permalink($productid);
         ?>    
         <div id="woocommerce-catalog" name="woocommerce_catalog" >	
-            <?php if ( isset($enquiry_button_text) ) { ?>
-                <br/>
-                <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo $enquiry_button_text; ?></button>
-                <?php
+            <?php if (isset($general_settings['is_enable_out_of_stock']) && $general_settings['is_enable_out_of_stock'] == "Enable") {
+                if (!$product->managing_stock() && !$product->is_in_stock()) {
+                    ?>
+                    <br/>
+                    <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                    <?php
+                    
+                } else {
+                    $product_object = wc_get_product( $productid );
+                    echo '<a href="' . esc_url( $product_object->add_to_cart_url() ) . '" class="add-to-cart button">' . esc_html__( 'Add to Cart', 'woocommerce-catalog-enquiry' ) . '</a>';
+                }
             } else {
                 ?>
-                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo __('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
-            <?php } ?>
+                <br/>
+                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                <?php
+            } ?>
             <input type="hidden" name="product_name_for_enquiry" id="product-name-for-enquiry" value="<?php echo get_post_field('post_title', $post->ID); ?>" />
             <input type="hidden" name="product_url_for_enquiry" id="product-url-for-enquiry" value="<?php echo get_permalink($post->ID); ?>" />
             <input type="hidden" name="product_id_for_enquiry" id="product-id-for-enquiry" value="<?php echo $post->ID; ?>" />
