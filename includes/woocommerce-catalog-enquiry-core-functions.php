@@ -164,7 +164,7 @@ if(!function_exists('woocommerce_catalog_wp_users')) {
 if(!function_exists('woocommerce_catalog_products')) {
   
   function woocommerce_catalog_products() {
-    $args = array( 'posts_per_page' => -1, 'post_type' => 'product', 'post_status' => 'publish', 'orderby' => 'title', 'order' => 'ASC' );
+    $args = apply_filters('woocommerce_catalog_limit_backend_product', array( 'posts_per_page' => -1, 'post_type' => 'product', 'post_status' => 'publish', 'orderby' => 'title', 'order' => 'ASC' ));
     $woocommerce_product = get_posts( $args );
     $all_products = array();
     foreach ( $woocommerce_product as $post => $value ){
