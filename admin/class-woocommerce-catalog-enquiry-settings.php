@@ -62,7 +62,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
     $layout = $this->woocommerce_catalog_get_page_layout(); ?>
     <div class="">
       <?php $this->woocommerce_catalog_plugin_options_tabs(); ?>
-      <div class="wcmp-catalog-space">
+      <div class="mvx-catalog-space">
         <?php if ($layout == '2-col'): ?>
           <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">
@@ -196,7 +196,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
           } elseif ($c == 1) {
             $active = 'nav-tab-active';
           }
-          if ($v[ 'id' ] == 'wcmp-catalog-from') {
+          if ($v[ 'id' ] == 'mvx-catalog-from') {
             echo '<a id="'.$v[ 'id' ].'" class="nav-tab ' . $active . '" href="admin.php?woo-catalog&tab=woo-catalog-from">';
           } else {
             echo '<a id="'.$v[ 'id' ].'" class="nav-tab ' . $active . '" href="?page=' . $menu_slug . '&tab=' . $v[ 'id' ] . '">';
@@ -213,7 +213,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
           $c++;
         }
       }
-      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://wcmpdemos.com/all-in-one-demo/my-account/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="dashicons dashicons-format-video"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
+      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://mvxdemos.com/all-in-one-demo/my-account/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="dashicons dashicons-format-video"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
       
       // For free version only
       if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ){
@@ -334,7 +334,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
 
   public function custom_enquiry_buttons_css_html_callback() {
     
-    global $WCMP_Woocommerce_Catalog_Enquiry;
+    global $MVX_Woocommerce_Catalog_Enquiry;
     $extra_fonts = apply_filters('wcce_catalog_enquiry_extra_button_style_fonts',array());
     $extra_fonts_options = '';
     if(!empty($extra_fonts) && is_array($extra_fonts)){

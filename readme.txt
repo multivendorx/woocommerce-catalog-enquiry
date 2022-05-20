@@ -1,7 +1,7 @@
 ﻿=== WC Catalog Enquiry ===
-Contributors: wcmp, rajsekharchatterjee11
+Contributors: mvx, rajsekharchatterjee11
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
-Donate link: https://wc-marketplace.com/donate
+Donate link: https://multivendorx.com/donate
 Requires at least: 4.4
 Tested up to: 5.9.2
 Requires PHP: 5.6
@@ -14,10 +14,10 @@ WC Catalog Enquiry is the most feature enriched WordPress catalog plugin. Now st
 == Description ==
 WC Catalog Enquiry converts your WooCommerce store into a catalog site, fully or partially. With this feature enriched plugin one can have both shop and catalog simultaneously. In addition, one can also use this plugin to get product enquiries from buyers via enquiry form. Install it now and create your own catalog site over just a few clicks.
 
-* [Demo](http://wcmpdemos.com/addon/catalog_enquiry/my-account/)
-* [Documentation](https://wc-marketplace.com/knowledgebase/woocommerce-catalog-enquiry-pro-wcmp/)
+* [Demo](http://mvxdemos.com/addon/catalog_enquiry/my-account/)
+* [Documentation](https://multivendorx.com/knowledgebase/woocommerce-catalog-enquiry-pro-mvx/)
 
-> Go Pro! Try our all new [WC Catalog Enquiry Pro](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/). 
+> Go Pro! Try our all new [WC Catalog Enquiry Pro](https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/). 
 
 = WC Catalog Enquiry Features =
 Following is a non-comprehensive list of the FREE features of our catalog plugin:
@@ -38,7 +38,7 @@ Following is a non-comprehensive list of the FREE features of our catalog plugin
 * Add Enquiry button anywhere in single product page via shortcode [wce_enquiry_button] 
 
 = WC Catalog Enquiry Pro features =
-Pro provides more control, more features and an additional support of [WC Marketplace](https://wc-marketplace.com/), the highest rated multi vendor plugin for WooCommerce. 
+Pro provides more control, more features and an additional support of [WC Marketplace](https://multivendorx.com/), the highest rated multi vendor plugin for WooCommerce. 
 
 <strong>Admin can</strong>
 
@@ -70,14 +70,14 @@ If you have WC Marketplace installed, then use <strong>Vendor can</strong>
 * Create custom enquiry button text
 * Use Add to cart with Catalog mode
 
-For more information or to go pro, [visit our plugin website](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/ "WC Catalog Enquiry Pro")
+For more information or to go pro, [visit our plugin website](https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/ "WC Catalog Enquiry Pro")
 
 We are adding new features as you are reading. So if your required feature is currently not available, feel free to request in the support forum.
 
 = Compatibility =
 * WooCommerce 3.6+
 * WordPress 4.4+
-* WC Marketplace - [demo](http://wcmpdemos.com/addon/wcmp_catalog_enquiry/my-account/ "Vendor - Marketplace Catalog Mode")
+* WC Marketplace - [demo](http://mvxdemos.com/addon/mvx_catalog_enquiry/my-account/ "Vendor - Marketplace Catalog Mode")
 * The theme should be WooCommerce standards compliant.
 * WPML compatible
 
@@ -262,7 +262,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WC Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (MVX)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price, and Availability) added. 
@@ -390,7 +390,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WC Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (MVX)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price and Availability) added. 

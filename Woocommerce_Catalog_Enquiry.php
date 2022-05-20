@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WC Catalog Enquiry
- * Plugin URI: https://wc-marketplace.com/
+ * Plugin URI: https://multivendorx.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
- * Author: WC Marketplace
+ * Author: MultivendorX
  * Version: 4.0.7
- * Author URI: https://wc-marketplace.com/
+ * Author URI: https://multivendorx.com/
  * WC requires at least: 4.2
  * WC tested up to: 6.3.1
  * Text Domain: woocommerce-catalog-enquiry
@@ -34,7 +34,7 @@ add_action( 'upgrader_process_complete', 'woocommerce_catalog_enquiry_option_mig
 function woocommerce_catalog_enquiry_plugin_links( $links ) {	
 	$plugin_links = array(
 		'<a href="' . admin_url( 'admin.php?page=woo-catalog' ) . '">' . __( 'Settings', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>',
-		'<a href="https://wc-marketplace.com/support-forum/forum/wcmp-catalog-enquiry/">' . __( 'Support', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>',			
+		'<a href="https://wc-marketplace.com/support-forum/forum/mvx-catalog-enquiry/">' . __( 'Support', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>',			
 	);	
 	$links = array_merge( $plugin_links, $links );
 	if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
