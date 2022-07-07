@@ -112,7 +112,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         }
     }
     
-    public function woocommerce_loop_add_to_cart_link($add_to_cart_button, $product, $args = array()){
+    public function woocommerce_loop_add_to_cart_link($add_to_cart_button, $product, $args = array()) {
         global $Woocommerce_Catalog_Enquiry;
         $settings = $Woocommerce_Catalog_Enquiry->options_general_settings;
         // button option
@@ -123,7 +123,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
 
         if (isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {
             $pro_link = '';
-            if(isset($options_button_appearence_settings['button_type'])){
+            if (isset($options_button_appearence_settings['button_type'])) {
                 switch ($options_button_appearence_settings['button_type']) {
                     case 2:
                         $link = isset($options_button_appearence_settings['button_link']) && !empty($options_button_appearence_settings['button_link']) ? $options_button_appearence_settings['button_link'] : '#';
@@ -362,7 +362,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
             add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
             remove_filter('woocommerce_loop_add_to_cart_link', array($this, 'woocommerce_loop_add_to_cart_link'), 99, 3);
         } else {
-            if($options_button_appearence_settings['button_type']){
+            if ($options_button_appearence_settings['button_type']) {
                 add_filter('woocommerce_loop_add_to_cart_link', array($this, 'woocommerce_loop_add_to_cart_link'), 99, 3);
             }else{
                 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
@@ -449,7 +449,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                 if (!$product->managing_stock() && !$product->is_in_stock()) {
                     ?>
                     <br/>
-                    <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                    <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if ($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
                     <?php
                     
                 } else {
@@ -459,7 +459,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
             } else {
                 ?>
                 <br/>
-                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if ($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
                 <?php
             } ?>
             <input type="hidden" name="product_name_for_enquiry" id="product-name-for-enquiry" value="<?php echo get_post_field('post_title', $post->ID); ?>" />
@@ -633,11 +633,11 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                     if (isset($custom_design_for_button) && $custom_design_for_button == "Enable") {
                         ?>
                         <br/>
-                        <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                        <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if ($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
                         <?php
                     } else {
                         ?>
-                        <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php esc_html_e('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
+                        <button class="woocommerce-catalog-enquiry-btn button demo btn btn-primary btn-large <?php if ($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" style="margin-top:15px;" href="#responsive"><?php esc_html_e('Send an enquiry', 'woocommerce-catalog-enquiry') ?></button>
                         <?php
                     }
                 } else {
@@ -648,7 +648,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
                 if (isset($custom_design_for_button) && $custom_design_for_button == "Enable") { 
                     ?>
                     <br/>
-                    <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
+                    <button class="woocommerce-catalog-enquiry-btn button woocommerce-catalog-enquiry-custom-button-enquiry <?php if ($settings_buttons && isset($settings_buttons['is_button']) && $settings_buttons['is_button'] == 'Enable') echo 'custom_enquiry_buttons_css_new'; else echo ''; ?>" href="#responsive"><?php echo esc_html($enquiry_button_text); ?></button>
                     <?php
                 } else {
                     ?>
@@ -1092,7 +1092,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
         }
     }
     
-    public function wce_enquiry_button_shortcode(){
+    public function wce_enquiry_button_shortcode() {
         global $Woocommerce_Catalog_Enquiry;
         $settings = $Woocommerce_Catalog_Enquiry->options_general_settings;
 
@@ -1111,8 +1111,8 @@ class Woocommerce_Catalog_Enquiry_Frontend {
     }
 
     public function remove_pricing_from_catalog_orderby( $orderby ) {
-        if( isset( $orderby['price'] ) ) unset( $orderby['price'] );
-        if( isset( $orderby['price-desc'] ) ) unset( $orderby['price-desc'] );
+        if ( isset( $orderby['price'] ) ) unset( $orderby['price'] );
+        if ( isset( $orderby['price-desc'] ) ) unset( $orderby['price-desc'] );
         return $orderby;
     }
 

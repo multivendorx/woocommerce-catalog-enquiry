@@ -37,7 +37,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
       'option_page')
       );
 
-    if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
+    if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
       add_submenu_page(
         'woo-catalog',
         __("Upgrade to Pro", 'woocommerce-catalog-enquiry'),
@@ -55,7 +55,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
     die;
   }
 
-  public function option_page(){
+  public function option_page() {
     global $Woocommerce_Catalog_Enquiry;
     $menu_slug = null;
     $page   = $_REQUEST[ 'page' ];
@@ -114,7 +114,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
               </div> <!-- #post-body-content -->
               <div id="postbox-container-1" class="postbox-container">
                 <div id="side-sortables" class="meta-box-sortables ui-sortable">
-                <?php if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) { ?>
+                <?php if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) { ?>
                   <a class="image-adv" 
                   href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/"
                   target="_blank"><img
@@ -202,7 +202,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
             echo '<a id="'.$v[ 'id' ].'" class="nav-tab ' . $active . '" href="?page=' . $menu_slug . '&tab=' . $v[ 'id' ] . '">';
           }
 
-          if( isset( $v[ 'font_class' ] ) ) {
+          if ( isset( $v[ 'font_class' ] ) ) {
             echo '<i class="dashicons '.$v[ 'font_class' ].'"></i> ';
           }
 
@@ -213,10 +213,10 @@ class Woocommerce_Catalog_Enquiry_Settings {
           $c++;
         }
       }
-      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://wcmpdemos.com/all-in-one-demo/my-account/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="dashicons dashicons-format-video"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
+      echo '<a class="nav-tab thickbox-preview" target="_blank" href="http://wcmpdemos.com/catalog-enquiry/wp-admin/" title="'.__('&larr; Close Window', 'woocommerce-catalog-enquiry').'"><i class="dashicons dashicons-format-video"></i> '.__('Live Preview', 'woocommerce-catalog-enquiry').'</a>';
       
       // For free version only
-      if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ){
+      if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
         echo '<a class="nav-tab woocommerce-catalog-upgrade" href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank" rel="noopener noreferrer"><i class="dashicons dashicons-star-filled"></i> '.__('Upgrade to Pro for More Features', 'woocommerce-catalog-enquiry').'</a>';
       }
 
@@ -337,7 +337,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
     global $WCMP_Woocommerce_Catalog_Enquiry;
     $extra_fonts = apply_filters('wcce_catalog_enquiry_extra_button_style_fonts',array());
     $extra_fonts_options = '';
-    if(!empty($extra_fonts) && is_array($extra_fonts)){
+    if (!empty($extra_fonts) && is_array($extra_fonts)) {
       foreach ($extra_fonts as $key => $value) {
         $extra_fonts_options .= '<option value="'.$value.', Helvetica, Arial, Sans-Serif">'.$value.'</option>';
       }

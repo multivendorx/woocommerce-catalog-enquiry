@@ -1,6 +1,6 @@
 <?php
 
-if(!function_exists('woocommerce_catalog_enquiry_alert_notice')) {
+if (!function_exists('woocommerce_catalog_enquiry_alert_notice')) {
 	 function woocommerce_catalog_enquiry_alert_notice() {
     ?>
     <div id="message" class="error">
@@ -11,7 +11,7 @@ if(!function_exists('woocommerce_catalog_enquiry_alert_notice')) {
 }
 
 
-if(!function_exists('woocommerce_catalog_enquiry_validate_color_hex_code')) {
+if (!function_exists('woocommerce_catalog_enquiry_validate_color_hex_code')) {
     function woocommerce_catalog_enquiry_validate_color_hex_code($code) {
         $color = str_replace( '#', '', $code );
         return '#'.$color;
@@ -19,12 +19,12 @@ if(!function_exists('woocommerce_catalog_enquiry_validate_color_hex_code')) {
 }
 
 // Old version to new migration
-if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
+if (!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
 
   function woocommerce_catalog_enquiry_option_migration_3_to_4() {
     global $Woocommerce_Catalog_Enquiry;
     
-    if( !get_option( 'woocommerce_catalog_migration_completed' ) ) :
+    if ( !get_option( 'woocommerce_catalog_migration_completed' ) ) :
 
     // Old catalog button data
     $woocommerce_catalog_old_button = get_option( 'dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name', true );
@@ -55,60 +55,60 @@ if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
     }
 
     // New catalog button data
-    if( !empty( $woocommerce_catalog_old_button ) ) {
+    if ( !empty( $woocommerce_catalog_old_button ) ) {
       update_option( 'woocommerce_catalog_enquiry_button_appearence_settings', $woocommerce_catalog_old_button );
     }
 
-    if( !empty( $woocommerce_catalog_old_options ) ) {
+    if ( !empty( $woocommerce_catalog_old_options ) ) {
       
       // Old catalog general data
       update_option( 'woocommerce_catalog_enquiry_general_settings', $woocommerce_catalog_old_options );
 
       // name
-      if( isset( $woocommerce_catalog_old_options['name_label'] ) && $woocommerce_catalog_old_options['name_label'] != ''  ){
+      if ( isset( $woocommerce_catalog_old_options['name_label'] ) && $woocommerce_catalog_old_options['name_label'] != ''  ){
 
         $woocommerce_catalog_old_options['form_name'] = array( 'label' => $woocommerce_catalog_old_options['form_name'] );
       }
       // Email
-      if( isset( $woocommerce_catalog_old_options['email_label'] ) && $woocommerce_catalog_old_options['email_label'] != ''  ){
+      if ( isset( $woocommerce_catalog_old_options['email_label'] ) && $woocommerce_catalog_old_options['email_label'] != ''  ){
 
         $woocommerce_catalog_old_options['form_email'] = array( 'label' => $woocommerce_catalog_old_options['form_email'] );
       }
       // File upload limit
-      if( isset( $woocommerce_catalog_old_options['filesize_limit'] ) && $woocommerce_catalog_old_options['filesize_limit'] != ''  ){
+      if ( isset( $woocommerce_catalog_old_options['filesize_limit'] ) && $woocommerce_catalog_old_options['filesize_limit'] != ''  ){
 
         $woocommerce_catalog_old_options['filesize_limit'] = array( 'label' => $woocommerce_catalog_old_options['filesize_limit'] );
       }
 
       // Subject
-      if( isset($woocommerce_catalog_old_options['is_subject']) &&  $woocommerce_catalog_old_options['is_subject'] == 'Enable' && isset( $woocommerce_catalog_old_options['subject_label'] ) && $woocommerce_catalog_old_options['subject_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_subject']) &&  $woocommerce_catalog_old_options['is_subject'] == 'Enable' && isset( $woocommerce_catalog_old_options['subject_label'] ) && $woocommerce_catalog_old_options['subject_label'] != ''  ){
 
         $woocommerce_catalog_old_options['form_subject'] = array( 'label' => $woocommerce_catalog_old_options['subject_label'], 'is_enable' => 'Enable' );
       }
 
       // phone
-      if( isset($woocommerce_catalog_old_options['is_phone']) &&  $woocommerce_catalog_old_options['is_phone'] == 'Enable' && isset( $woocommerce_catalog_old_options['phone_label'] ) && $woocommerce_catalog_old_options['phone_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_phone']) &&  $woocommerce_catalog_old_options['is_phone'] == 'Enable' && isset( $woocommerce_catalog_old_options['phone_label'] ) && $woocommerce_catalog_old_options['phone_label'] != ''  ){
 
         $woocommerce_catalog_old_options['form_phone'] = array( 'label' => $woocommerce_catalog_old_options['phone_label'], 'is_enable' => 'Enable' );
       }
 
       // Address
-      if( isset($woocommerce_catalog_old_options['is_address']) &&  $woocommerce_catalog_old_options['is_address'] == 'Enable' && isset( $woocommerce_catalog_old_options['address_label'] ) && $woocommerce_catalog_old_options['address_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_address']) &&  $woocommerce_catalog_old_options['is_address'] == 'Enable' && isset( $woocommerce_catalog_old_options['address_label'] ) && $woocommerce_catalog_old_options['address_label'] != ''  ){
         $woocommerce_catalog_old_options['form_address'] = array( 'label' => $woocommerce_catalog_old_options['address_label'], 'is_enable' => 'Enable' );
       }
 
       // comment
-      if( isset($woocommerce_catalog_old_options['is_comment']) &&  $woocommerce_catalog_old_options['is_comment'] == 'Enable' && isset( $woocommerce_catalog_old_options['comment_label'] ) && $woocommerce_catalog_old_options['comment_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_comment']) &&  $woocommerce_catalog_old_options['is_comment'] == 'Enable' && isset( $woocommerce_catalog_old_options['comment_label'] ) && $woocommerce_catalog_old_options['comment_label'] != ''  ){
         $woocommerce_catalog_old_options['form_comment'] = array( 'label' => $woocommerce_catalog_old_options['comment_label'], 'is_enable' => 'Enable' );
       }
 
       // file upload
-      if( isset($woocommerce_catalog_old_options['is_fileupload']) &&  $woocommerce_catalog_old_options['is_fileupload'] == 'Enable' && isset( $woocommerce_catalog_old_options['fileupload_label'] ) && $woocommerce_catalog_old_options['fileupload_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_fileupload']) &&  $woocommerce_catalog_old_options['is_fileupload'] == 'Enable' && isset( $woocommerce_catalog_old_options['fileupload_label'] ) && $woocommerce_catalog_old_options['fileupload_label'] != ''  ){
         $woocommerce_catalog_old_options['form_fileupload'] = array( 'label' => $woocommerce_catalog_old_options['fileupload_label'], 'is_enable' => 'Enable' );
       }
 
       // Capta label
-      if( isset($woocommerce_catalog_old_options['is_captcha']) &&  $woocommerce_catalog_old_options['is_captcha'] == 'Enable' && isset( $woocommerce_catalog_old_options['captcha_label'] ) && $woocommerce_catalog_old_options['captcha_label'] != ''  ){
+      if ( isset($woocommerce_catalog_old_options['is_captcha']) &&  $woocommerce_catalog_old_options['is_captcha'] == 'Enable' && isset( $woocommerce_catalog_old_options['captcha_label'] ) && $woocommerce_catalog_old_options['captcha_label'] != ''  ){
         $woocommerce_catalog_old_options['form_captcha'] = array( 'label' => $woocommerce_catalog_old_options['captcha_label'], 'is_enable' => 'Enable' );
       }
 
@@ -118,7 +118,7 @@ if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
 
     // By default set
     $general_settings = get_option( 'woocommerce_catalog_enquiry_general_settings' );
-    if( is_array( $general_settings ) && !empty( $general_settings ) ){
+    if ( is_array( $general_settings ) && !empty( $general_settings ) ){
       $general_settings['for-user-type'] = 2;
       update_option( 'woocommerce_catalog_enquiry_general_settings', $general_settings );
     } else {
@@ -129,7 +129,7 @@ if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
 
     // set button type
     $button_settings = get_option( 'woocommerce_catalog_enquiry_button_appearence_settings' );
-    if( is_array( $button_settings ) &&  !empty( $button_settings ) ){
+    if ( is_array( $button_settings ) &&  !empty( $button_settings ) ){
       $button_settings['button_type'] = 1;
       update_option( 'woocommerce_catalog_enquiry_button_appearence_settings', $button_settings );
     } else {
@@ -148,7 +148,7 @@ if(!function_exists('woocommerce_catalog_enquiry_option_migration_3_to_4')) {
 }
 
 // find all wp users
-if(!function_exists('woocommerce_catalog_wp_users')) {
+if (!function_exists('woocommerce_catalog_wp_users')) {
   
   function woocommerce_catalog_wp_users(){
     $users = get_users();
@@ -161,7 +161,7 @@ if(!function_exists('woocommerce_catalog_wp_users')) {
 }
 
 // find all woocommerce product
-if(!function_exists('woocommerce_catalog_products')) {
+if (!function_exists('woocommerce_catalog_products')) {
   
   function woocommerce_catalog_products() {
     $args = apply_filters('woocommerce_catalog_limit_backend_product', array( 'posts_per_page' => -1, 'post_type' => 'product', 'post_status' => 'publish', 'orderby' => 'title', 'order' => 'ASC' ));
@@ -174,7 +174,7 @@ if(!function_exists('woocommerce_catalog_products')) {
   }
 }
 // find all product caegory
-if(!function_exists('woocommerce_catalog_product_category')) {
+if (!function_exists('woocommerce_catalog_product_category')) {
   function woocommerce_catalog_product_category() { 
     $all_product_cat = array();
     $args = array( 'orderby' => 'name', 'order' => 'ASC' );
@@ -187,7 +187,7 @@ if(!function_exists('woocommerce_catalog_product_category')) {
 }
 
 // Get all woocommerce pages
-if(!function_exists('woocommerce_catalog_wp_pages')) {
+if (!function_exists('woocommerce_catalog_wp_pages')) {
   
   function woocommerce_catalog_wp_pages() {
     $args = array( 'posts_per_page' => -1, 'post_type' => 'page', 'orderby' => 'title', 'order' => 'ASC' );

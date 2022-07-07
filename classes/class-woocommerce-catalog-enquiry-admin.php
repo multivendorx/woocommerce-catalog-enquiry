@@ -28,7 +28,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
         ?>
         <div style="clear: both"></div>
         <div id="woocommerce-catalog-admin-footer">
-        <?php _e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://wc-marketplace.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/wcmp.png'; ?>"></a><?php _e('WC Marketplace', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
+        <?php esc_html_e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://wc-marketplace.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/wcmp.png'; ?>"></a><?php esc_html_e('WC Marketplace', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
         </div>
         <?php
     }
@@ -100,7 +100,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
 
             $settings_buttons = get_option( 'woocommerce_catalog_enquiry_button_appearence_settings' );
             // Enqueue admin script and stylesheet from here
-            if ($screen->id == 'toplevel_page_woo-catalog' ) :
+            if ($screen && $screen->id == 'toplevel_page_woo-catalog' ) :
 
                 $Woocommerce_Catalog_Enquiry->library->load_qtip_lib();
                 $Woocommerce_Catalog_Enquiry->library->load_select2_lib();

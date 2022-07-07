@@ -93,10 +93,10 @@ class Woocommerce_Catalog_Enquiry {
    * @return void
    */
   	public function load_plugin_textdomain() {
-  		$locale = is_admin() && function_exists('get_user_locale') ? get_user_locale() : get_locale();
-        $locale = apply_filters('woocommerce_catalog_enquiry_plugin_locale', $locale, 'woocommerce-catalog-enquiry');
-        load_textdomain('woocommerce-catalog-enquiry', WP_LANG_DIR . '/woocommerce-catalog-enquiry/woocommerce-catalog-enquiry-' . $locale . '.mo');
-        load_plugin_textdomain('woocommerce-catalog-enquiry', false, plugin_basename(dirname(dirname(__FILE__))) . '/languages');
+		$locale = is_admin() && function_exists('get_user_locale') ? get_user_locale() : get_locale();
+		$locale = apply_filters('woocommerce_catalog_enquiry_plugin_locale', $locale, 'woocommerce-catalog-enquiry');
+		load_textdomain('woocommerce-catalog-enquiry', WP_LANG_DIR . '/woocommerce-catalog-enquiry/woocommerce-catalog-enquiry-' . $locale . '.mo');
+		load_plugin_textdomain('woocommerce-catalog-enquiry', false, plugin_basename(dirname(dirname(__FILE__))) . '/languages');
   	}
 
 	public function load_class($class_name = '') {
