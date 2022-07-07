@@ -136,6 +136,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Enhancement: Coding structure enhancement.
 * Fixed: WordPress screen checking update.
 * Fixed: Securing (escaping) Output.
+* Fixed: Live preview link update.
 * Updated: Language file.
 
 = 4.0.7 - 2022-03-24 =
