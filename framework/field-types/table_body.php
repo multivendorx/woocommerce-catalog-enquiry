@@ -149,7 +149,7 @@ if( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
 
 <?php
 
-echo __('Want to customise the form as per your need? To have a fully customizable form kindly upgrade to <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry');
+echo __('Want to customise the form as per your need? To have a fully customizable form kindly upgrade to <a href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry');
 
 }
 

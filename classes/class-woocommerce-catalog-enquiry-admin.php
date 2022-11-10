@@ -28,7 +28,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
         ?>
         <div style="clear: both"></div>
         <div id="woocommerce-catalog-admin-footer">
-        <?php esc_html_e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://wc-marketplace.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/mvx.png'; ?>"></a><?php esc_html_e('WC Marketplace', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
+        <?php esc_html_e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://multivendorx.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/mvx.svg'; ?>"></a><?php esc_html_e('MultiVendorX', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
         </div>
         <?php
     }

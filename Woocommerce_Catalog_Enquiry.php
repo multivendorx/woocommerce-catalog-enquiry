@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WC Catalog Enquiry
- * Plugin URI: https://wc-marketplace.com/
+ * Plugin URI: https://multivendorx.com/
  * Description: Convert your WooCommerce store into a catalog website in a click
- * Author: WC Marketplace
+ * Author: MultiVendorX
  * Version: 4.0.9
- * Author URI: https://wc-marketplace.com/
+ * Author URI: https://multivendorx.com/
  * WC requires at least: 4.2
  * WC tested up to: 7.1.0
  * Text Domain: woocommerce-catalog-enquiry
@@ -38,7 +38,7 @@ function woocommerce_catalog_enquiry_plugin_links( $links ) {
 	);	
 	$links = array_merge( $plugin_links, $links );
 	if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
-        $links[] = '<a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">' . __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>';
+        $links[] = '<a href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">' . __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>';
     }
     return $links;
 }
@@ -49,7 +49,7 @@ add_filter( 'plugin_row_meta', 'plugin_row_meta', 10, 2 );
 function plugin_row_meta( $links, $file ) {
     if($file == 'woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php' && apply_filters( 'woocommerce_catalog_enquiry_free_active', true )){
         $row_meta = array(
-            'pro'    => '<a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" title="' . esc_attr( __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) ) . '">' . __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>'
+            'pro'    => '<a href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" title="' . esc_attr( __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) ) . '">' . __( 'Upgrade to Pro', WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ) . '</a>'
         );
         return array_merge( $links, $row_meta );
     }else{

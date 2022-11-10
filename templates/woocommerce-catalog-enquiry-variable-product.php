@@ -2,7 +2,7 @@
 /**
  * Variable product add to cart
  *
- * @author  WC Marketplace
+ * @author  MultiVendorX
  * @package woocommerce-catalog-enquiry/Templates
  * @version 3.3
  */

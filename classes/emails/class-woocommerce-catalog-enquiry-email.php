@@ -11,7 +11,7 @@ if ( ! class_exists( 'Woocommerce_Catalog_Enquiry_Email' ) ) :
  *
  * @class 		Woocommerce_Catalog_Enquiry_Email
  * @version		3.0.2
- * @author 		WC Marketplace
+ * @author 		MultiVendorX
  * @extends 	WC_Email
  */
 class Woocommerce_Catalog_Enquiry_Email extends WC_Email {

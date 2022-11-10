@@ -51,7 +51,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
 
   // Upgrade to pro link
   public function handle_external_redirects() {
-    wp_redirect( 'https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/' );
+    wp_redirect( 'https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/' );
     die;
   }
 
@@ -116,7 +116,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
                 <div id="side-sortables" class="meta-box-sortables ui-sortable">
                 <?php if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) { ?>
                   <a class="image-adv" 
-                  href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/"
+                  href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/"
                   target="_blank"><img
                   src="<?php echo plugins_url() .'/woocommerce-catalog-enquiry/'; ?>framework/Catalog-Pro-Banner.jpg" /></a>
                   <br><br>
@@ -144,7 +144,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
   </div>
 
   <?php
-    // Wc marketplace admin footer
+    // MultiVendorX admin footer
     do_action('woocommerce_catalog_enquiry_admin_footer');
 
   }
@@ -217,7 +217,7 @@ class Woocommerce_Catalog_Enquiry_Settings {
       
       // For free version only
       if ( apply_filters( 'woocommerce_catalog_enquiry_free_active', true ) ) {
-        echo '<a class="nav-tab woocommerce-catalog-upgrade" href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank" rel="noopener noreferrer"><i class="dashicons dashicons-star-filled"></i> '.__('Upgrade to Pro for More Features', 'woocommerce-catalog-enquiry').'</a>';
+        echo '<a class="nav-tab woocommerce-catalog-upgrade" href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" target="_blank" rel="noopener noreferrer"><i class="dashicons dashicons-star-filled"></i> '.__('Upgrade to Pro for More Features', 'woocommerce-catalog-enquiry').'</a>';
       }
 
       // Add extra tab for pro version

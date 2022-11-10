@@ -2,7 +2,7 @@
 /**
  * Woocommerce Catalog Enquiry Admin
  *
- * @author 	WC Marketplace
+ * @author 	MultiVendorX
  * @version   3.0.2
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

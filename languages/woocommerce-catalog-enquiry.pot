@@ -272,7 +272,7 @@ msgstr ""
 msgid ""
 "Enable this to activate catalog mode sitewide. This will remove your Add to "
 "Cart button. To keep Add to Cart button in your site, upgrade to  <a "
-"href=\"https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/\" "
+"href=\"https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/\" "
 "target=\"_blank\">WooCommerce Catalog Enquiry Pro</a>."
 msgstr ""
 
@@ -298,7 +298,7 @@ msgstr ""
 msgid ""
 "Enable this to redirect user to home page, if they click on the cart or "
 "checkout page. To set the redirection to another page kindly upgrade to <a "
-"href=\"https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/\" "
+"href=\"https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/\" "
 "target=\"_blank\">WooCommerce Catalog Enquiry Pro</a>."
 msgstr ""
 
@@ -435,7 +435,7 @@ msgstr ""
 
 #. URI of the plugin
 #. Author URI of the plugin
-msgid "https://wc-marketplace.com/"
+msgid "https://multivendorx.com/"
 msgstr ""
 
 #: classes/class-woocommerce-catalog-enquiry-admin.php:89
@@ -725,7 +725,7 @@ msgstr ""
 
 #. Author of the plugin
 #: classes/class-woocommerce-catalog-enquiry-admin.php:31
-msgid "WC Marketplace"
+msgid "MultiVendorX"
 msgstr ""
 
 #: framework/field-types/date.php:32 framework/field-types/daterange.php:32

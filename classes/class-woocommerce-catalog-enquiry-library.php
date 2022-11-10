@@ -116,7 +116,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "id" => "is-enable",
         "name" => "is_enable",
         "label" => __( "Catalog Mode", 'woocommerce-catalog-enquiry' ),
-        "desc" => apply_filters( 'woocommerce_catalog_enquiry_enable_catalog_text', __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to  <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry') ),
+        "desc" => apply_filters( 'woocommerce_catalog_enquiry_enable_catalog_text', __('Enable this to activate catalog mode sitewide. This will remove your Add to Cart button. To keep Add to Cart button in your site, upgrade to  <a href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry', 'woocommerce-catalog-enquiry') ),
         "option_values" => array(
              'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
         )
@@ -162,7 +162,7 @@ class Woocommerce_Catalog_Enquiry_Library {
         "id" => "is-hide-cart-checkout",
         "name" => "is_hide_cart_checkout",
         "label" => __( "Disable Cart and Checkout Page?", 'woocommerce-catalog-enquiry' ),
-        "desc" => apply_filters( 'woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect user to home page, if they click on the cart or checkout page. To set the redirection to another page kindly upgrade to <a href="https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry') ),
+        "desc" => apply_filters( 'woocommerce_catalog_enquiry_hide_cart', __('Enable this to redirect user to home page, if they click on the cart or checkout page. To set the redirection to another page kindly upgrade to <a href="https://multivendorx.com/product/woocommerce-catalog-enquiry-pro/" target="_blank">WooCommerce Catalog Enquiry Pro</a>.', 'woocommerce-catalog-enquiry') ),
         "option_values" => array(
              'Enable' => __( '', 'woocommerce-catalog-enquiry' ),
         )
