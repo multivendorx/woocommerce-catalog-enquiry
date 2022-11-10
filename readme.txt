@@ -3,9 +3,9 @@ Contributors: wcmp, rajsekharchatterjee11
 Tags: catalog, woocommerce catalog, product catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalogue only, product catalogue, catalog for woocommerce, catalog mode, remove add to cart 
 Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.4
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.6
-Stable tag: 4.0.8
+Stable tag: 4.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ WC Catalog Enquiry is the most feature enriched WordPress catalog plugin. Now st
 WC Catalog Enquiry converts your WooCommerce store into a catalog site, fully or partially. With this feature enriched plugin one can have both shop and catalog simultaneously. In addition, one can also use this plugin to get product enquiries from buyers via enquiry form. Install it now and create your own catalog site over just a few clicks.
 
 * [Demo](http://wcmpdemos.com/addon/catalog_enquiry/my-account/)
-* [Documentation](https://wc-marketplace.com/knowledgebase/woocommerce-catalog-enquiry-pro-wcmp/)
+* [Documentation](https://multivendorx.com/knowledgebase/catalog-enquiry/)
 
 > Go Pro! Try our all new [WC Catalog Enquiry Pro](https://wc-marketplace.com/product/woocommerce-catalog-enquiry-pro/). 
 
@@ -129,6 +129,12 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 10.Catalog Enquiry with WC Marketplace - Vendor Catalog Settings
 
 == Changelog ==
+
+= 4.0.8 - 2022-07-07 =
+* Added: Compatibility of WordPress 6.1.
+* Added: Compatibility of WooCommerce 7.1.0.
+* Added: Compatibility with MultiVendorX.
+* Updated: Language file.
 
 = 4.0.8 - 2022-07-07 =
 * Added: Compatibility of WordPress 6.0.
@@ -271,7 +277,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WC Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (MultiVendorX)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price, and Availability) added. 
@@ -399,7 +405,7 @@ Ans. Yes, you can use this plugin for shop and catalog simultaneously.You can al
 * Fix - Excluded Product variation add to cart issue fixed
 
 = 2.3.7 =
-* Launched - WC Catalog Enquiry Pro (WCMp)
+* Launched - WC Catalog Enquiry Pro (MultiVendorX)
 
 = 2.3.6 =
 * Added – Product single variation section (Description, Price and Availability) added. 

@@ -6,9 +6,9 @@ jQuery(function($) {
     var cssValues = {};
 
     // if user set custom style for button //
-    if (wcmp_catalog_btn.custom_cssStuff != '') {
+    if (mvx_catalog_btn.custom_cssStuff != '') {
 
-        var userStyle = JSON.parse(wcmp_catalog_btn.custom_cssStuff);
+        var userStyle = JSON.parse(mvx_catalog_btn.custom_cssStuff);
         if ($.isEmptyObject(userStyle)) {
             cssStuff['buttonPadding'] = "5px 10px";
             cssStuff['backgroundBottom'] = "#65a9d7";
@@ -43,9 +43,9 @@ jQuery(function($) {
     }
     
     // custom css generate fields values //
-    if (wcmp_catalog_btn.custom_cssValues != '') {
+    if (mvx_catalog_btn.custom_cssValues != '') {
 
-        var userStyleValue = JSON.parse(wcmp_catalog_btn.custom_cssValues);
+        var userStyleValue = JSON.parse(mvx_catalog_btn.custom_cssValues);
         if ($.isEmptyObject(userStyleValue)) {
             cssValues['sizer_value'] = 10;
             cssValues['fontsizer_value'] = 12;
@@ -137,9 +137,9 @@ jQuery(function($) {
 
     //$("head").append("<style type='text/css'></style>"); //
 
-    if (wcmp_catalog_btn.custom_css != '') {
-        $("head").append("<style type='text/css'>" + wcmp_catalog_btn.custom_css + "</style>");
-        $("#custom_enquiry_buttons_css").val(wcmp_catalog_btn.custom_css);
+    if (mvx_catalog_btn.custom_css != '') {
+        $("head").append("<style type='text/css'>" + mvx_catalog_btn.custom_css + "</style>");
+        $("#custom_enquiry_buttons_css").val(mvx_catalog_btn.custom_css);
     } else {
         reCenterButton();
         createCSS();

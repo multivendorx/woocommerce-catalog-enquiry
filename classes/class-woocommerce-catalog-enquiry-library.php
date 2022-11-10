@@ -106,7 +106,7 @@ class Woocommerce_Catalog_Enquiry_Library {
 
     $woocommerce_catalog_options[ ] = array(
         "type" => "section",
-        "id" => "wcmp-catalog-license",
+        "id" => "mvx-catalog-license",
         "label" => __( "Common Settings", 'woocommerce-catalog-enquiry' ),
     );
 

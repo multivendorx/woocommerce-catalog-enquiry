@@ -28,7 +28,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
         ?>
         <div style="clear: both"></div>
         <div id="woocommerce-catalog-admin-footer">
-        <?php esc_html_e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://wc-marketplace.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/wcmp.png'; ?>"></a><?php esc_html_e('WC Marketplace', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
+        <?php esc_html_e('Powered by', 'woocommerce-catalog-enquiry'); ?> <a href="http://wc-marketplace.com/" target="_blank"><img src="<?php echo $Woocommerce_Catalog_Enquiry->plugin_url . '/assets/images/mvx.png'; ?>"></a><?php esc_html_e('WC Marketplace', 'woocommerce-catalog-enquiry'); ?> &copy; <?php echo date('Y'); ?>
         </div>
         <?php
     }
@@ -121,7 +121,7 @@ class Woocommerce_Catalog_Enquiry_Admin {
 
                 wp_localize_script(
                 'button_gen_js', 
-                'wcmp_catalog_btn', 
+                'mvx_catalog_btn', 
                 array(
                     'custom_css' => isset($settings_buttons['custom_enquiry_buttons_css']) ? $settings_buttons['custom_enquiry_buttons_css'] : '',  
                     'custom_cssStuff' => isset($settings_buttons['custom_enquiry_buttons_cssStuff']) ? $settings_buttons['custom_enquiry_buttons_cssStuff'] : '',
