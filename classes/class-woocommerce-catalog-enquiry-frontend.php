@@ -978,6 +978,7 @@ class Woocommerce_Catalog_Enquiry_Frontend {
     }
 
     public function remove_price_from_product_list_single() {
+        remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
         remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
     }
 
