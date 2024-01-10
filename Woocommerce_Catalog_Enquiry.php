@@ -65,3 +65,8 @@ function plugin_row_meta( $links, $file ) {
 		$GLOBALS['Woocommerce_Catalog_Enquiry'] = $Woocommerce_Catalog_Enquiry;
 	}
 //}
+add_action ( 'before_woocommerce_init', function () {  
+    if ( class_exists ( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility ( 'custom_order_tables', WP_CONTENT_DIR.'/plugins/woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php', true );  
+    } 
+});
